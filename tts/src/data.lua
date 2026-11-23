@@ -10,10 +10,10 @@ SHEETS = {{
     ["w"] = 5,
     ["h"] = 3
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-f8a07d3d.png?v=f72b6c32",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-9a9e1fe5.png?v=61ea22c0",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-encounter.png?v=45748297",
-    ["w"] = 6,
-    ["h"] = 4
+    ["w"] = 7,
+    ["h"] = 5
   }}
 CARDS = {
   ["CHR-DRG"] = {
@@ -1144,6 +1144,82 @@ CARDS = {
     ["idx"] = 21,
     ["enc"] = true
   },
+  ["BOS-001"] = {
+    ["name"] = "Boss Horde",
+    ["set"] = "BOS",
+    ["type"] = "Enemy",
+    ["text"] = "Enemy Type - Generic (Any)\nP 0 H 2*\nWhenever the boss die is rolled, my power is set based on the result: A - 1, B - 2, C - 3.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 22,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Generic",
+      ["rank"] = 2,
+      ["with"] = "Any"
+    },
+    ["power"] = "0",
+    ["health"] = "2*",
+    ["keywords"] = ""
+  },
+  ["BOS-002"] = {
+    ["name"] = "Champion",
+    ["set"] = "BOS",
+    ["type"] = "Enemy",
+    ["text"] = "Enemy Type - Vanguard (Any)\nP 2 H 5\nBosses get Armor 1.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 23,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Vanguard",
+      ["rank"] = 3,
+      ["with"] = "Any"
+    },
+    ["power"] = "2",
+    ["health"] = "5",
+    ["keywords"] = ""
+  },
+  ["BOS-003"] = {
+    ["name"] = "Feel My Wrath",
+    ["set"] = "BOS",
+    ["type"] = "Event",
+    ["text"] = "Event\nRoll the boss die.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 24,
+    ["enc"] = true
+  },
+  ["BOS-004"] = {
+    ["name"] = "I Will Not Fall",
+    ["set"] = "BOS",
+    ["type"] = "Event",
+    ["text"] = "Event\nRemove 1* damage from the Boss. If no damage is removed this way, this gains Cascade.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 25,
+    ["enc"] = true
+  },
+  ["BOS-005"] = {
+    ["name"] = "Kneel",
+    ["set"] = "BOS",
+    ["type"] = "Event",
+    ["text"] = "Event\nEach player taps their hero and weapon.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 26,
+    ["enc"] = true
+  },
+  ["BOS-006"] = {
+    ["name"] = "My Patience Ends",
+    ["set"] = "BOS",
+    ["type"] = "Event",
+    ["text"] = "Event\nPut a +1 Power counter on the boss.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 27,
+    ["enc"] = true
+  },
   ["ETK-001"] = {
     ["name"] = "Beast",
     ["set"] = "ETK",
@@ -1151,7 +1227,7 @@ CARDS = {
     ["text"] = "Beast\nP 1 H 4",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 22,
+    ["idx"] = 28,
     ["enc"] = true,
     ["stack"] = {
       ["role"] = "Generic",
@@ -1169,7 +1245,7 @@ CARDS = {
     ["text"] = "Obstacle\nChannel [G]|[B]\n\"More work?\"",
     ["qty"] = 4,
     ["sheet"] = 3,
-    ["idx"] = 23,
+    ["idx"] = 29,
     ["enc"] = true
   }
 }
@@ -1283,6 +1359,11 @@ SETS = {
     ["name"] = "Trials and Tribulations",
     ["kind"] = "Encounter set",
     ["cards"] = {"TAT-001", "TAT-002", "TAT-003"}
+  },
+  ["BOS"] = {
+    ["name"] = "Bosses",
+    ["kind"] = "Encounter set",
+    ["cards"] = {"BOS-001", "BOS-002", "BOS-003", "BOS-004", "BOS-005", "BOS-006"}
   },
   ["ETK"] = {
     ["name"] = "Encounter tokens",
@@ -1404,7 +1485,7 @@ ADVENTURES = {{
         ["set_aside"] = {}
       }}
   }}
-SET_ORDER = {"CHR", "ANC", "MAG", "MAG-FIR", "MAG-ICE", "WAR", "WAR-BLD", "WAR-IRC", "PRI", "PRI-ANO", "PRI-SER", "DRG", "DRG-BRD", "DRG-SCB", "ROG", "ROG-ASN", "ROG-OUT", "TWG", "IGK", "MMS", "PTP", "TAT", "ETK"}
+SET_ORDER = {"CHR", "ANC", "MAG", "MAG-FIR", "MAG-ICE", "WAR", "WAR-BLD", "WAR-IRC", "PRI", "PRI-ANO", "PRI-SER", "DRG", "DRG-BRD", "DRG-SCB", "ROG", "ROG-ASN", "ROG-OUT", "TWG", "IGK", "MMS", "PTP", "TAT", "BOS", "ETK"}
 UI_ASSETS = {{
     ["name"] = "CHR-DRG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/CHR-DRG.png?v=20d5d645"
@@ -1717,6 +1798,24 @@ UI_ASSETS = {{
   }, {
     ["name"] = "TAT-003",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=31429406"
+  }, {
+    ["name"] = "BOS-001",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=3c7c0bbb"
+  }, {
+    ["name"] = "BOS-002",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-002.png?v=a249acef"
+  }, {
+    ["name"] = "BOS-003",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-003.png?v=af1937b9"
+  }, {
+    ["name"] = "BOS-004",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-004.png?v=b3cfc6ef"
+  }, {
+    ["name"] = "BOS-005",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-005.png?v=911b5c58"
+  }, {
+    ["name"] = "BOS-006",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-006.png?v=1a28b5df"
   }, {
     ["name"] = "ETK-001",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-001.png?v=8331a020"

@@ -128,6 +128,12 @@ CARDS = [
 ("TAT-001","Exhausted","TAT","Event","Event","","Banish a card from your hand unless you discard a {g} card.","","","","encounters/Trials and Tribulations/Exhausted x1.png",""),
 ("TAT-002","Lose an Action","TAT","Event","Event","","Lose an action unless you discard a {b} card.","","","","encounters/Trials and Tribulations/Lose an Action x1.png",""),
 ("TAT-003","Overwhelmed","TAT","Event","Event","","Tap your hero and weapon unless you discard a {r} card.","","","","encounters/Trials and Tribulations/Overwhelmed x1.png",""),
+("BOS-001","Boss Horde","BOS","Enemy","Enemy Type - Generic (Any)","","Whenever the boss die is rolled, my power is set based on the result: A - 1, B - 2, C - 3.","0","2*","","encounters/Bosses/Boss Horde x1.png","Generic boss set (works with any boss). Horde: 2 bodies per player"),
+("BOS-002","Champion","BOS","Enemy","Enemy Type - Vanguard (Any)","","Bosses get Armor 1.","2","5","","encounters/Bosses/Champion x1.png","Generic boss set"),
+("BOS-003","Feel My Wrath","BOS","Event","Event","","Roll the boss die.","","","","encounters/Bosses/Feel My Wrath x1.png","Generic boss set"),
+("BOS-004","I Will Not Fall","BOS","Event","Event","Cascade","Remove 1* damage from the Boss. If no damage is removed this way, this gains Cascade.","","","","encounters/Bosses/I Will Not Fall x1.png","Generic boss set"),
+("BOS-005","Kneel","BOS","Event","Event","","Each player taps their hero and weapon.","","","","encounters/Bosses/Kneel x1.png","Generic boss set"),
+("BOS-006","My Patience Ends","BOS","Event","Event","","Put a +1 Power counter on the boss.","","","","encounters/Bosses/My Patience Ends x1.png","Generic boss set"),
 # --- encounter tokens
 ("ETK-001","Beast","ETK","Enemy","Beast","","","1","4","","encounters/tokens/Beast x1.png","Rules text is the template placeholder 'Card Text'"),
 ("ETK-002","Peasant","ETK","Obstacle","Obstacle","","\"More work?\"","","","{g}|{b}","encounters/tokens/Peasant x4.png",""),
@@ -142,7 +148,7 @@ SETS = [  # set, name, kind, class, subclass, back
 ("ROG","Rogue - Core","Class core","Rogue","",P),("ROG-ASN","Rogue - Assassin","Subclass","Rogue","Assassin",P),("ROG-OUT","Rogue - Outlaw","Subclass","Rogue","Outlaw",P),
 ("TWG","Trouble with Goblins","Encounter set","","",E),("IGK","Ire of the Goblin King","Encounter set","","",E),
 ("MMS","Magical Mishaps","Encounter set","","",E),("PTP","Portal to Problems","Encounter set","","",E),
-("TAT","Trials and Tribulations","Encounter set","","",E),("ETK","Encounter tokens","Tokens","","",E),
+("TAT","Trials and Tribulations","Encounter set","","",E),("BOS","Bosses","Encounter set","","",E),("ETK","Encounter tokens","Tokens","","",E),
 ]
 CLASSES = [  # class, subclass, hero, weapon (blank = none yet), core_set, subclass_set, health (blank = 10),
              # choose_one: a trait word - subclass cards with it are a pick-one group at creation (e.g. Scaleborn Transformations)
