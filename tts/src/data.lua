@@ -10,7 +10,7 @@ SHEETS = {{
     ["w"] = 5,
     ["h"] = 3
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-4212677c.png?v=bf0e9b21",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-f8a07d3d.png?v=f72b6c32",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-encounter.png?v=45748297",
     ["w"] = 6,
     ["h"] = 4
@@ -1118,7 +1118,7 @@ CARDS = {
     ["name"] = "Exhausted",
     ["set"] = "TAT",
     ["type"] = "Event",
-    ["text"] = "Event\nBanish a card from your hand.",
+    ["text"] = "Event\nBanish a card from your hand unless you discard a [G] card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 19,
@@ -1128,7 +1128,7 @@ CARDS = {
     ["name"] = "Lose an Action",
     ["set"] = "TAT",
     ["type"] = "Event",
-    ["text"] = "Event\nLose an action.",
+    ["text"] = "Event\nLose an action unless you discard a [B] card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 20,
@@ -1138,7 +1138,7 @@ CARDS = {
     ["name"] = "Overwhelmed",
     ["set"] = "TAT",
     ["type"] = "Event",
-    ["text"] = "Event\nTap your hero and weapon.",
+    ["text"] = "Event\nTap your hero and weapon unless you discard a [R] card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 21,
@@ -1710,13 +1710,13 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/PTP-001.png?v=caa3b70c"
   }, {
     ["name"] = "TAT-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=f4ad246c"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=2b554a1b"
   }, {
     ["name"] = "TAT-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=cac1c2a3"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=1587ab98"
   }, {
     ["name"] = "TAT-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=2615718d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=31429406"
   }, {
     ["name"] = "ETK-001",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-001.png?v=8331a020"

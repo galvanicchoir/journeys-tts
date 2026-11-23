@@ -125,9 +125,9 @@ CARDS = [
 # --- Portal to Problems
 ("PTP-001","Portal to Problems","PTP","Event","Event","","Draw a random card from the & Cache. If you can't, this gains cascade.","","","","encounters/Portal to Problems/Portal to Problems x3.png","Needs an & Cache to be set up"),
 # --- Trials and Tribulations
-("TAT-001","Exhausted","TAT","Event","Event","","Banish a card from your hand.","","","","encounters/Trials and Tribulations/Exhausted x1.png",""),
-("TAT-002","Lose an Action","TAT","Event","Event","","Lose an action.","","","","encounters/Trials and Tribulations/Lose an Action x1.png",""),
-("TAT-003","Overwhelmed","TAT","Event","Event","","Tap your hero and weapon.","","","","encounters/Trials and Tribulations/Overwhelmed x1.png",""),
+("TAT-001","Exhausted","TAT","Event","Event","","Banish a card from your hand unless you discard a {g} card.","","","","encounters/Trials and Tribulations/Exhausted x1.png",""),
+("TAT-002","Lose an Action","TAT","Event","Event","","Lose an action unless you discard a {b} card.","","","","encounters/Trials and Tribulations/Lose an Action x1.png",""),
+("TAT-003","Overwhelmed","TAT","Event","Event","","Tap your hero and weapon unless you discard a {r} card.","","","","encounters/Trials and Tribulations/Overwhelmed x1.png",""),
 # --- encounter tokens
 ("ETK-001","Beast","ETK","Enemy","Beast","","","1","4","","encounters/tokens/Beast x1.png","Rules text is the template placeholder 'Card Text'"),
 ("ETK-002","Peasant","ETK","Obstacle","Obstacle","","\"More work?\"","","","{g}|{b}","encounters/tokens/Peasant x4.png",""),
