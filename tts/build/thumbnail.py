@@ -25,16 +25,15 @@ def place(c, cx, cy, ang):
     im.alpha_composite(sh, (int(cx - r.width / 2 + 10), int(cy - r.height / 2 + 18)))
     im.alpha_composite(r, (int(cx - r.width / 2), int(cy - r.height / 2)))
 
-# goblin horde lurking behind, then the five heroes fanned out
-place(card("encounters/Trouble with Goblins/Goblin Horde x4.png", 270), S/2, 505, 0)
+# the five heroes fanned out
 heroes = ["Warrior x1.png", "Rogue x1.png", "Mage x1.png", "Priest x1.png", "Dragonheart x1.png"]
 order = [0, 4, 1, 3, 2]                     # draw outer cards first so the middle one sits on top
 for i in order:
     k = i - 2
     ang = -k * 11
-    cx = S/2 + k * 150
-    cy = 700 + abs(k) ** 1.5 * 22
-    place(card("character cards/" + heroes[i], 280), cx, cy, ang)
+    cx = S/2 + k * 146
+    cy = 640 + abs(k) ** 1.5 * 24
+    place(card("character cards/" + heroes[i], 300), cx, cy, ang)
 
 d = ImageDraw.Draw(im)
 def text(y, s, size, fill, stroke=6, spacing=0):
