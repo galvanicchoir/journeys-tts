@@ -10,9 +10,9 @@ SHEETS = {{
     ["w"] = 5,
     ["h"] = 3
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-9a9e1fe5.png?v=61ea22c0",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-6ea2e5a9.png?v=8d5dcad6",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-encounter.png?v=45748297",
-    ["w"] = 7,
+    ["w"] = 8,
     ["h"] = 5
   }}
 CARDS = {
@@ -1118,17 +1118,17 @@ CARDS = {
     ["name"] = "Exhausted",
     ["set"] = "TAT",
     ["type"] = "Event",
-    ["text"] = "Event\nBanish a card from your hand unless you discard a [G] card.",
+    ["text"] = "Event\nLose an action unless you discard a [G] card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 19,
     ["enc"] = true
   },
   ["TAT-002"] = {
-    ["name"] = "Lose an Action",
+    ["name"] = "Daunted",
     ["set"] = "TAT",
     ["type"] = "Event",
-    ["text"] = "Event\nLose an action unless you discard a [B] card.",
+    ["text"] = "Event\nBanish a card from your hand unless you discard a [B] card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 20,
@@ -1144,6 +1144,124 @@ CARDS = {
     ["idx"] = 21,
     ["enc"] = true
   },
+  ["SOL-001"] = {
+    ["name"] = "Abomination",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Elite Undead - Vanguard\nP 2 H 6\nDread. Whenever a player draws a Dread card, Abomination aggros to them.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 22,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Vanguard",
+      ["rank"] = 3,
+      ["with"] = "Any"
+    },
+    ["power"] = "2",
+    ["health"] = "6",
+    ["keywords"] = "Dread"
+  },
+  ["SOL-002"] = {
+    ["name"] = "Death Knight",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Undead - Vanguard\nP 1 H 4\nArmor 1. Whenever you draw a Dread card, Death Knight gets +1P this turn.",
+    ["qty"] = 2,
+    ["sheet"] = 3,
+    ["idx"] = 23,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Vanguard",
+      ["rank"] = 3,
+      ["with"] = "Any"
+    },
+    ["power"] = "1",
+    ["health"] = "4",
+    ["keywords"] = "Armor"
+  },
+  ["SOL-003"] = {
+    ["name"] = "Ghoulcaller",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Undead - Backline (Horde)\nP 1 H 3\nEnter - If there is no Undead Horde on the field, search the encounter deck and discard pile and summon it stacked with me. Hordes stacked with me get +1 Power.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 24,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Backline",
+      ["rank"] = 1,
+      ["with"] = "Horde"
+    },
+    ["power"] = "1",
+    ["health"] = "3",
+    ["keywords"] = "Enter"
+  },
+  ["SOL-004"] = {
+    ["name"] = "Lich's Servant",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Undead - Backline\nP 0 H 4\nDread. Enter - For each encounter type in the discard, put a power counter on Lich.",
+    ["qty"] = 1,
+    ["sheet"] = 3,
+    ["idx"] = 25,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Backline",
+      ["rank"] = 1,
+      ["with"] = "Any"
+    },
+    ["power"] = "0",
+    ["health"] = "4",
+    ["keywords"] = "Dread, Enter"
+  },
+  ["SOL-005"] = {
+    ["name"] = "Power of the Lich",
+    ["set"] = "SOL",
+    ["type"] = "Event",
+    ["text"] = "Event\nDread, Cascade.",
+    ["qty"] = 2,
+    ["sheet"] = 3,
+    ["idx"] = 26,
+    ["enc"] = true
+  },
+  ["SOL-006"] = {
+    ["name"] = "Undead Horde",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Undead - Generic\nP 1 H 2*\nWhenever a non-horde enemy is defeated, Undead Horde reinforces. Whenever you draw a Dread card, Undead Horde gets +1P this turn.",
+    ["qty"] = 3,
+    ["sheet"] = 3,
+    ["idx"] = 27,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Generic",
+      ["rank"] = 2,
+      ["with"] = "Any"
+    },
+    ["power"] = "1",
+    ["health"] = "2*",
+    ["keywords"] = "Reinforce"
+  },
+  ["SOL-007"] = {
+    ["name"] = "Wailing Banshee",
+    ["set"] = "SOL",
+    ["type"] = "Enemy",
+    ["text"] = "Undead - Generic\nP 0 H 4\nWhenever a player cycles a card, I deal 1 damage to them. Act: Each player cycles a card.",
+    ["qty"] = 2,
+    ["sheet"] = 3,
+    ["idx"] = 28,
+    ["enc"] = true,
+    ["stack"] = {
+      ["role"] = "Generic",
+      ["rank"] = 2,
+      ["with"] = "Any"
+    },
+    ["power"] = "0",
+    ["health"] = "4",
+    ["keywords"] = "Act"
+  },
   ["BOS-001"] = {
     ["name"] = "Boss Horde",
     ["set"] = "BOS",
@@ -1151,7 +1269,7 @@ CARDS = {
     ["text"] = "Enemy Type - Generic (Any)\nP 0 H 2*\nWhenever the boss die is rolled, my power is set based on the result: A - 1, B - 2, C - 3.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 22,
+    ["idx"] = 29,
     ["enc"] = true,
     ["stack"] = {
       ["role"] = "Generic",
@@ -1169,7 +1287,7 @@ CARDS = {
     ["text"] = "Enemy Type - Vanguard (Any)\nP 2 H 5\nBosses get Armor 1.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 23,
+    ["idx"] = 30,
     ["enc"] = true,
     ["stack"] = {
       ["role"] = "Vanguard",
@@ -1187,7 +1305,7 @@ CARDS = {
     ["text"] = "Event\nRoll the boss die.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 24,
+    ["idx"] = 31,
     ["enc"] = true
   },
   ["BOS-004"] = {
@@ -1197,7 +1315,7 @@ CARDS = {
     ["text"] = "Event\nRemove 1* damage from the Boss. If no damage is removed this way, this gains Cascade.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 25,
+    ["idx"] = 32,
     ["enc"] = true
   },
   ["BOS-005"] = {
@@ -1207,7 +1325,7 @@ CARDS = {
     ["text"] = "Event\nEach player taps their hero and weapon.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 26,
+    ["idx"] = 33,
     ["enc"] = true
   },
   ["BOS-006"] = {
@@ -1217,7 +1335,7 @@ CARDS = {
     ["text"] = "Event\nPut a +1 Power counter on the boss.",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 27,
+    ["idx"] = 34,
     ["enc"] = true
   },
   ["ETK-001"] = {
@@ -1227,7 +1345,7 @@ CARDS = {
     ["text"] = "Beast\nP 1 H 4",
     ["qty"] = 1,
     ["sheet"] = 3,
-    ["idx"] = 28,
+    ["idx"] = 35,
     ["enc"] = true,
     ["stack"] = {
       ["role"] = "Generic",
@@ -1245,7 +1363,7 @@ CARDS = {
     ["text"] = "Obstacle\nChannel [G]|[B]\n\"More work?\"",
     ["qty"] = 4,
     ["sheet"] = 3,
-    ["idx"] = 29,
+    ["idx"] = 36,
     ["enc"] = true
   }
 }
@@ -1364,6 +1482,11 @@ SETS = {
     ["name"] = "Bosses",
     ["kind"] = "Encounter set",
     ["cards"] = {"BOS-001", "BOS-002", "BOS-003", "BOS-004", "BOS-005", "BOS-006"}
+  },
+  ["SOL"] = {
+    ["name"] = "Servants of the Lich",
+    ["kind"] = "Encounter set",
+    ["cards"] = {"SOL-001", "SOL-002", "SOL-003", "SOL-004", "SOL-005", "SOL-006", "SOL-007"}
   },
   ["ETK"] = {
     ["name"] = "Encounter tokens",
@@ -1485,7 +1608,7 @@ ADVENTURES = {{
         ["set_aside"] = {}
       }}
   }}
-SET_ORDER = {"CHR", "ANC", "MAG", "MAG-FIR", "MAG-ICE", "WAR", "WAR-BLD", "WAR-IRC", "PRI", "PRI-ANO", "PRI-SER", "DRG", "DRG-BRD", "DRG-SCB", "ROG", "ROG-ASN", "ROG-OUT", "TWG", "IGK", "MMS", "PTP", "TAT", "BOS", "ETK"}
+SET_ORDER = {"CHR", "ANC", "MAG", "MAG-FIR", "MAG-ICE", "WAR", "WAR-BLD", "WAR-IRC", "PRI", "PRI-ANO", "PRI-SER", "DRG", "DRG-BRD", "DRG-SCB", "ROG", "ROG-ASN", "ROG-OUT", "TWG", "IGK", "MMS", "PTP", "TAT", "BOS", "SOL", "ETK"}
 UI_ASSETS = {{
     ["name"] = "CHR-DRG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/CHR-DRG.png?v=20d5d645"
@@ -1791,13 +1914,34 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/PTP-001.png?v=caa3b70c"
   }, {
     ["name"] = "TAT-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=2b554a1b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=d7ca938d"
   }, {
     ["name"] = "TAT-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=1587ab98"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=c1ef7c8c"
   }, {
     ["name"] = "TAT-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=31429406"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=1211e87f"
+  }, {
+    ["name"] = "SOL-001",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-001.png?v=799bccc7"
+  }, {
+    ["name"] = "SOL-002",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-002.png?v=006e1ab7"
+  }, {
+    ["name"] = "SOL-003",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-003.png?v=543e30ab"
+  }, {
+    ["name"] = "SOL-004",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-004.png?v=7c1c9eb3"
+  }, {
+    ["name"] = "SOL-005",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-005.png?v=2dfd0331"
+  }, {
+    ["name"] = "SOL-006",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-006.png?v=4bbbab9d"
+  }, {
+    ["name"] = "SOL-007",
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-007.png?v=8e183654"
   }, {
     ["name"] = "BOS-001",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=3c7c0bbb"
