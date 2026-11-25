@@ -34,6 +34,7 @@ SUPPLY_DZ     = 2.1
 PHASES        = {"Start of Turn", "Encounter", "Player Phase", "Enemy Phase", "End of Turn"}
 DEFAULT_AP    = 2
 BOSS_DIE      = {"A", "A", "A", "B", "B", "C"}   -- six faces
+DIE_NAME      = {A = "Circle", B = "Triangle", C = "Square"}   -- how the faces are shown (cards use these shapes)
 HAND_SIZE     = 4
 BTN_PER_LOCAL = 520                -- button size units per local unit (measured in TTS)
 
@@ -443,7 +444,7 @@ function j_bossPower(obj, color, alt) bump("power", obj, alt, 0, 99) end
 function rollBossDie()
   local face = BOSS_DIE[math.random(#BOSS_DIE)]
   if STATE.turn then STATE.turn.die = face end
-  local msg = "Boss die: " .. face
+  local msg = "Boss die: " .. DIE_NAME[face]
   local b = STATE.journey and STATE.journey.boss
   if b and b.hp > 0 then msg = msg .. "  -  " .. BOSSES[b.id].name .. ": " .. BOSSES[b.id].abc[({A = 1, B = 2, C = 3})[face]] end
   broadcastToAll(msg, {0.95, 0.45, 0.35})
@@ -469,7 +470,7 @@ local function phaseLabel()
 end
 local function dieLabel()
   local t = STATE.turn
-  return (t and t.die) and ("Boss Die: " .. t.die) or "Roll Boss Die"
+  return (t and t.die) and ("Boss Die: " .. (DIE_NAME[t.die] or t.die)) or "Roll Boss Die"
 end
 -- Rebuild the whole Global UI so every player sees the same round / phase / die.
 function refreshTurnBar()
@@ -1530,7 +1531,7 @@ function buildUI()
     x[#x + 1] = '<Panel id="j_turnbar" rectAlignment="LowerRight" offsetXY="-16 128" width="300" height="108">' ..
       '<VerticalLayout spacing="8" childAlignment="LowerRight">' ..
       uBtn("j_phaseBtn", phaseLabel(), "j_ui_nextPhase", 300, 50, "#2E4A30F0", 20, 'tooltip="Click: next phase   |   Right-click: back one\nJust a tracker - it does nothing automatically."') ..
-      uBtn("j_dieBtn", dieLabel(), "j_ui_rollDie", 300, 50, "#5A2020F0", 20, 'tooltip="Roll the boss die (A A A B B C)"') ..
+      uBtn("j_dieBtn", dieLabel(), "j_ui_rollDie", 300, 50, "#5A2020F0", 20, 'tooltip="Roll the boss die (3 circles, 2 triangles, 1 square)"') ..
       '</VerticalLayout></Panel>'
   end
   for _, c in ipairs(SEAT_ORDER) do

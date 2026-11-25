@@ -164,19 +164,25 @@ for b in bosses:
     d.text((512, 155), b["traits"], fill=(90, 80, 80), font=font(36, False), anchor="mm")
     d.text((512, 225), f"Power {b['power']}     Health {b['health']}", fill=(150, 30, 30), font=font(48), anchor="mm")
     y = 290; body = font(34, False)
-    def para(label, text):
+    def die_shape(k, x, yy, s=30, fill=(40, 30, 30)):   # boss die faces: A circle, B triangle, C square (as on the cards)
+        if k == "A": d.ellipse((x, yy, x + s, yy + s), fill=fill)
+        elif k == "B": d.polygon([(x + s / 2, yy), (x + s, yy + s), (x, yy + s)], fill=fill)
+        else: d.rectangle((x + 2, yy + 2, x + s - 2, yy + s - 2), fill=fill)
+    def para(text, face=None):
         global y
-        lines = wrap(d, (label + "  " if label else "") + pretty(text), body, 900)
+        x0 = 110 if face else 62
+        if face: die_shape(face, 62, y + 6)
+        lines = wrap(d, pretty(text), body, 962 - x0)
         for i, ln in enumerate(lines):
-            d.text((62, y), ln, fill=(30, 30, 30), font=body); y += 44
+            d.text((x0, y), ln, fill=(30, 30, 30), font=body); y += 44
         y += 18
-    para("", b["text"])
-    for k in ("A", "B", "C"): para(k + " -", b[k])
+    para(b["text"])
+    for k in ("A", "B", "C"): para(b[k], k)
     fname = f"boss-{b['boss_id'].lower()}.png"; im.save(os.path.join(TTS, "images", fname))
     hp = str(b["health"]); per = hp.endswith("*")
     BOSSES_L[b["boss_id"]] = {"name": b["name"], "image": f"{ASSET}/tts/images/{fname}", "power": int(b["power"] or 0),
         "health": int(hp.rstrip("*") or 0), "per_player": per, "abc": [pretty(b[k]) for k in "ABC"],
-        "text": "\n".join([b["traits"], f"P {b['power']}  H {b['health']}", pretty(b["text"])] + [f"{k} - {pretty(b[k])}" for k in "ABC"])}
+        "text": "\n".join([b["traits"], f"P {b['power']}  H {b['health']}", pretty(b["text"])] + [f"{({'A': 'Circle', 'B': 'Triangle', 'C': 'Square'})[k]} - {pretty(b[k])}" for k in "ABC"])}
 
 # ---------- tokens + phase tracker ----------
 TOKENS = [  # name, label, rgb, kind, owner

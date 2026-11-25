@@ -1827,10 +1827,10 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=7f75cf1f"
   }, {
     ["name"] = "BOSS_GK-CAMP",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=b44ace23"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=efd5a7e7"
   }, {
     ["name"] = "BOSS_GK-TOWER",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=2fcc306b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f869068d"
   }, {
     ["name"] = "ADV_TWG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-twg.png?v=554e50bf"
@@ -2059,20 +2059,20 @@ JOURNEYS = {
 BOSSES = {
   ["GK-CAMP"] = {
     ["name"] = "The Goblin King",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=b44ace23",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=efd5a7e7",
     ["power"] = 1,
     ["health"] = 4,
     ["per_player"] = true,
     ["abc"] = {"Reinforce all Goblin Hordes twice.", "Put a Power Counter on the Goblin Horde with the most bodies. If you can't, put a Power Counter on the Goblin King instead.", "Spawn a set aside Goblin Horde or a Goblin Horde from the discard pile."},
-    ["text"] = "Elite Enemy - Goblin\nP 1  H 4*\nThe Goblin King cannot be attacked while there is a Horde in play.\nA - Reinforce all Goblin Hordes twice.\nB - Put a Power Counter on the Goblin Horde with the most bodies. If you can't, put a Power Counter on the Goblin King instead.\nC - Spawn a set aside Goblin Horde or a Goblin Horde from the discard pile."
+    ["text"] = "Elite Enemy - Goblin\nP 1  H 4*\nThe Goblin King cannot be attacked while there is a Horde in play.\nCircle - Reinforce all Goblin Hordes twice.\nTriangle - Put a Power Counter on the Goblin Horde with the most bodies. If you can't, put a Power Counter on the Goblin King instead.\nSquare - Spawn a set aside Goblin Horde or a Goblin Horde from the discard pile."
   },
   ["GK-TOWER"] = {
     ["name"] = "The Goblin King",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=2fcc306b",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f869068d",
     ["power"] = 1,
     ["health"] = 4,
     ["per_player"] = true,
     ["abc"] = {"Discard the top 5 cards of the encounter deck. If a Solution is discarded, a player may banish a [G] card to draw it instead.", "If there is a discarded Solution, banish it and put a Power Counter onto the Goblin King.", "Each player draws an encounter card. Enemies summoned this way enter stunned."},
-    ["text"] = "Elite Enemy - Goblin\nP 1  H 4*\nThe Goblin King cannot be attacked while there is a Horde in play.\nA - Discard the top 5 cards of the encounter deck. If a Solution is discarded, a player may banish a [G] card to draw it instead.\nB - If there is a discarded Solution, banish it and put a Power Counter onto the Goblin King.\nC - Each player draws an encounter card. Enemies summoned this way enter stunned."
+    ["text"] = "Elite Enemy - Goblin\nP 1  H 4*\nThe Goblin King cannot be attacked while there is a Horde in play.\nCircle - Discard the top 5 cards of the encounter deck. If a Solution is discarded, a player may banish a [G] card to draw it instead.\nTriangle - If there is a discarded Solution, banish it and put a Power Counter onto the Goblin King.\nSquare - Each player draws an encounter card. Enemies summoned this way enter stunned."
   }
 }
