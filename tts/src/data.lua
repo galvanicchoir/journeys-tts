@@ -10,7 +10,7 @@ SHEETS = {{
     ["w"] = 5,
     ["h"] = 3
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-077eba26.png?v=e1ef94e3",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-03-63c85132.png?v=d0156735",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-encounter.png?v=45748297",
     ["w"] = 7,
     ["h"] = 5
@@ -1737,7 +1737,7 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-001.png?v=e8e4bb92"
   }, {
     ["name"] = "TWG-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-002.png?v=3655c202"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-002.png?v=854b57ca"
   }, {
     ["name"] = "TWG-003",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-003.png?v=e90bae08"
@@ -1767,7 +1767,7 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-001.png?v=b664aed9"
   }, {
     ["name"] = "IGK-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-002.png?v=eb838084"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-002.png?v=9cf7897a"
   }, {
     ["name"] = "IGK-003",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-003.png?v=aa805553"
@@ -1776,13 +1776,13 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-004.png?v=1f5b0012"
   }, {
     ["name"] = "MMS-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-001.png?v=5721a535"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-001.png?v=b185f2eb"
   }, {
     ["name"] = "MMS-002",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-002.png?v=02cd5fd6"
   }, {
     ["name"] = "MMS-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-003.png?v=76a18693"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-003.png?v=08f18150"
   }, {
     ["name"] = "MMS-004",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-004.png?v=2f353dcf"
@@ -1800,7 +1800,7 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=53a77359"
   }, {
     ["name"] = "BOS-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=42e64a1b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=4881dae0"
   }, {
     ["name"] = "BOS-002",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-002.png?v=fe349724"

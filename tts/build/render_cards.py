@@ -17,7 +17,7 @@ from openpyxl import load_workbook
 from PIL import Image, ImageChops
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import die_icons
-DIE_FAMILY = "eyes"                         # boss die symbols: eyes, claws, flames or pips (see card_frame/die_icons.py)
+DIE_FAMILY = "solid"                        # boss die symbols: solid, outline or ink (see card_frame/die_icons.py)
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
 ONLY = set(sys.argv[2:])
@@ -43,6 +43,8 @@ def type_info(traits, kind):
     if not m:
         return {"type": traits or "Enemy", "rank": "mid", "joins": ""}
     head, role, paren = m.group(1), m.group(2), (m.group(3) or "").strip()
+    if role == "Unique":                      # uniques follow their own stacking rules (in their text): star, not bars
+        return {"type": f"{head} \u2014 {role}", "rank": "unique", "joins": ""}
     rank = {"Backline": "back", "Vanguard": "front"}.get(role, "mid")
     if re.match(r"(?i)behind\b", paren): rank, paren = "behind", re.sub(r"(?i)^behind\s*", "", paren)
     elif re.match(r"(?i)front\b", paren): rank, paren = "fore", re.sub(r"(?i)^front\s*", "", paren)
@@ -50,6 +52,9 @@ def type_info(traits, kind):
 
 def rank_svg(rank, size=18):
     on, off = "#e6c46a", "rgba(0,0,0,0.35)"
+    if rank == "unique":
+        return (f'<svg class="rank" width="{size}" height="{size}" viewBox="0 0 16 16"><path d="M8 0.8 10.1 5.6 15.3 6.1 11.4 9.6 '
+                f'12.5 14.7 8 12.1 3.5 14.7 4.6 9.6 0.7 6.1 5.9 5.6Z" fill="{on}" stroke="#5c4520" stroke-width="0.6" stroke-linejoin="round"/></svg>')
     slot = {"behind": 1, "back": 1, "mid": 2, "front": 3, "fore": 3}[rank]
     bars = "".join(f'<rect x="2" y="{y}" width="12" height="3.4" rx="1.2" fill="{on if i + 1 == slot else off}" stroke="{on}" stroke-width="0.8"/>'
                    for i, y in enumerate((4, 9.3, 14.6)))
