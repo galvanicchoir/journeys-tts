@@ -28,7 +28,7 @@ python3 tts/build/render_cards.py <repo folder> TWG-004    # just these ids
 ```
 Then run the build as above. The frame is `tts/build/card_frame/frame.css` (fonts: Cinzel and Alegreya, SIL Open Font License).
 - Card data comes from the Cards sheet. The type line's role (`Goblin - Backline`) becomes the rank bar; Unique gets a gold star instead, since uniques stack by their own rules. Bracket text is no longer shown: any enemy can join any stack.
-- Boss die results in rules text (`A - ...`, `B - ...`, `C - ...`) become the die symbols. A is a circle, B a triangle, C a square. Pick the look with `DIE_FAMILY` in `render_cards.py` (solid, outline or ink; drawn in `card_frame/die_icons.py`).
+- Boss die results in rules text (`A - ...`, `B - ...`, `C - ...`) become the die symbols. They are small sigils drawn from plain lines and shapes. Pick the set with `DIE_FAMILY` in `render_cards.py` (seals, stems or pierced; drawn in `card_frame/die_icons.py`).
 - An enemy with 0 power and an `Act -` ability shows a cast symbol in place of its power.
 - Art: drop a file named after the card into `art/encounters/`. With none, the art is cut from the card's old export, unless that only has a placeholder silhouette; then the card shows an ART box.
 - Long names and rules text shrink to fit; the script prints CHECK lines for any that still don't.

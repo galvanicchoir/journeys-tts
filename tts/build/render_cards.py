@@ -17,7 +17,7 @@ from openpyxl import load_workbook
 from PIL import Image, ImageChops
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import die_icons
-DIE_FAMILY = "solid"                        # boss die symbols: solid, outline or ink (see card_frame/die_icons.py)
+DIE_FAMILY = "seals"                        # boss die sigils: seals, stems or pierced (see card_frame/die_icons.py)
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
 ONLY = set(sys.argv[2:])
