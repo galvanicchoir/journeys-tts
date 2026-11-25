@@ -125,9 +125,16 @@ CARDS = [
 # --- Portal to Problems
 ("PTP-001","Portal to Problems","PTP","Event","Event","","Draw a random card from the & Cache. If you can't, this gains cascade.","","","","encounters/Portal to Problems/Portal to Problems x3.png","Needs an & Cache to be set up"),
 # --- Trials and Tribulations
-("TAT-001","Exhausted","TAT","Event","Event","","Banish a card from your hand unless you discard a {g} card.","","","","encounters/Trials and Tribulations/Exhausted x1.png",""),
-("TAT-002","Lose an Action","TAT","Event","Event","","Lose an action unless you discard a {b} card.","","","","encounters/Trials and Tribulations/Lose an Action x1.png",""),
+("TAT-001","Exhausted","TAT","Event","Event","","Lose an action unless you discard a {g} card.","","","","encounters/Trials and Tribulations/Exhausted x1.png",""),
+("TAT-002","Daunted","TAT","Event","Event","","Banish a card from your hand unless you discard a {b} card.","","","","encounters/Trials and Tribulations/Daunted x1.png","Replaced Lose an Action (Nov 24)"),
 ("TAT-003","Overwhelmed","TAT","Event","Event","","Tap your hero and weapon unless you discard a {r} card.","","","","encounters/Trials and Tribulations/Overwhelmed x1.png",""),
+("SOL-001","Abomination","SOL","Enemy","Elite Undead - Vanguard","Dread","Dread. Whenever a player draws a Dread card, Abomination aggros to them.","2","6","","encounters/Servants of the Lich/Abomination x1.png",""),
+("SOL-002","Death Knight","SOL","Enemy","Undead - Vanguard","Armor","Armor 1. Whenever you draw a Dread card, Death Knight gets +1P this turn.","1","4","","encounters/Servants of the Lich/Death Knight x2.png",""),
+("SOL-003","Ghoulcaller","SOL","Enemy","Undead - Backline (Horde)","Enter","Enter - If there is no Undead Horde on the field, search the encounter deck and discard pile and summon it stacked with me. Hordes stacked with me get +1 Power.","1","3","","encounters/Servants of the Lich/Ghoulcaller x1.png",""),
+("SOL-004","Lich's Servant","SOL","Enemy","Undead - Backline","Dread, Enter","Dread. Enter - For each encounter type in the discard, put a power counter on Lich.","0","4","","encounters/Servants of the Lich/Lich's Servant x1.png",""),
+("SOL-005","Power of the Lich","SOL","Event","Event","Dread, Cascade","Dread, Cascade.","","","","encounters/Servants of the Lich/Power of the Lich x2.png",""),
+("SOL-006","Undead Horde","SOL","Enemy","Undead - Generic","Reinforce","Whenever a non-horde enemy is defeated, Undead Horde reinforces. Whenever you draw a Dread card, Undead Horde gets +1P this turn.","1","2*","","encounters/Servants of the Lich/Undead Horde x3.png","Horde: 2 bodies per player"),
+("SOL-007","Wailing Banshee","SOL","Enemy","Undead - Generic","Act","Whenever a player cycles a card, I deal 1 damage to them. Act: Each player cycles a card.","0","4","","encounters/Servants of the Lich/Wailing Banshee x2.png",""),
 ("BOS-001","Boss Horde","BOS","Enemy","Enemy Type - Generic (Any)","","Whenever the boss die is rolled, my power is set based on the result: A - 1, B - 2, C - 3.","0","2*","","encounters/Bosses/Boss Horde x1.png","Generic boss set (works with any boss). Horde: 2 bodies per player"),
 ("BOS-002","Champion","BOS","Enemy","Enemy Type - Vanguard (Any)","","Bosses get Armor 1.","2","5","","encounters/Bosses/Champion x1.png","Generic boss set"),
 ("BOS-003","Feel My Wrath","BOS","Event","Event","","Roll the boss die.","","","","encounters/Bosses/Feel My Wrath x1.png","Generic boss set"),
@@ -148,7 +155,7 @@ SETS = [  # set, name, kind, class, subclass, back
 ("ROG","Rogue - Core","Class core","Rogue","",P),("ROG-ASN","Rogue - Assassin","Subclass","Rogue","Assassin",P),("ROG-OUT","Rogue - Outlaw","Subclass","Rogue","Outlaw",P),
 ("TWG","Trouble with Goblins","Encounter set","","",E),("IGK","Ire of the Goblin King","Encounter set","","",E),
 ("MMS","Magical Mishaps","Encounter set","","",E),("PTP","Portal to Problems","Encounter set","","",E),
-("TAT","Trials and Tribulations","Encounter set","","",E),("BOS","Bosses","Encounter set","","",E),("ETK","Encounter tokens","Tokens","","",E),
+("TAT","Trials and Tribulations","Encounter set","","",E),("BOS","Bosses","Encounter set","","",E),("SOL","Servants of the Lich","Encounter set","","",E),("ETK","Encounter tokens","Tokens","","",E),
 ]
 CLASSES = [  # class, subclass, hero, weapon (blank = none yet), core_set, subclass_set, health (blank = 10),
              # choose_one: a trait word - subclass cards with it are a pick-one group at creation (e.g. Scaleborn Transformations)
