@@ -5,12 +5,12 @@ SHEETS = {{
     ["w"] = 10,
     ["h"] = 7
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-02-559b7898.png?v=b7759cea",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-02-61d3ee2b.png?v=074d27f5",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-player.png?v=c92a287b",
     ["w"] = 10,
     ["h"] = 7
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-03-662c37c0.png?v=ccfc7375",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-03-7cab27f8.png?v=8c1aff02",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-player.png?v=c92a287b",
     ["w"] = 7,
     ["h"] = 5
@@ -1375,7 +1375,7 @@ CARDS = {
     ["name"] = "Ashen Wand",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Ritual, apply 1 burn to an enemy.",
+    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Fireball also applies 1 burn to an enemy.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 13,
@@ -1385,7 +1385,7 @@ CARDS = {
     ["name"] = "Emberforged Staff",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Fire Tornado, this weapon gets +1 Power this turn.",
+    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Magic Missile also heals you 1.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 14,
@@ -1395,7 +1395,7 @@ CARDS = {
     ["name"] = "Cinderwood Stave",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Cinder gets +1[R].",
+    ["text"] = "Mage Weapon - Fire\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Knowledge gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 15,
@@ -1405,7 +1405,7 @@ CARDS = {
     ["name"] = "Stave of Kindling",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Arcane Barrier gets +1[G]. Magic Missile has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Arcane Barrier gets +1[G]. Fireball gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 16,
@@ -1415,7 +1415,7 @@ CARDS = {
     ["name"] = "Rod of Cinders",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Smolder, this weapon gets +1 Power this turn. Fireball has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Ritual also heals you 1. Smolder gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 17,
@@ -1425,7 +1425,7 @@ CARDS = {
     ["name"] = "Staff of Cinders",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Comeback, apply 1 burn to an enemy. Fireball has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. If Fireball defeats an enemy, draw a card. Smolder gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 18,
@@ -1435,7 +1435,7 @@ CARDS = {
     ["name"] = "Ashen Rod of Embers",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Cinder, heal 1. When you play Fire Tornado, untap this weapon. Smolder has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Smolder gets +1[R]. Fire Tornado has Quickcast. Fireball gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 19,
@@ -1445,7 +1445,7 @@ CARDS = {
     ["name"] = "Blazing Rod of Ash",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Smolder, this weapon gets +1 Power this turn. Cinder gets +2[R]. Fire Tornado has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Ritual also heals you 1. Cinder gets +2[R]. Magic Missile has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 20,
@@ -1455,7 +1455,7 @@ CARDS = {
     ["name"] = "Scorched Stave of the Bonfire",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Fireball gets +1[R]. Arcane Barrier gets +2[G]. Smolder has Quickcast.",
+    ["text"] = "Mage Weapon - Fire\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Cinder gets +1[R]. Arcane Barrier gets +2[G]. Fireball has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 21,
@@ -1465,7 +1465,7 @@ CARDS = {
     ["name"] = "Hoarfrost Scepter",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Damage, this weapon gets +1 Power this turn.",
+    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Shatter also heals you 1.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 22,
@@ -1475,7 +1475,7 @@ CARDS = {
     ["name"] = "Glacial Staff",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Shatter, gain 1 Shield.",
+    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Frostbite gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 23,
@@ -1485,27 +1485,27 @@ CARDS = {
     ["name"] = "Glacial Rod",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Comeback, gain 1 Shield.",
+    ["text"] = "Mage Weapon - Ice\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Frostbite gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 24,
     ["enc"] = false
   },
   ["LOOT-MAG-ICE-III-01"] = {
-    ["name"] = "Scepter of the Glacier",
+    ["name"] = "Staff of Stillness",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Frostbite, gain 1 Shield. Magic Missile gets +2[B].",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Frostbite gets +1[B]. Shatter gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 25,
     ["enc"] = false
   },
   ["LOOT-MAG-ICE-III-02"] = {
-    ["name"] = "Rod of Stillness",
+    ["name"] = "Stave of Sleet",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate: recycle a card - 2[R]. If Shatter defeats an enemy, draw a card. Comeback gets +2[B].",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Chilling Air also gives you 1 Shield. Comeback gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 26,
@@ -1515,757 +1515,757 @@ CARDS = {
     ["name"] = "Stave of Stillness",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Knowledge gets +1[B]. Chilling Air gets +1[G] and +1[B].",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Comeback gets +1[B]. Frostbite gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 27,
     ["enc"] = false
   },
   ["LOOT-MAG-ICE-IV-01"] = {
-    ["name"] = "Wintry Stave of Sleet",
+    ["name"] = "Shivering Stave of Sleet",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. If Damage defeats an enemy, draw a card. Comeback has Quickcast. Frostbite gets +2[B].",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Knowledge gets +1[B]. Damage gets +1[R] and +1[B]. Shatter gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 28,
     ["enc"] = false
   },
   ["LOOT-MAG-ICE-IV-02"] = {
-    ["name"] = "Glacial Staff of the Glacier",
+    ["name"] = "Wintry Stave of Stillness",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. If Chilling Air defeats an enemy, draw a card. Shatter has Quickcast. Damage gets +2[B].",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Frostbite gets +1[B]. Arcane Barrier gets +2[G]. Freeze has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 29,
     ["enc"] = false
   },
   ["LOOT-MAG-ICE-IV-03"] = {
-    ["name"] = "Rimed Wand of Sleet",
+    ["name"] = "Shivering Scepter of the Glacier",
     ["set"] = "LOOT-MAG",
     ["type"] = "Weapon",
-    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. If Frostbite defeats an enemy, draw a card. Knowledge gets +2[B]. When you play Shatter, untap this weapon.",
+    ["text"] = "Mage Weapon - Ice\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Freeze also heals you 1. Frostbite gets +2[B]. Arcane Barrier has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 30,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-II-01"] = {
-    ["name"] = "Flickering Cleaver",
+    ["name"] = "Duelist's Blade",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Push the Point, untap this weapon.",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Parry also heals you 1.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 31,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-II-02"] = {
-    ["name"] = "Keen Warhammer",
+    ["name"] = "Whirling Warhammer",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Parry, untap this weapon.",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Sharpen Steel also untaps a weapon you control.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 32,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-II-03"] = {
-    ["name"] = "Duelist's Warhammer",
+    ["name"] = "Balanced Blade",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Follow Up gets +1[G].",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Swords Up also gives you 1 Shield.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 33,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-III-01"] = {
-    ["name"] = "Blade of Grace",
+    ["name"] = "Cleaver of Whirlwinds",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Sharpen Steel, untap this weapon. Bring Down gets +2[R].",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Sharpen Steel gets +1[R]. Victory Rush has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 34,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-III-02"] = {
-    ["name"] = "Mace of Whirlwinds",
+    ["name"] = "Mace of Grace",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Victory Rush, untap this weapon. Cleave has Quickcast.",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Push the Point also untaps a weapon you control. Victory Rush has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 35,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-III-03"] = {
-    ["name"] = "Warhammer of the Feint",
+    ["name"] = "Sword of the Feint",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Parry gets +1[B]. Cleave has Quickcast.",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Parry also untaps a weapon you control. Victory Rush has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 36,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-IV-01"] = {
-    ["name"] = "Duelist's Cleaver of the Edge",
+    ["name"] = "Keen Sword of the Edge",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Push the Point gets +1[G]. Parry has Quickcast. Cleave gets +1[R] and +1[G].",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Push the Point also untaps a weapon you control. Cleave gets +1[R] and +1[G]. Victory Rush gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 37,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-IV-02"] = {
-    ["name"] = "Whirling Axe of the Edge",
+    ["name"] = "Dancing Cleaver of Tempo",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. If Victory Rush defeats an enemy, draw a card. Cleave has Quickcast. Parry gets +2[B].",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Parry gets +1[B]. Sharpen Steel gets +2[R]. Victory Rush gets +1[B] and +1[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 38,
     ["enc"] = false
   },
   ["LOOT-WAR-BLD-IV-03"] = {
-    ["name"] = "Whirling Axe of Grace",
+    ["name"] = "Whirling Blade of Whirlwinds",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Bring Down, this weapon gets +1 Power this turn. Follow Up gets +2[G]. Duelist Stance gets +1[G] and +1[R].",
+    ["text"] = "Warrior Weapon - Blade Dancer\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Cleave also untaps a weapon you control. Duelist Stance gets +2[G]. Parry has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 39,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-II-01"] = {
-    ["name"] = "Bulwark Mace",
+    ["name"] = "Stalwart Mace",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Guardian Stance gets +1[B].",
+    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Guardian Stance gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 40,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-II-02"] = {
-    ["name"] = "Ironbound Axe",
+    ["name"] = "Heavy Cleaver",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Follow Up gets +1[G].",
+    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Armor Aura gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 41,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-II-03"] = {
-    ["name"] = "Riveted Mace",
+    ["name"] = "Ironbound Cleaver",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Shields Up, gain 1 Shield.",
+    ["text"] = "Warrior Weapon - Ironclad\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. While you have Shield, Cleave gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 42,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-III-01"] = {
-    ["name"] = "Sword of Holding Fast",
+    ["name"] = "Axe of the Wall",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate: recycle a card - 2[R]. If Bring Down defeats an enemy, draw a card. Victory Rush gets +2[R].",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Cleave gets +1[R]. Follow Up gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 43,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-III-02"] = {
-    ["name"] = "Axe of the Wall",
+    ["name"] = "Mace of Iron",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Cleave, heal 1. Stand Behind Me gets +2[G].",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Victory Rush gets +1[B]. Bring Down gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 44,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-III-03"] = {
-    ["name"] = "Warhammer of the Wall",
+    ["name"] = "Sword of Holding Fast",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Armor Aura, heal 1. Head Butt gets +2[R].",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Guardian Stance gets +1[B]. Armor Aura gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 45,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-IV-01"] = {
-    ["name"] = "Ironbound Mace of the Rampart",
+    ["name"] = "Ironbound Warhammer of the Anvil",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Cleave gets +1[R]. Stand Behind Me gets +2[G]. Shields Up has Quickcast.",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Guardian Stance gets +1[B]. Bring Down gets +2[R]. Shields Up has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 46,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-IV-02"] = {
-    ["name"] = "Ironbound Axe of the Anvil",
+    ["name"] = "Stalwart Axe of the Wall",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Stand Behind Me gets +1[R]. Shields Up gets +2[G]. Bring Down has Quickcast.",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Shields Up gets +1[G]. Guardian Stance gets +2[B]. Cleave has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 47,
     ["enc"] = false
   },
   ["LOOT-WAR-IRC-IV-03"] = {
-    ["name"] = "Ironbound Warhammer of the Wall",
+    ["name"] = "Stalwart Warhammer of the Wall",
     ["set"] = "LOOT-WAR",
     ["type"] = "Weapon",
-    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Armor Aura gets +1[G]. Head Butt gets +2[R]. When you play Victory Rush, untap this weapon.",
+    ["text"] = "Warrior Weapon - Ironclad\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Stand Behind Me gets +1[R]. Head Butt gets +2[R]. Cleave gets +1[G] and +1[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 48,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-II-01"] = {
-    ["name"] = "Gilded Censer",
+    ["name"] = "Blessed Mace",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Premonition, gain 1 Shield.",
+    ["text"] = "Priest Weapon - Anointed\nWeapon II. Activate - Recycle a card: Heal an ally 1. Premonition gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 49,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-II-02"] = {
-    ["name"] = "Radiant Censer",
+    ["name"] = "Blessed Flail",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Mind Soothe gets +1[G].",
+    ["text"] = "Priest Weapon - Anointed\nWeapon II. Activate - Recycle a card: Heal an ally 1. Sanctuary also heals you 1.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 50,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-II-03"] = {
-    ["name"] = "Consecrated Crozier",
+    ["name"] = "Radiant Mace",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Regular Heal, gain 1 Shield.",
+    ["text"] = "Priest Weapon - Anointed\nWeapon II. Activate - Recycle a card: Heal an ally 1. Sanctuary gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 51,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-III-01"] = {
-    ["name"] = "Censer of the Litany",
+    ["name"] = "Mace of the Litany",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Sanctuary gets +1[G]. Divine Blessing is always Imbued.",
+    ["text"] = "Priest Weapon - Anointed\nWeapon III. Activate - Recycle a card: Heal an ally 2. Sanctuary also heals an ally 1. Miracle is always Imbued.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 52,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-III-02"] = {
-    ["name"] = "Censer of Grace",
+    ["name"] = "Censer of the Vigil",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Sanctuary gets +1[R]. When you play Smite, untap this weapon.",
+    ["text"] = "Priest Weapon - Anointed\nWeapon III. Activate - Recycle a card: Heal an ally 2. Sanctuary gets +1[R]. Divine Blessing has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 53,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-III-03"] = {
-    ["name"] = "Scepter of the Vigil",
+    ["name"] = "Censer of Mercy",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Mind Soothe, gain 1 Shield. Regular Heal gets +1[R] and +1[B].",
+    ["text"] = "Priest Weapon - Anointed\nWeapon III. Activate - Recycle a card: Heal an ally 2. Regular Heal gets +1[R]. Smite gets +1[R] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 54,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-IV-01"] = {
-    ["name"] = "Sanctified Scepter of Grace",
+    ["name"] = "Sanctified Censer of the Vigil",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Divine Blessing gets +1[G]. Sanctuary is always Imbued. When you play Smite, untap this weapon.",
+    ["text"] = "Priest Weapon - Anointed\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Premonition gets +1[B]. Chain Heal is always Imbued. Mind Soothe gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 55,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-IV-02"] = {
-    ["name"] = "Radiant Crozier of the Vigil",
+    ["name"] = "Gilded Mace of Grace",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Mind Soothe gets +1[G]. Chain Heal has Quickcast. Divine Blessing gets +1[G] and +1[R].",
+    ["text"] = "Priest Weapon - Anointed\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Smite gets +1[R]. Regular Heal is always Imbued. Premonition has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 56,
     ["enc"] = false
   },
   ["LOOT-PRI-ANO-IV-03"] = {
-    ["name"] = "Gilded Censer of Mercy",
+    ["name"] = "Hallowed Censer of Benediction",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Anointed\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Divine Blessing gets +1[R]. Smite has Quickcast. Sanctuary gets +1[G] and +1[R].",
+    ["text"] = "Priest Weapon - Anointed\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Premonition also heals an ally 1. Divine Blessing is always Imbued. Smite gets +1[R] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 57,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-II-01"] = {
-    ["name"] = "Choral Flail",
+    ["name"] = "Luminous Censer",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Cherub gets +1[G].",
+    ["text"] = "Priest Weapon - Seraph\nWeapon II. Activate - Recycle a card: Heal an ally 1. Cherub gets +1[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 58,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-II-02"] = {
-    ["name"] = "Winged Mace",
+    ["name"] = "Luminous Flail",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Cherub gets +1[R].",
+    ["text"] = "Priest Weapon - Seraph\nWeapon II. Activate - Recycle a card: Heal an ally 1. Angel gets +1[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 59,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-II-03"] = {
-    ["name"] = "Haloed Scepter",
+    ["name"] = "Choral Censer",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Smite, heal an ally 1.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon II. Activate - Recycle a card: Heal an ally 1. Ally Counters also heals an ally 1.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 60,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-III-01"] = {
-    ["name"] = "Scepter of Wings",
+    ["name"] = "Mace of the Seraphim",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Tag Team, gain 1 Shield. Cherub gets +2[R].",
+    ["text"] = "Priest Weapon - Seraph\nWeapon III. Activate - Recycle a card: Heal an ally 2. Ally Counters gets +1[B]. Cherub gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 61,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-III-02"] = {
-    ["name"] = "Flail of Daybreak",
+    ["name"] = "Flail of the Host",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Angel, heal an ally 1. Chain Heal has Quickcast.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon III. Activate - Recycle a card: Heal an ally 2. Tag Team gets +1[R]. Ally Counters gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 62,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-III-03"] = {
-    ["name"] = "Mace of Light",
+    ["name"] = "Scepter of Light",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Cherub, gain 1 Shield. Angel is always Imbued.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon III. Activate - Recycle a card: Heal an ally 2. Ally Counters also heals you 1. Chain Heal gets +1[G] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 63,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-IV-01"] = {
-    ["name"] = "Choral Scepter of the Host",
+    ["name"] = "Winged Censer of Light",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Ally Counters gets +1[B]. Chain Heal gets +1[B] and +1[G]. Angel is always Imbued.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Ally Counters gets +1[G]. Cherub gets +2[R]. Regular Heal has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 64,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-IV-02"] = {
-    ["name"] = "Feathered Censer of the Host",
+    ["name"] = "Gleaming Crozier of the Choir",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Cherub, heal an ally 1. When you play Smite, untap this weapon. Tag Team has Quickcast.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Healing Buddy gets +1[G]. Cherub gets +2[R]. Angel gets +1[G] and +1[R].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 65,
     ["enc"] = false
   },
   ["LOOT-PRI-SER-IV-03"] = {
-    ["name"] = "Haloed Flail of Light",
+    ["name"] = "Choral Scepter of Daybreak",
     ["set"] = "LOOT-PRI",
     ["type"] = "Weapon",
-    ["text"] = "Priest Weapon - Seraph\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Healing Buddy gets +1[G]. Angel gets +2[R]. Smite has Quickcast.",
+    ["text"] = "Priest Weapon - Seraph\nWeapon IV. Activate - Recycle a card: Heal an ally 2. Healing Buddy also gives you 1 Shield. Angel gets +2[G]. Smite gets +1[R] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 66,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-II-01"] = {
-    ["name"] = "Nesting Talon",
+    ["name"] = "Matriarch's Fang",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Many Whelps, heal 1.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Tend the Brood gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 67,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-II-02"] = {
-    ["name"] = "Matriarch's Glaive",
+    ["name"] = "Wyrmling Fang",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Dragon, this weapon gets +1 Power this turn.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Scorch also gains you 1 Ember.",
     ["qty"] = 1,
     ["sheet"] = 2,
     ["idx"] = 68,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-II-03"] = {
-    ["name"] = "Matriarch's Halberd",
+    ["name"] = "Hatchling Spear",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play With Me, Whelps, this weapon gets +1 Power this turn.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. With Me, Whelps gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 0,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-III-01"] = {
-    ["name"] = "Glaive of the Nest",
+    ["name"] = "Talon of the Nest",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play With Me, Whelps, gain 1 Ember. Dragon gets +2[R].",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. With Me, Whelps gets +1[B]. Tend the Brood gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 1,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-III-02"] = {
-    ["name"] = "Glaive of the Mother",
+    ["name"] = "Glaive of the Clutch",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Many Whelps, gain 1 Ember. Command the Brood has Quickcast.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. With Me, Whelps gets +1[R]. Tend the Brood gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 2,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-III-03"] = {
-    ["name"] = "Spear of the Brood",
+    ["name"] = "Halberd of the Mother",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Tend the Brood, gain 1 Shield. Burn Bright gets +2[R].",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Tend the Brood gets +1[G]. Many Whelps also creates a Whelp token.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 3,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-IV-01"] = {
-    ["name"] = "Wyrmling Glaive of Hatching",
+    ["name"] = "Clutchkeeper's Fang of the Clutch",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Command the Brood, gain 1 Shield. Tend the Brood has Quickcast. Scorch gets +2[B].",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Scorch gets +1[G]. Burn Bright has Quickcast. Dragon gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 4,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-IV-02"] = {
-    ["name"] = "Nesting Fang of Hatching",
+    ["name"] = "Brooding Glaive of Many Wings",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Dragon gets +1[R]. With Me, Whelps gets +2[B]. When you play Burn Bright, untap this weapon.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Command the Brood also gains you 1 Ember. With Me, Whelps also creates a Whelp token. Tend the Brood gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 5,
     ["enc"] = false
   },
   ["LOOT-DRG-BRD-IV-03"] = {
-    ["name"] = "Brooding Spear of the Mother",
+    ["name"] = "Wyrmling Fang of Many Wings",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Scorch gets +1[B]. Many Whelps gets +2[B]. When you play Cinders, untap this weapon.",
+    ["text"] = "Dragonheart Weapon - Broodmother\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Tend the Brood gets +1[R]. Dragon gets +2[R]. Command the Brood has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 6,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-II-01"] = {
-    ["name"] = "Searing Spear",
+    ["name"] = "Molting Fang",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Hardened Scales, gain 1 Ember.",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Scorch gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 7,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-II-02"] = {
-    ["name"] = "Drakeforged Talon",
+    ["name"] = "Horned Fang",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Scaleborn Command, gain 1 Ember.",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Ember Strike gets +1[B].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 8,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-II-03"] = {
-    ["name"] = "Molting Glaive",
+    ["name"] = "Searing Halberd",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Scaleborn Command gets +1[R].",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Ember Strike gets +1[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 9,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-III-01"] = {
-    ["name"] = "Spear of Dragonfire",
+    ["name"] = "Talon of the Wyrm",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Burn Bright, gain 1 Ember. Scaleborn Command gets +1[B] and +1[R].",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Ember Strike also heals you 1. Cinders also gains you 2 Embers.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 10,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-III-02"] = {
-    ["name"] = "Fang of the Hoard",
+    ["name"] = "Spear of Dragonfire",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Cinders, heal 1. Face Me has Quickcast.",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Cinders gets +1[B]. Scaleborn Command has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 11,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-III-03"] = {
-    ["name"] = "Spear of Shedding",
+    ["name"] = "Glaive of Shedding",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Ember Strike, gain 1 Ember. Tend the Brood gets +2[R].",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Scorch gets +1[B]. Ember Strike gets +1[R] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 12,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-IV-01"] = {
-    ["name"] = "Molting Talon of Shedding",
+    ["name"] = "Wyrmblood Fang of Shedding",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Ember Strike, heal 1. When you play Burn Bright, untap this weapon. Scorch gets +1[G] and +1[B].",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Hardened Scales gets +1[G]. Burn Bright has Quickcast. Ember Strike also gains you 2 Embers.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 13,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-IV-02"] = {
-    ["name"] = "Molting Glaive of Dragonfire",
+    ["name"] = "Drakeforged Fang of Shedding",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Scaleborn Command gets +1[G]. Tend the Brood has Quickcast. When you play Cinders, gain 2 Embers.",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Scorch gets +1[G]. Ember Strike gets +1[R] and +1[B]. Cinders has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 14,
     ["enc"] = false
   },
   ["LOOT-DRG-SCB-IV-03"] = {
-    ["name"] = "Molting Spear of the Molt",
+    ["name"] = "Wyrmblood Glaive of Scales",
     ["set"] = "LOOT-DRG",
     ["type"] = "Weapon",
-    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Cinders, this weapon gets +1 Power this turn. When you play Scaleborn Command, untap this weapon. Face Me gets +2[G].",
+    ["text"] = "Dragonheart Weapon - Scaleborn\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Ember Strike also gains you 1 Ember. Scaleborn Command also gains you 2 Embers. Cinders gets +2[B].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 15,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-II-01"] = {
-    ["name"] = "Black Stiletto",
+    ["name"] = "Hollow Knife",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Strike and Fade gets +1[G].",
+    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Riposte gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 16,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-II-02"] = {
-    ["name"] = "Hollow Dagger",
+    ["name"] = "Hollow Dirk",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Strike and Fade gets +1[G].",
+    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Strike and Fade gets +1[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 17,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-II-03"] = {
-    ["name"] = "Silent Stiletto",
+    ["name"] = "Venomous Dirk",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Shiv gets +1[R].",
+    ["text"] = "Rogue Weapon - Assassin\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Assassin's Toolbelt gets +1[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 18,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-III-01"] = {
-    ["name"] = "Dagger of Silence",
+    ["name"] = "Stiletto of Nightfall",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Go for the Throat gets +1[R]. When you play Smokebomb, untap this weapon.",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Strike and Fade gets +1[G]. Shiv has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 19,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-III-02"] = {
-    ["name"] = "Kris of Shadows",
+    ["name"] = "Stiletto of Silence",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Smokebomb, heal 1. Strike and Fade has Quickcast.",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Assassin's Toolbelt gets +1[G]. Go for the Throat has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 20,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-III-03"] = {
-    ["name"] = "Dirk of the Final Breath",
+    ["name"] = "Knife of the Unseen",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate: recycle a card - 2[R]. If Go for the Throat defeats an enemy, enter stealth. Strike and Fade gets +2[G].",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Adrenaline gets +1[G]. Shiv has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 21,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-IV-01"] = {
-    ["name"] = "Shadowed Knife of the Unseen",
+    ["name"] = "Whispering Dagger of the Final Breath",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Strike and Fade, heal 1. When you play Assassin's Toolbelt, untap this weapon. Backstab gets +1[G] and +1[R].",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Riposte also heals you 1. Assassin's Toolbelt gets +2[R]. Shiv has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 22,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-IV-02"] = {
-    ["name"] = "Silent Dagger of the Final Breath",
+    ["name"] = "Silent Stiletto of Poison",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Adrenaline gets +1[G]. Go for the Throat gets +2[R]. Shiv has Quickcast.",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Backstab gets +1[R]. Adrenaline gets +2[G]. Assassin's Toolbelt has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 23,
     ["enc"] = false
   },
   ["LOOT-ROG-ASN-IV-03"] = {
-    ["name"] = "Shadowed Knife of Poison",
+    ["name"] = "Whispering Dirk of Shadows",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Strike and Fade, this weapon gets +1 Power this turn. Adrenaline has Quickcast. When you play Assassin's Toolbelt, untap this weapon.",
+    ["text"] = "Rogue Weapon - Assassin\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Shiv gets +1[R]. Pocket Sand has Quickcast. Assassin's Toolbelt gets +1[R] and +1[B].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 24,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-II-01"] = {
-    ["name"] = "Infamous Blunderbuss",
+    ["name"] = "Lucky Knife",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Adrenaline gets +1[G].",
+    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Force to Reckon With gets +1[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 25,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-II-02"] = {
-    ["name"] = "Smoking Dirk",
+    ["name"] = "Infamous Blunderbuss",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate: recycle a card - 1[R]. Riposte gets +1[G].",
+    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. If Trickshot defeats an enemy, draw a card.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 26,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-II-03"] = {
-    ["name"] = "Infamous Pistol",
+    ["name"] = "Notorious Dagger",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate: recycle a card - 1[R]. When you play Trickshot, heal 1.",
+    ["text"] = "Rogue Weapon - Outlaw\nP 1\nWeapon II. Activate - Recycle a card: Deal its Power to an enemy. Force to Reckon With also gives you 1 Shield.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 27,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-III-01"] = {
-    ["name"] = "Dirk of Infamy",
+    ["name"] = "Dagger of the Bounty",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate: recycle a card - 2[R]. When you play Backstab, this weapon gets +1 Power this turn. Adrenaline gets +2[G].",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Star of the Show also gives you 1 Shield. Pocket Sand has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 28,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-III-02"] = {
-    ["name"] = "Dagger of Fortune",
+    ["name"] = "Knife of the Long Odds",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Trickshot gets +1[G]. Backstab has Quickcast.",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Riposte gets +1[G]. Force to Reckon With gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 29,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-III-03"] = {
-    ["name"] = "Dagger of Infamy",
+    ["name"] = "Pistol of Renown",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate: recycle a card - 2[R]. Wild Card gets +1[R]. When you play Force to Reckon With, untap this weapon.",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon III. Activate - Recycle a card: Deal its Power to an enemy. Adrenaline gets +1[G]. Backstab gets +2[G].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 30,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-IV-01"] = {
-    ["name"] = "Wanted Dirk of Renown",
+    ["name"] = "Infamous Knife of Fortune",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Riposte, gain 1 Shield. Backstab gets +1[G] and +1[R]. Trickshot gets +2[G].",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Living in Infamy gets +1[G]. Wild Card gets +2[R]. Trickshot has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 31,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-IV-02"] = {
-    ["name"] = "Infamous Stiletto of Fortune",
+    ["name"] = "Infamous Stiletto of Infamy",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. Trickshot gets +1[G]. Living in Infamy gets +2[G]. Force to Reckon With has Quickcast.",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. Force to Reckon With gets +1[R]. Backstab gets +2[R]. Star of the Show has Quickcast.",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 32,
     ["enc"] = false
   },
   ["LOOT-ROG-OUT-IV-03"] = {
-    ["name"] = "Infamous Kris of Fortune",
+    ["name"] = "Lucky Kris of Infamy",
     ["set"] = "LOOT-ROG",
     ["type"] = "Weapon",
-    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate: recycle a card - 2[R]. When you play Pocket Sand, gain 1 Shield. Trickshot gets +2[G]. Wild Card has Quickcast.",
+    ["text"] = "Rogue Weapon - Outlaw\nP 2\nWeapon IV. Activate - Recycle a card: Deal its Power to an enemy. If Wild Card defeats an enemy, draw a card. Trickshot has Quickcast. Force to Reckon With gets +2[R].",
     ["qty"] = 1,
     ["sheet"] = 3,
     ["idx"] = 33,
@@ -3349,274 +3349,274 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-002.png?v=77872f1f"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-01.png?v=10de1f68"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-01.png?v=51c24023"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-02.png?v=7d438aa1"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-02.png?v=93ef976f"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-03.png?v=5668e7da"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-03.png?v=82d07bb7"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-01.png?v=e444b6c8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-01.png?v=12b3d22f"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-02.png?v=e0032dde"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-02.png?v=ffb5dce3"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-03.png?v=2881561a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-03.png?v=9825da39"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-01.png?v=89bad1c2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-01.png?v=17f21ed9"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-02.png?v=7728dffa"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-02.png?v=c28d72c3"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-03.png?v=60947daf"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-03.png?v=68e0cccd"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-01.png?v=db581596"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-01.png?v=af4ee838"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-02.png?v=9a969cd7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-02.png?v=875e4080"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-03.png?v=e608773b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-03.png?v=4479e717"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-01.png?v=60a9a055"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-01.png?v=39783ff1"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-02.png?v=5f4c5192"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-02.png?v=abbb018a"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-03.png?v=8d6f3274"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-03.png?v=ebc0ace6"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-01.png?v=33b29f66"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-01.png?v=6c5e1602"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-02.png?v=7e6315f9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-02.png?v=183a54d2"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-03.png?v=667749f7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-03.png?v=b61d28f8"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-01.png?v=b8c9bec7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-01.png?v=376c106b"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-02.png?v=4a1c34e7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-02.png?v=705d62b2"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-03.png?v=04da92f2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-03.png?v=70cdc275"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-01.png?v=e1858dd9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-01.png?v=903cdc9c"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-02.png?v=da7baa6d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-02.png?v=1cda4692"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-03.png?v=f3fd64ee"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-03.png?v=ea3fded5"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-01.png?v=d51e3b15"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-01.png?v=9531c1a5"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-02.png?v=cd587649"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-02.png?v=6a25d294"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-03.png?v=6aeb0909"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-03.png?v=06fa8134"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-01.png?v=295d394e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-01.png?v=7562fd01"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-02.png?v=15c528a2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-02.png?v=3aab513c"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-03.png?v=3a32ac87"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-03.png?v=f7a13546"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-01.png?v=e2a1ef49"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-01.png?v=9d140789"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-02.png?v=cfe72dcc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-02.png?v=fab221bc"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-03.png?v=91047b78"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-03.png?v=79b00b50"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-01.png?v=241e5062"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-01.png?v=7c5ca447"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-02.png?v=059f739f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-02.png?v=2d7233cb"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-03.png?v=a70c31fd"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-03.png?v=0c3f56a8"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-01.png?v=351c8ac4"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-01.png?v=6169bd62"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-02.png?v=65b6477f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-02.png?v=571e55ff"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-03.png?v=085fe04a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-03.png?v=278d730b"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-01.png?v=d26ecdb9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-01.png?v=557ed691"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-02.png?v=19fabb15"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-02.png?v=74a6e8b2"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-03.png?v=4ea3d443"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-03.png?v=21a035e9"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-01.png?v=6c3d3eca"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-01.png?v=2550dd08"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-02.png?v=16c8f6e3"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-02.png?v=d89a2e25"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-03.png?v=e33d4d22"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-03.png?v=9139bf95"
   }, {
     ["name"] = "LOOT-PRI-SER-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-01.png?v=af2ef026"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-01.png?v=aaf56ce8"
   }, {
     ["name"] = "LOOT-PRI-SER-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-02.png?v=248245a1"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-02.png?v=633794d2"
   }, {
     ["name"] = "LOOT-PRI-SER-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-03.png?v=d4b69915"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-03.png?v=4441bc1e"
   }, {
     ["name"] = "LOOT-PRI-SER-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-01.png?v=4a78c7cd"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-01.png?v=4a99e605"
   }, {
     ["name"] = "LOOT-PRI-SER-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-02.png?v=882da4d5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-02.png?v=a7870cc3"
   }, {
     ["name"] = "LOOT-PRI-SER-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-03.png?v=2d2fa783"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-03.png?v=2cb4ac8e"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-01.png?v=fd3d17e5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-01.png?v=2f6fdd01"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-02.png?v=d9f5386f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-02.png?v=1b84ccbc"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-03.png?v=31d299da"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-03.png?v=94fc2f67"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-01.png?v=8118b774"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-01.png?v=7f7d7837"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-02.png?v=a18a36dc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-02.png?v=058b6a26"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-03.png?v=261b1181"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-03.png?v=ffa6fd3a"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-01.png?v=0c36b1d7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-01.png?v=ecd0a800"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-02.png?v=17f27598"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-02.png?v=ac67015d"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-03.png?v=9595155d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-03.png?v=cf77cddc"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-01.png?v=7b326768"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-01.png?v=2f732a4e"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-02.png?v=59773b59"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-02.png?v=23572e35"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-03.png?v=46aeca5b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-03.png?v=f6b924c9"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-01.png?v=ffd29a5c"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-01.png?v=ec81ad03"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-02.png?v=f5372a38"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-02.png?v=587667f1"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-03.png?v=70f7de48"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-03.png?v=f2d06372"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-01.png?v=f510cc26"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-01.png?v=fdd2f0e8"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-02.png?v=d9d26a95"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-02.png?v=1367e9b2"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-03.png?v=a471c6ff"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-03.png?v=8e068261"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-01.png?v=fb263887"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-01.png?v=7d9114e5"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-02.png?v=a2752895"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-02.png?v=7df73a1e"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-03.png?v=0942c0f8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-03.png?v=f5d6cc53"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-01.png?v=8d436f73"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-01.png?v=137ef71b"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-02.png?v=1a8845fc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-02.png?v=5e923b34"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-03.png?v=e34e19bc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-03.png?v=b2729717"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-01.png?v=3958f065"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-01.png?v=bfdc019a"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-02.png?v=a539ec6f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-02.png?v=c6c90a6b"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-03.png?v=40764a9b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-03.png?v=d193f7bf"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-01.png?v=730f1d25"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-01.png?v=8ecc391c"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-02.png?v=e9df11a5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-02.png?v=db86a9bd"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-03.png?v=1e21ab50"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-03.png?v=4950fdbf"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-01.png?v=ebe76962"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-01.png?v=7ec3d029"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-02.png?v=fa2d8498"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-02.png?v=412ac678"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-03.png?v=1f6a741f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-03.png?v=3d4c5c07"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-01.png?v=3de46662"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-01.png?v=4fe1a934"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-02.png?v=d1984282"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-02.png?v=6302f69a"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-03.png?v=494c0cb7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-03.png?v=46106e27"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-01.png?v=a076dbd7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-01.png?v=8aeac59d"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-02.png?v=66746b6a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-02.png?v=e2adaf78"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=49358d70"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=72f3316b"
   }, {
     ["name"] = "MAP_TWG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=7f75cf1f"

@@ -10,8 +10,10 @@
    "bonuses": [
     {
      "key": "burn",
-     "card": "MAG-FIR-004",
-     "colors": []
+     "card": "MAG-FIR-003",
+     "colors": [
+      "r"
+     ]
     }
    ]
   },
@@ -23,8 +25,8 @@
    "name": "Emberforged Staff",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "MAG-FIR-002",
+     "key": "heal",
+     "card": "MAG-004",
      "colors": [
       "b"
      ]
@@ -40,9 +42,9 @@
    "bonuses": [
     {
      "key": "gem",
-     "card": "MAG-FIR-001",
+     "card": "MAG-003",
      "colors": [
-      "r"
+      "b"
      ]
     }
    ]
@@ -62,10 +64,10 @@
      ]
     },
     {
-     "key": "quick",
-     "card": "MAG-004",
+     "key": "gem2",
+     "card": "MAG-FIR-003",
      "colors": [
-      "b"
+      "r"
      ]
     }
    ]
@@ -78,15 +80,13 @@
    "name": "Rod of Cinders",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "MAG-FIR-005",
-     "colors": [
-      "r"
-     ]
+     "key": "heal",
+     "card": "MAG-FIR-004",
+     "colors": []
     },
     {
-     "key": "quick",
-     "card": "MAG-FIR-003",
+     "key": "gem2",
+     "card": "MAG-FIR-005",
      "colors": [
       "r"
      ]
@@ -101,15 +101,15 @@
    "name": "Staff of Cinders",
    "bonuses": [
     {
-     "key": "burn",
-     "card": "MAG-002",
+     "key": "killdraw",
+     "card": "MAG-FIR-003",
      "colors": [
-      "b"
+      "r"
      ]
     },
     {
-     "key": "quick",
-     "card": "MAG-FIR-003",
+     "key": "gem2",
+     "card": "MAG-FIR-005",
      "colors": [
       "r"
      ]
@@ -124,22 +124,22 @@
    "name": "Ashen Rod of Embers",
    "bonuses": [
     {
-     "key": "heal",
-     "card": "MAG-FIR-001",
+     "key": "gem",
+     "card": "MAG-FIR-005",
      "colors": [
       "r"
      ]
     },
     {
-     "key": "rearm",
+     "key": "quick",
      "card": "MAG-FIR-002",
      "colors": [
       "b"
      ]
     },
     {
-     "key": "quick",
-     "card": "MAG-FIR-005",
+     "key": "gem2",
+     "card": "MAG-FIR-003",
      "colors": [
       "r"
      ]
@@ -154,11 +154,9 @@
    "name": "Blazing Rod of Ash",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "MAG-FIR-005",
-     "colors": [
-      "r"
-     ]
+     "key": "heal",
+     "card": "MAG-FIR-004",
+     "colors": []
     },
     {
      "key": "gem2",
@@ -169,7 +167,7 @@
     },
     {
      "key": "quick",
-     "card": "MAG-FIR-002",
+     "card": "MAG-004",
      "colors": [
       "b"
      ]
@@ -185,7 +183,7 @@
    "bonuses": [
     {
      "key": "gem",
-     "card": "MAG-FIR-003",
+     "card": "MAG-FIR-001",
      "colors": [
       "r"
      ]
@@ -199,7 +197,7 @@
     },
     {
      "key": "quick",
-     "card": "MAG-FIR-005",
+     "card": "MAG-FIR-003",
      "colors": [
       "r"
      ]
@@ -214,11 +212,11 @@
    "name": "Hoarfrost Scepter",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "MAG-ICE-002",
+     "key": "heal",
+     "card": "MAG-ICE-005",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "r"
      ]
     }
    ]
@@ -231,10 +229,9 @@
    "name": "Glacial Staff",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "MAG-ICE-005",
+     "key": "gem",
+     "card": "MAG-ICE-004",
      "colors": [
-      "r",
       "b"
      ]
     }
@@ -248,8 +245,8 @@
    "name": "Glacial Rod",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "MAG-002",
+     "key": "gem",
+     "card": "MAG-ICE-004",
      "colors": [
       "b"
      ]
@@ -261,10 +258,10 @@
    "class": "Mage",
    "subclass": "Ice",
    "tier": 3,
-   "name": "Scepter of the Glacier",
+   "name": "Staff of Stillness",
    "bonuses": [
     {
-     "key": "shield",
+     "key": "gem",
      "card": "MAG-ICE-004",
      "colors": [
       "b"
@@ -272,8 +269,9 @@
     },
     {
      "key": "gem2",
-     "card": "MAG-004",
+     "card": "MAG-ICE-005",
      "colors": [
+      "r",
       "b"
      ]
     }
@@ -284,14 +282,14 @@
    "class": "Mage",
    "subclass": "Ice",
    "tier": 3,
-   "name": "Rod of Stillness",
+   "name": "Stave of Sleet",
    "bonuses": [
     {
-     "key": "killdraw",
-     "card": "MAG-ICE-005",
+     "key": "shield",
+     "card": "MAG-ICE-001",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "g"
      ]
     },
     {
@@ -312,38 +310,6 @@
    "bonuses": [
     {
      "key": "gem",
-     "card": "MAG-003",
-     "colors": [
-      "b"
-     ]
-    },
-    {
-     "key": "twin",
-     "card": "MAG-ICE-001",
-     "colors": [
-      "g",
-      "b"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-MAG-ICE-IV-01",
-   "class": "Mage",
-   "subclass": "Ice",
-   "tier": 4,
-   "name": "Wintry Stave of Sleet",
-   "bonuses": [
-    {
-     "key": "killdraw",
-     "card": "MAG-ICE-002",
-     "colors": [
-      "r",
-      "b"
-     ]
-    },
-    {
-     "key": "quick",
      "card": "MAG-002",
      "colors": [
       "b"
@@ -359,23 +325,22 @@
    ]
   },
   {
-   "id": "LOOT-MAG-ICE-IV-02",
+   "id": "LOOT-MAG-ICE-IV-01",
    "class": "Mage",
    "subclass": "Ice",
    "tier": 4,
-   "name": "Glacial Staff of the Glacier",
+   "name": "Shivering Stave of Sleet",
    "bonuses": [
     {
-     "key": "killdraw",
-     "card": "MAG-ICE-001",
+     "key": "gem",
+     "card": "MAG-003",
      "colors": [
-      "b",
-      "g"
+      "b"
      ]
     },
     {
-     "key": "quick",
-     "card": "MAG-ICE-005",
+     "key": "twin",
+     "card": "MAG-ICE-002",
      "colors": [
       "r",
       "b"
@@ -383,7 +348,7 @@
     },
     {
      "key": "gem2",
-     "card": "MAG-ICE-002",
+     "card": "MAG-ICE-005",
      "colors": [
       "b",
       "r"
@@ -392,14 +357,14 @@
    ]
   },
   {
-   "id": "LOOT-MAG-ICE-IV-03",
+   "id": "LOOT-MAG-ICE-IV-02",
    "class": "Mage",
    "subclass": "Ice",
    "tier": 4,
-   "name": "Rimed Wand of Sleet",
+   "name": "Wintry Stave of Stillness",
    "bonuses": [
     {
-     "key": "killdraw",
+     "key": "gem",
      "card": "MAG-ICE-004",
      "colors": [
       "b"
@@ -407,17 +372,42 @@
     },
     {
      "key": "gem2",
-     "card": "MAG-003",
+     "card": "MAG-001",
+     "colors": [
+      "g"
+     ]
+    },
+    {
+     "key": "quick",
+     "card": "MAG-ICE-003",
+     "colors": []
+    }
+   ]
+  },
+  {
+   "id": "LOOT-MAG-ICE-IV-03",
+   "class": "Mage",
+   "subclass": "Ice",
+   "tier": 4,
+   "name": "Shivering Scepter of the Glacier",
+   "bonuses": [
+    {
+     "key": "heal",
+     "card": "MAG-ICE-003",
+     "colors": []
+    },
+    {
+     "key": "gem2",
+     "card": "MAG-ICE-004",
      "colors": [
       "b"
      ]
     },
     {
-     "key": "rearm",
-     "card": "MAG-ICE-005",
+     "key": "quick",
+     "card": "MAG-001",
      "colors": [
-      "r",
-      "b"
+      "g"
      ]
     }
    ]
@@ -427,13 +417,13 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 2,
-   "name": "Flickering Cleaver",
+   "name": "Duelist's Blade",
    "bonuses": [
     {
-     "key": "flourish",
-     "card": "WAR-BLD-003",
+     "key": "heal",
+     "card": "WAR-BLD-002",
      "colors": [
-      "g"
+      "b"
      ]
     }
    ]
@@ -443,13 +433,13 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 2,
-   "name": "Keen Warhammer",
+   "name": "Whirling Warhammer",
    "bonuses": [
     {
      "key": "flourish",
-     "card": "WAR-BLD-002",
+     "card": "WAR-BLD-004",
      "colors": [
-      "b"
+      "r"
      ]
     }
    ]
@@ -459,14 +449,12 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 2,
-   "name": "Duelist's Warhammer",
+   "name": "Balanced Blade",
    "bonuses": [
     {
-     "key": "gem",
-     "card": "WAR-003",
-     "colors": [
-      "g"
-     ]
+     "key": "shield",
+     "card": "WAR-BLD-005",
+     "colors": []
     }
    ]
   },
@@ -475,20 +463,21 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 3,
-   "name": "Blade of Grace",
+   "name": "Cleaver of Whirlwinds",
    "bonuses": [
     {
-     "key": "flourish",
+     "key": "gem",
      "card": "WAR-BLD-004",
      "colors": [
       "r"
      ]
     },
     {
-     "key": "gem2",
-     "card": "WAR-001",
+     "key": "quick",
+     "card": "WAR-004",
      "colors": [
-      "r"
+      "r",
+      "b"
      ]
     }
    ]
@@ -498,21 +487,20 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 3,
-   "name": "Mace of Whirlwinds",
+   "name": "Mace of Grace",
    "bonuses": [
     {
      "key": "flourish",
-     "card": "WAR-004",
+     "card": "WAR-BLD-003",
      "colors": [
-      "b",
-      "r"
+      "g"
      ]
     },
     {
      "key": "quick",
-     "card": "WAR-002",
+     "card": "WAR-004",
      "colors": [
-      "g",
+      "b",
       "r"
      ]
     }
@@ -523,10 +511,10 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 3,
-   "name": "Warhammer of the Feint",
+   "name": "Sword of the Feint",
    "bonuses": [
     {
-     "key": "gem",
+     "key": "flourish",
      "card": "WAR-BLD-002",
      "colors": [
       "b"
@@ -534,9 +522,9 @@
     },
     {
      "key": "quick",
-     "card": "WAR-002",
+     "card": "WAR-004",
      "colors": [
-      "g",
+      "b",
       "r"
      ]
     }
@@ -547,20 +535,13 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 4,
-   "name": "Duelist's Cleaver of the Edge",
+   "name": "Keen Sword of the Edge",
    "bonuses": [
     {
-     "key": "gem",
+     "key": "flourish",
      "card": "WAR-BLD-003",
      "colors": [
       "g"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "WAR-BLD-002",
-     "colors": [
-      "b"
      ]
     },
     {
@@ -570,6 +551,14 @@
       "r",
       "g"
      ]
+    },
+    {
+     "key": "gem2",
+     "card": "WAR-004",
+     "colors": [
+      "b",
+      "r"
+     ]
     }
    ]
   },
@@ -578,29 +567,28 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 4,
-   "name": "Whirling Axe of the Edge",
+   "name": "Dancing Cleaver of Tempo",
    "bonuses": [
     {
-     "key": "killdraw",
-     "card": "WAR-004",
+     "key": "gem",
+     "card": "WAR-BLD-002",
      "colors": [
-      "b",
-      "r"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "WAR-002",
-     "colors": [
-      "g",
-      "r"
+      "b"
      ]
     },
     {
      "key": "gem2",
-     "card": "WAR-BLD-002",
+     "card": "WAR-BLD-004",
      "colors": [
-      "b"
+      "r"
+     ]
+    },
+    {
+     "key": "twin",
+     "card": "WAR-004",
+     "colors": [
+      "b",
+      "r"
      ]
     }
    ]
@@ -610,28 +598,29 @@
    "class": "Warrior",
    "subclass": "Blade Dancer",
    "tier": 4,
-   "name": "Whirling Axe of Grace",
+   "name": "Whirling Blade of Whirlwinds",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "WAR-001",
+     "key": "flourish",
+     "card": "WAR-002",
      "colors": [
-      "r"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "WAR-003",
-     "colors": [
+      "r",
       "g"
      ]
     },
     {
-     "key": "twin",
+     "key": "gem2",
      "card": "WAR-BLD-001",
      "colors": [
       "g",
       "r"
+     ]
+    },
+    {
+     "key": "quick",
+     "card": "WAR-BLD-002",
+     "colors": [
+      "b"
      ]
     }
    ]
@@ -641,7 +630,7 @@
    "class": "Warrior",
    "subclass": "Ironclad",
    "tier": 2,
-   "name": "Bulwark Mace",
+   "name": "Stalwart Mace",
    "bonuses": [
     {
      "key": "gem",
@@ -657,11 +646,11 @@
    "class": "Warrior",
    "subclass": "Ironclad",
    "tier": 2,
-   "name": "Ironbound Axe",
+   "name": "Heavy Cleaver",
    "bonuses": [
     {
      "key": "gem",
-     "card": "WAR-003",
+     "card": "WAR-IRC-001",
      "colors": [
       "g"
      ]
@@ -673,13 +662,14 @@
    "class": "Warrior",
    "subclass": "Ironclad",
    "tier": 2,
-   "name": "Riveted Mace",
+   "name": "Ironbound Cleaver",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "WAR-IRC-004",
+     "key": "ward",
+     "card": "WAR-002",
      "colors": [
-      "g"
+      "g",
+      "r"
      ]
     }
    ]
@@ -689,79 +679,7 @@
    "class": "Warrior",
    "subclass": "Ironclad",
    "tier": 3,
-   "name": "Sword of Holding Fast",
-   "bonuses": [
-    {
-     "key": "killdraw",
-     "card": "WAR-001",
-     "colors": [
-      "r"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "WAR-004",
-     "colors": [
-      "r",
-      "b"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-WAR-IRC-III-02",
-   "class": "Warrior",
-   "subclass": "Ironclad",
-   "tier": 3,
    "name": "Axe of the Wall",
-   "bonuses": [
-    {
-     "key": "heal",
-     "card": "WAR-002",
-     "colors": [
-      "r",
-      "g"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "WAR-IRC-005",
-     "colors": [
-      "g",
-      "r"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-WAR-IRC-III-03",
-   "class": "Warrior",
-   "subclass": "Ironclad",
-   "tier": 3,
-   "name": "Warhammer of the Wall",
-   "bonuses": [
-    {
-     "key": "heal",
-     "card": "WAR-IRC-001",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "WAR-IRC-003",
-     "colors": [
-      "r"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-WAR-IRC-IV-01",
-   "class": "Warrior",
-   "subclass": "Ironclad",
-   "tier": 4,
-   "name": "Ironbound Mace of the Rampart",
    "bonuses": [
     {
      "key": "gem",
@@ -773,9 +691,78 @@
     },
     {
      "key": "gem2",
-     "card": "WAR-IRC-005",
+     "card": "WAR-003",
      "colors": [
-      "g",
+      "g"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-WAR-IRC-III-02",
+   "class": "Warrior",
+   "subclass": "Ironclad",
+   "tier": 3,
+   "name": "Mace of Iron",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "WAR-004",
+     "colors": [
+      "b",
+      "r"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "WAR-001",
+     "colors": [
+      "r"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-WAR-IRC-III-03",
+   "class": "Warrior",
+   "subclass": "Ironclad",
+   "tier": 3,
+   "name": "Sword of Holding Fast",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "WAR-IRC-002",
+     "colors": [
+      "b"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "WAR-IRC-001",
+     "colors": [
+      "g"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-WAR-IRC-IV-01",
+   "class": "Warrior",
+   "subclass": "Ironclad",
+   "tier": 4,
+   "name": "Ironbound Warhammer of the Anvil",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "WAR-IRC-002",
+     "colors": [
+      "b"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "WAR-001",
+     "colors": [
       "r"
      ]
     },
@@ -793,7 +780,38 @@
    "class": "Warrior",
    "subclass": "Ironclad",
    "tier": 4,
-   "name": "Ironbound Axe of the Anvil",
+   "name": "Stalwart Axe of the Wall",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "WAR-IRC-004",
+     "colors": [
+      "g"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "WAR-IRC-002",
+     "colors": [
+      "b"
+     ]
+    },
+    {
+     "key": "quick",
+     "card": "WAR-002",
+     "colors": [
+      "g",
+      "r"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-WAR-IRC-IV-03",
+   "class": "Warrior",
+   "subclass": "Ironclad",
+   "tier": 4,
+   "name": "Stalwart Warhammer of the Wall",
    "bonuses": [
     {
      "key": "gem",
@@ -805,47 +823,17 @@
     },
     {
      "key": "gem2",
-     "card": "WAR-IRC-004",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "WAR-001",
-     "colors": [
-      "r"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-WAR-IRC-IV-03",
-   "class": "Warrior",
-   "subclass": "Ironclad",
-   "tier": 4,
-   "name": "Ironbound Warhammer of the Wall",
-   "bonuses": [
-    {
-     "key": "gem",
-     "card": "WAR-IRC-001",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "gem2",
      "card": "WAR-IRC-003",
      "colors": [
       "r"
      ]
     },
     {
-     "key": "rearm",
-     "card": "WAR-004",
+     "key": "twin",
+     "card": "WAR-002",
      "colors": [
-      "r",
-      "b"
+      "g",
+      "r"
      ]
     }
    ]
@@ -855,10 +843,10 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 2,
-   "name": "Gilded Censer",
+   "name": "Blessed Mace",
    "bonuses": [
     {
-     "key": "shield",
+     "key": "gem",
      "card": "PRI-ANO-004",
      "colors": [
       "b",
@@ -872,13 +860,14 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 2,
-   "name": "Radiant Censer",
+   "name": "Blessed Flail",
    "bonuses": [
     {
-     "key": "gem",
-     "card": "PRI-ANO-003",
+     "key": "heal",
+     "card": "PRI-ANO-005",
      "colors": [
-      "g"
+      "g",
+      "r"
      ]
     }
    ]
@@ -888,14 +877,14 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 2,
-   "name": "Consecrated Crozier",
+   "name": "Radiant Mace",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "PRI-003",
+     "key": "gem",
+     "card": "PRI-ANO-005",
      "colors": [
-      "r",
-      "b"
+      "g",
+      "r"
      ]
     }
    ]
@@ -905,10 +894,10 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 3,
-   "name": "Censer of the Litany",
+   "name": "Mace of the Litany",
    "bonuses": [
     {
-     "key": "gem",
+     "key": "mend",
      "card": "PRI-ANO-005",
      "colors": [
       "g",
@@ -917,12 +906,8 @@
     },
     {
      "key": "imbue",
-     "card": "PRI-ANO-002",
-     "colors": [
-      "r",
-      "b",
-      "g"
-     ]
+     "card": "PRI-002",
+     "colors": []
     }
    ]
   },
@@ -931,7 +916,7 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 3,
-   "name": "Censer of Grace",
+   "name": "Censer of the Vigil",
    "bonuses": [
     {
      "key": "gem",
@@ -942,11 +927,12 @@
      ]
     },
     {
-     "key": "rearm",
-     "card": "PRI-004",
+     "key": "quick",
+     "card": "PRI-ANO-002",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "g",
+      "r"
      ]
     }
    ]
@@ -956,18 +942,19 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 3,
-   "name": "Scepter of the Vigil",
+   "name": "Censer of Mercy",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "PRI-ANO-003",
+     "key": "gem",
+     "card": "PRI-003",
      "colors": [
-      "g"
+      "r",
+      "b"
      ]
     },
     {
      "key": "twin",
-     "card": "PRI-003",
+     "card": "PRI-004",
      "colors": [
       "r",
       "b"
@@ -980,31 +967,29 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 4,
-   "name": "Sanctified Scepter of Grace",
+   "name": "Sanctified Censer of the Vigil",
    "bonuses": [
     {
      "key": "gem",
-     "card": "PRI-ANO-002",
+     "card": "PRI-ANO-004",
      "colors": [
-      "g",
-      "r",
-      "b"
-     ]
-    },
-    {
-     "key": "imbue",
-     "card": "PRI-ANO-005",
-     "colors": [
-      "r",
+      "b",
       "g"
      ]
     },
     {
-     "key": "rearm",
-     "card": "PRI-004",
+     "key": "imbue",
+     "card": "PRI-001",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "g"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "PRI-ANO-003",
+     "colors": [
+      "g"
      ]
     }
    ]
@@ -1014,30 +999,30 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 4,
-   "name": "Radiant Crozier of the Vigil",
+   "name": "Gilded Mace of Grace",
    "bonuses": [
     {
      "key": "gem",
-     "card": "PRI-ANO-003",
+     "card": "PRI-004",
      "colors": [
-      "g"
+      "r",
+      "b"
+     ]
+    },
+    {
+     "key": "imbue",
+     "card": "PRI-003",
+     "colors": [
+      "r",
+      "b"
      ]
     },
     {
      "key": "quick",
-     "card": "PRI-001",
+     "card": "PRI-ANO-004",
      "colors": [
-      "g",
-      "b"
-     ]
-    },
-    {
-     "key": "twin",
-     "card": "PRI-ANO-002",
-     "colors": [
-      "g",
-      "r",
-      "b"
+      "b",
+      "g"
      ]
     }
    ]
@@ -1047,31 +1032,31 @@
    "class": "Priest",
    "subclass": "Anointed",
    "tier": 4,
-   "name": "Gilded Censer of Mercy",
+   "name": "Hallowed Censer of Benediction",
    "bonuses": [
     {
-     "key": "gem",
-     "card": "PRI-ANO-002",
+     "key": "mend",
+     "card": "PRI-ANO-004",
      "colors": [
-      "r",
-      "g",
-      "b"
+      "b",
+      "g"
      ]
     },
     {
-     "key": "quick",
-     "card": "PRI-004",
+     "key": "imbue",
+     "card": "PRI-ANO-002",
      "colors": [
-      "r",
-      "b"
+      "g",
+      "b",
+      "r"
      ]
     },
     {
      "key": "twin",
-     "card": "PRI-ANO-005",
+     "card": "PRI-004",
      "colors": [
-      "g",
-      "r"
+      "r",
+      "b"
      ]
     }
    ]
@@ -1081,14 +1066,14 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 2,
-   "name": "Choral Flail",
+   "name": "Luminous Censer",
    "bonuses": [
     {
      "key": "gem",
      "card": "PRI-SER-003",
      "colors": [
-      "g",
-      "r"
+      "r",
+      "g"
      ]
     }
    ]
@@ -1098,11 +1083,11 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 2,
-   "name": "Winged Mace",
+   "name": "Luminous Flail",
    "bonuses": [
     {
      "key": "gem",
-     "card": "PRI-SER-003",
+     "card": "PRI-SER-002",
      "colors": [
       "r",
       "g"
@@ -1115,14 +1100,14 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 2,
-   "name": "Haloed Scepter",
+   "name": "Choral Censer",
    "bonuses": [
     {
      "key": "mend",
-     "card": "PRI-004",
+     "card": "PRI-SER-001",
      "colors": [
       "b",
-      "r"
+      "g"
      ]
     }
    ]
@@ -1132,14 +1117,14 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 3,
-   "name": "Scepter of Wings",
+   "name": "Mace of the Seraphim",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "PRI-SER-005",
+     "key": "gem",
+     "card": "PRI-SER-001",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "g"
      ]
     },
     {
@@ -1157,22 +1142,22 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 3,
-   "name": "Flail of Daybreak",
+   "name": "Flail of the Host",
    "bonuses": [
     {
-     "key": "mend",
-     "card": "PRI-SER-002",
+     "key": "gem",
+     "card": "PRI-SER-005",
      "colors": [
       "r",
-      "g"
+      "b"
      ]
     },
     {
-     "key": "quick",
-     "card": "PRI-001",
+     "key": "gem2",
+     "card": "PRI-SER-001",
      "colors": [
-      "g",
-      "b"
+      "b",
+      "g"
      ]
     }
    ]
@@ -1182,35 +1167,10 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 3,
-   "name": "Mace of Light",
+   "name": "Scepter of Light",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "PRI-SER-003",
-     "colors": [
-      "g",
-      "r"
-     ]
-    },
-    {
-     "key": "imbue",
-     "card": "PRI-SER-002",
-     "colors": [
-      "r",
-      "g"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-PRI-SER-IV-01",
-   "class": "Priest",
-   "subclass": "Seraph",
-   "tier": 4,
-   "name": "Choral Scepter of the Host",
-   "bonuses": [
-    {
-     "key": "gem",
+     "key": "heal",
      "card": "PRI-SER-001",
      "colors": [
       "b",
@@ -1221,16 +1181,41 @@
      "key": "twin",
      "card": "PRI-001",
      "colors": [
-      "b",
+      "g",
+      "b"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-PRI-SER-IV-01",
+   "class": "Priest",
+   "subclass": "Seraph",
+   "tier": 4,
+   "name": "Winged Censer of Light",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "PRI-SER-001",
+     "colors": [
+      "g",
+      "b"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "PRI-SER-003",
+     "colors": [
+      "r",
       "g"
      ]
     },
     {
-     "key": "imbue",
-     "card": "PRI-SER-002",
+     "key": "quick",
+     "card": "PRI-003",
      "colors": [
-      "g",
-      "r"
+      "r",
+      "b"
      ]
     }
    ]
@@ -1240,40 +1225,7 @@
    "class": "Priest",
    "subclass": "Seraph",
    "tier": 4,
-   "name": "Feathered Censer of the Host",
-   "bonuses": [
-    {
-     "key": "mend",
-     "card": "PRI-SER-003",
-     "colors": [
-      "g",
-      "r"
-     ]
-    },
-    {
-     "key": "rearm",
-     "card": "PRI-004",
-     "colors": [
-      "b",
-      "r"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "PRI-SER-005",
-     "colors": [
-      "r",
-      "b"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-PRI-SER-IV-03",
-   "class": "Priest",
-   "subclass": "Seraph",
-   "tier": 4,
-   "name": "Haloed Flail of Light",
+   "name": "Gleaming Crozier of the Choir",
    "bonuses": [
     {
      "key": "gem",
@@ -1284,14 +1236,46 @@
     },
     {
      "key": "gem2",
-     "card": "PRI-SER-002",
+     "card": "PRI-SER-003",
      "colors": [
       "r",
       "g"
      ]
     },
     {
-     "key": "quick",
+     "key": "twin",
+     "card": "PRI-SER-002",
+     "colors": [
+      "g",
+      "r"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-PRI-SER-IV-03",
+   "class": "Priest",
+   "subclass": "Seraph",
+   "tier": 4,
+   "name": "Choral Scepter of Daybreak",
+   "bonuses": [
+    {
+     "key": "shield",
+     "card": "PRI-SER-004",
+     "colors": [
+      "g"
+     ]
+    },
+    {
+     "key": "gem2",
+     "card": "PRI-SER-002",
+     "colors": [
+      "g",
+      "r"
+     ]
+    },
+    {
+     "key": "twin",
      "card": "PRI-004",
      "colors": [
       "r",
@@ -1305,14 +1289,14 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 2,
-   "name": "Nesting Talon",
+   "name": "Matriarch's Fang",
    "bonuses": [
     {
-     "key": "heal",
-     "card": "DRG-BRD-004",
+     "key": "gem",
+     "card": "DRG-004",
      "colors": [
-      "r",
-      "b"
+      "g",
+      "r"
      ]
     }
    ]
@@ -1322,13 +1306,14 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 2,
-   "name": "Matriarch's Glaive",
+   "name": "Wyrmling Fang",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "DRG-BRD-003",
+     "key": "ember",
+     "card": "DRG-003",
      "colors": [
-      "r"
+      "b",
+      "g"
      ]
     }
    ]
@@ -1338,10 +1323,10 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 2,
-   "name": "Matriarch's Halberd",
+   "name": "Hatchling Spear",
    "bonuses": [
     {
-     "key": "sharpen",
+     "key": "gem",
      "card": "DRG-BRD-005",
      "colors": [
       "b",
@@ -1355,20 +1340,21 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 3,
-   "name": "Glaive of the Nest",
+   "name": "Talon of the Nest",
    "bonuses": [
     {
-     "key": "ember",
+     "key": "gem",
      "card": "DRG-BRD-005",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "r"
      ]
     },
     {
      "key": "gem2",
-     "card": "DRG-BRD-003",
+     "card": "DRG-004",
      "colors": [
+      "g",
       "r"
      ]
     }
@@ -1379,20 +1365,23 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 3,
-   "name": "Glaive of the Mother",
+   "name": "Glaive of the Clutch",
    "bonuses": [
     {
-     "key": "ember",
-     "card": "DRG-BRD-004",
+     "key": "gem",
+     "card": "DRG-BRD-005",
      "colors": [
       "r",
       "b"
      ]
     },
     {
-     "key": "quick",
-     "card": "DRG-BRD-002",
-     "colors": []
+     "key": "gem2",
+     "card": "DRG-004",
+     "colors": [
+      "r",
+      "g"
+     ]
     }
    ]
   },
@@ -1401,20 +1390,21 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 3,
-   "name": "Spear of the Brood",
+   "name": "Halberd of the Mother",
    "bonuses": [
     {
-     "key": "shield",
+     "key": "gem",
      "card": "DRG-004",
      "colors": [
-      "r",
-      "g"
+      "g",
+      "r"
      ]
     },
     {
-     "key": "gem2",
-     "card": "DRG-001",
+     "key": "whelp",
+     "card": "DRG-BRD-004",
      "colors": [
+      "b",
       "r"
      ]
     }
@@ -1425,27 +1415,28 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 4,
-   "name": "Wyrmling Glaive of Hatching",
+   "name": "Clutchkeeper's Fang of the Clutch",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "DRG-BRD-002",
-     "colors": []
+     "key": "gem",
+     "card": "DRG-003",
+     "colors": [
+      "g",
+      "b"
+     ]
     },
     {
      "key": "quick",
-     "card": "DRG-004",
+     "card": "DRG-001",
      "colors": [
-      "r",
-      "g"
+      "r"
      ]
     },
     {
      "key": "gem2",
-     "card": "DRG-003",
+     "card": "DRG-BRD-003",
      "colors": [
-      "b",
-      "g"
+      "r"
      ]
     }
    ]
@@ -1455,27 +1446,26 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 4,
-   "name": "Nesting Fang of Hatching",
+   "name": "Brooding Glaive of Many Wings",
    "bonuses": [
     {
-     "key": "gem",
-     "card": "DRG-BRD-003",
+     "key": "ember",
+     "card": "DRG-BRD-002",
+     "colors": []
+    },
+    {
+     "key": "whelp",
+     "card": "DRG-BRD-005",
      "colors": [
-      "r"
+      "r",
+      "b"
      ]
     },
     {
      "key": "gem2",
-     "card": "DRG-BRD-005",
+     "card": "DRG-004",
      "colors": [
-      "b",
-      "r"
-     ]
-    },
-    {
-     "key": "rearm",
-     "card": "DRG-001",
-     "colors": [
+      "g",
       "r"
      ]
     }
@@ -1486,31 +1476,27 @@
    "class": "Dragonheart",
    "subclass": "Broodmother",
    "tier": 4,
-   "name": "Brooding Spear of the Mother",
+   "name": "Wyrmling Fang of Many Wings",
    "bonuses": [
     {
      "key": "gem",
-     "card": "DRG-003",
+     "card": "DRG-004",
      "colors": [
-      "b",
+      "r",
       "g"
      ]
     },
     {
      "key": "gem2",
-     "card": "DRG-BRD-004",
+     "card": "DRG-BRD-003",
      "colors": [
-      "b",
       "r"
      ]
     },
     {
-     "key": "rearm",
-     "card": "DRG-002",
-     "colors": [
-      "b",
-      "r"
-     ]
+     "key": "quick",
+     "card": "DRG-BRD-002",
+     "colors": []
     }
    ]
   },
@@ -1519,14 +1505,14 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 2,
-   "name": "Searing Spear",
+   "name": "Molting Fang",
    "bonuses": [
     {
-     "key": "ember",
-     "card": "DRG-SCB-004",
+     "key": "gem",
+     "card": "DRG-003",
      "colors": [
-      "b",
-      "g"
+      "g",
+      "b"
      ]
     }
    ]
@@ -1536,15 +1522,14 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 2,
-   "name": "Drakeforged Talon",
+   "name": "Horned Fang",
    "bonuses": [
     {
-     "key": "ember",
-     "card": "DRG-SCB-005",
+     "key": "gem",
+     "card": "DRG-SCB-002",
      "colors": [
-      "g",
-      "r",
-      "b"
+      "b",
+      "r"
      ]
     }
    ]
@@ -1554,14 +1539,13 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 2,
-   "name": "Molting Glaive",
+   "name": "Searing Halberd",
    "bonuses": [
     {
      "key": "gem",
-     "card": "DRG-SCB-005",
+     "card": "DRG-SCB-002",
      "colors": [
       "r",
-      "g",
       "b"
      ]
     }
@@ -1572,22 +1556,22 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 3,
-   "name": "Spear of Dragonfire",
+   "name": "Talon of the Wyrm",
    "bonuses": [
     {
-     "key": "ember",
-     "card": "DRG-001",
+     "key": "heal",
+     "card": "DRG-SCB-002",
      "colors": [
-      "r"
+      "r",
+      "b"
      ]
     },
     {
-     "key": "twin",
-     "card": "DRG-SCB-005",
+     "key": "stoke",
+     "card": "DRG-002",
      "colors": [
-      "b",
       "r",
-      "g"
+      "b"
      ]
     }
    ]
@@ -1597,10 +1581,10 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 3,
-   "name": "Fang of the Hoard",
+   "name": "Spear of Dragonfire",
    "bonuses": [
     {
-     "key": "heal",
+     "key": "gem",
      "card": "DRG-002",
      "colors": [
       "b",
@@ -1609,8 +1593,10 @@
     },
     {
      "key": "quick",
-     "card": "DRG-SCB-003",
+     "card": "DRG-SCB-005",
      "colors": [
+      "r",
+      "b",
       "g"
      ]
     }
@@ -1621,22 +1607,22 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 3,
-   "name": "Spear of Shedding",
+   "name": "Glaive of Shedding",
    "bonuses": [
     {
-     "key": "ember",
+     "key": "gem",
+     "card": "DRG-003",
+     "colors": [
+      "b",
+      "g"
+     ]
+    },
+    {
+     "key": "twin",
      "card": "DRG-SCB-002",
      "colors": [
       "r",
       "b"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "DRG-004",
-     "colors": [
-      "r",
-      "g"
      ]
     }
    ]
@@ -1646,29 +1632,29 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 4,
-   "name": "Molting Talon of Shedding",
+   "name": "Wyrmblood Fang of Shedding",
    "bonuses": [
     {
-     "key": "heal",
-     "card": "DRG-SCB-002",
+     "key": "gem",
+     "card": "DRG-SCB-004",
      "colors": [
-      "b",
-      "r"
+      "g",
+      "b"
      ]
     },
     {
-     "key": "rearm",
+     "key": "quick",
      "card": "DRG-001",
      "colors": [
       "r"
      ]
     },
     {
-     "key": "twin",
-     "card": "DRG-003",
+     "key": "stoke",
+     "card": "DRG-SCB-002",
      "colors": [
-      "g",
-      "b"
+      "b",
+      "r"
      ]
     }
    ]
@@ -1678,27 +1664,26 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 4,
-   "name": "Molting Glaive of Dragonfire",
+   "name": "Drakeforged Fang of Shedding",
    "bonuses": [
     {
      "key": "gem",
-     "card": "DRG-SCB-005",
+     "card": "DRG-003",
      "colors": [
       "g",
+      "b"
+     ]
+    },
+    {
+     "key": "twin",
+     "card": "DRG-SCB-002",
+     "colors": [
       "r",
       "b"
      ]
     },
     {
      "key": "quick",
-     "card": "DRG-004",
-     "colors": [
-      "g",
-      "r"
-     ]
-    },
-    {
-     "key": "stoke",
      "card": "DRG-002",
      "colors": [
       "b",
@@ -1712,30 +1697,31 @@
    "class": "Dragonheart",
    "subclass": "Scaleborn",
    "tier": 4,
-   "name": "Molting Spear of the Molt",
+   "name": "Wyrmblood Glaive of Scales",
    "bonuses": [
     {
-     "key": "sharpen",
-     "card": "DRG-002",
+     "key": "ember",
+     "card": "DRG-SCB-002",
      "colors": [
-      "r",
-      "b"
+      "b",
+      "r"
      ]
     },
     {
-     "key": "rearm",
+     "key": "stoke",
      "card": "DRG-SCB-005",
      "colors": [
       "r",
-      "g",
-      "b"
+      "b",
+      "g"
      ]
     },
     {
      "key": "gem2",
-     "card": "DRG-SCB-003",
+     "card": "DRG-002",
      "colors": [
-      "g"
+      "b",
+      "r"
      ]
     }
    ]
@@ -1745,11 +1731,11 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 2,
-   "name": "Black Stiletto",
+   "name": "Hollow Knife",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-ASN-005",
+     "card": "ROG-004",
      "colors": [
       "g"
      ]
@@ -1761,7 +1747,7 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 2,
-   "name": "Hollow Dagger",
+   "name": "Hollow Dirk",
    "bonuses": [
     {
      "key": "gem",
@@ -1777,13 +1763,15 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 2,
-   "name": "Silent Stiletto",
+   "name": "Venomous Dirk",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-ASN-003",
+     "card": "ROG-ASN-001",
      "colors": [
-      "r"
+      "r",
+      "b",
+      "g"
      ]
     }
    ]
@@ -1793,19 +1781,21 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 3,
-   "name": "Dagger of Silence",
+   "name": "Stiletto of Nightfall",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-ASN-002",
+     "card": "ROG-ASN-005",
      "colors": [
-      "r"
+      "g"
      ]
     },
     {
-     "key": "rearm",
-     "card": "ROG-ASN-004",
-     "colors": []
+     "key": "quick",
+     "card": "ROG-ASN-003",
+     "colors": [
+      "r"
+     ]
     }
    ]
   },
@@ -1814,18 +1804,22 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 3,
-   "name": "Kris of Shadows",
+   "name": "Stiletto of Silence",
    "bonuses": [
     {
-     "key": "heal",
-     "card": "ROG-ASN-004",
-     "colors": []
+     "key": "gem",
+     "card": "ROG-ASN-001",
+     "colors": [
+      "g",
+      "b",
+      "r"
+     ]
     },
     {
      "key": "quick",
-     "card": "ROG-ASN-005",
+     "card": "ROG-ASN-002",
      "colors": [
-      "g"
+      "r"
      ]
     }
    ]
@@ -1835,20 +1829,20 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 3,
-   "name": "Dirk of the Final Breath",
+   "name": "Knife of the Unseen",
    "bonuses": [
     {
-     "key": "fade",
-     "card": "ROG-ASN-002",
+     "key": "gem",
+     "card": "ROG-001",
      "colors": [
-      "r"
+      "g"
      ]
     },
     {
-     "key": "gem2",
-     "card": "ROG-ASN-005",
+     "key": "quick",
+     "card": "ROG-ASN-003",
      "colors": [
-      "g"
+      "r"
      ]
     }
    ]
@@ -1858,29 +1852,28 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 4,
-   "name": "Shadowed Knife of the Unseen",
+   "name": "Whispering Dagger of the Final Breath",
    "bonuses": [
     {
      "key": "heal",
-     "card": "ROG-ASN-005",
+     "card": "ROG-004",
      "colors": [
       "g"
      ]
     },
     {
-     "key": "rearm",
+     "key": "gem2",
      "card": "ROG-ASN-001",
      "colors": [
-      "b",
+      "r",
       "g",
-      "r"
+      "b"
      ]
     },
     {
-     "key": "twin",
-     "card": "ROG-002",
+     "key": "quick",
+     "card": "ROG-ASN-003",
      "colors": [
-      "g",
       "r"
      ]
     }
@@ -1891,120 +1884,10 @@
    "class": "Rogue",
    "subclass": "Assassin",
    "tier": 4,
-   "name": "Silent Dagger of the Final Breath",
+   "name": "Silent Stiletto of Poison",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-001",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "gem2",
-     "card": "ROG-ASN-002",
-     "colors": [
-      "r"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "ROG-ASN-003",
-     "colors": [
-      "r"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-ROG-ASN-IV-03",
-   "class": "Rogue",
-   "subclass": "Assassin",
-   "tier": 4,
-   "name": "Shadowed Knife of Poison",
-   "bonuses": [
-    {
-     "key": "sharpen",
-     "card": "ROG-ASN-005",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "quick",
-     "card": "ROG-001",
-     "colors": [
-      "g"
-     ]
-    },
-    {
-     "key": "rearm",
-     "card": "ROG-ASN-001",
-     "colors": [
-      "b",
-      "g",
-      "r"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-ROG-OUT-II-01",
-   "class": "Rogue",
-   "subclass": "Outlaw",
-   "tier": 2,
-   "name": "Infamous Blunderbuss",
-   "bonuses": [
-    {
-     "key": "gem",
-     "card": "ROG-001",
-     "colors": [
-      "g"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-ROG-OUT-II-02",
-   "class": "Rogue",
-   "subclass": "Outlaw",
-   "tier": 2,
-   "name": "Smoking Dirk",
-   "bonuses": [
-    {
-     "key": "gem",
-     "card": "ROG-004",
-     "colors": [
-      "g"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-ROG-OUT-II-03",
-   "class": "Rogue",
-   "subclass": "Outlaw",
-   "tier": 2,
-   "name": "Infamous Pistol",
-   "bonuses": [
-    {
-     "key": "heal",
-     "card": "ROG-OUT-004",
-     "colors": [
-      "g"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "LOOT-ROG-OUT-III-01",
-   "class": "Rogue",
-   "subclass": "Outlaw",
-   "tier": 3,
-   "name": "Dirk of Infamy",
-   "bonuses": [
-    {
-     "key": "sharpen",
      "card": "ROG-002",
      "colors": [
       "r",
@@ -2017,6 +1900,114 @@
      "colors": [
       "g"
      ]
+    },
+    {
+     "key": "quick",
+     "card": "ROG-ASN-001",
+     "colors": [
+      "b",
+      "r",
+      "g"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-ROG-ASN-IV-03",
+   "class": "Rogue",
+   "subclass": "Assassin",
+   "tier": 4,
+   "name": "Whispering Dirk of Shadows",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "ROG-ASN-003",
+     "colors": [
+      "r"
+     ]
+    },
+    {
+     "key": "quick",
+     "card": "ROG-003",
+     "colors": []
+    },
+    {
+     "key": "twin",
+     "card": "ROG-ASN-001",
+     "colors": [
+      "r",
+      "b",
+      "g"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-ROG-OUT-II-01",
+   "class": "Rogue",
+   "subclass": "Outlaw",
+   "tier": 2,
+   "name": "Lucky Knife",
+   "bonuses": [
+    {
+     "key": "gem",
+     "card": "ROG-OUT-001",
+     "colors": [
+      "r"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-ROG-OUT-II-02",
+   "class": "Rogue",
+   "subclass": "Outlaw",
+   "tier": 2,
+   "name": "Infamous Blunderbuss",
+   "bonuses": [
+    {
+     "key": "killdraw",
+     "card": "ROG-OUT-004",
+     "colors": [
+      "g"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-ROG-OUT-II-03",
+   "class": "Rogue",
+   "subclass": "Outlaw",
+   "tier": 2,
+   "name": "Notorious Dagger",
+   "bonuses": [
+    {
+     "key": "shield",
+     "card": "ROG-OUT-001",
+     "colors": [
+      "r"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "LOOT-ROG-OUT-III-01",
+   "class": "Rogue",
+   "subclass": "Outlaw",
+   "tier": 3,
+   "name": "Dagger of the Bounty",
+   "bonuses": [
+    {
+     "key": "shield",
+     "card": "ROG-OUT-003",
+     "colors": [
+      "b"
+     ]
+    },
+    {
+     "key": "quick",
+     "card": "ROG-003",
+     "colors": []
     }
    ]
   },
@@ -2025,20 +2016,19 @@
    "class": "Rogue",
    "subclass": "Outlaw",
    "tier": 3,
-   "name": "Dagger of Fortune",
+   "name": "Knife of the Long Odds",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-OUT-004",
+     "card": "ROG-004",
      "colors": [
       "g"
      ]
     },
     {
-     "key": "quick",
-     "card": "ROG-002",
+     "key": "gem2",
+     "card": "ROG-OUT-001",
      "colors": [
-      "g",
       "r"
      ]
     }
@@ -2049,19 +2039,20 @@
    "class": "Rogue",
    "subclass": "Outlaw",
    "tier": 3,
-   "name": "Dagger of Infamy",
+   "name": "Pistol of Renown",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-OUT-005",
+     "card": "ROG-001",
      "colors": [
-      "r"
+      "g"
      ]
     },
     {
-     "key": "rearm",
-     "card": "ROG-OUT-001",
+     "key": "gem2",
+     "card": "ROG-002",
      "colors": [
+      "g",
       "r"
      ]
     }
@@ -2072,25 +2063,24 @@
    "class": "Rogue",
    "subclass": "Outlaw",
    "tier": 4,
-   "name": "Wanted Dirk of Renown",
+   "name": "Infamous Knife of Fortune",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "ROG-004",
+     "key": "gem",
+     "card": "ROG-OUT-002",
      "colors": [
       "g"
      ]
     },
     {
-     "key": "twin",
-     "card": "ROG-002",
+     "key": "gem2",
+     "card": "ROG-OUT-005",
      "colors": [
-      "g",
       "r"
      ]
     },
     {
-     "key": "gem2",
+     "key": "quick",
      "card": "ROG-OUT-004",
      "colors": [
       "g"
@@ -2103,27 +2093,28 @@
    "class": "Rogue",
    "subclass": "Outlaw",
    "tier": 4,
-   "name": "Infamous Stiletto of Fortune",
+   "name": "Infamous Stiletto of Infamy",
    "bonuses": [
     {
      "key": "gem",
-     "card": "ROG-OUT-004",
+     "card": "ROG-OUT-001",
      "colors": [
-      "g"
+      "r"
      ]
     },
     {
      "key": "gem2",
-     "card": "ROG-OUT-002",
+     "card": "ROG-002",
      "colors": [
+      "r",
       "g"
      ]
     },
     {
      "key": "quick",
-     "card": "ROG-OUT-001",
+     "card": "ROG-OUT-003",
      "colors": [
-      "r"
+      "b"
      ]
     }
    ]
@@ -2133,23 +2124,25 @@
    "class": "Rogue",
    "subclass": "Outlaw",
    "tier": 4,
-   "name": "Infamous Kris of Fortune",
+   "name": "Lucky Kris of Infamy",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "ROG-003",
-     "colors": []
+     "key": "killdraw",
+     "card": "ROG-OUT-005",
+     "colors": [
+      "r"
+     ]
     },
     {
-     "key": "gem2",
+     "key": "quick",
      "card": "ROG-OUT-004",
      "colors": [
       "g"
      ]
     },
     {
-     "key": "quick",
-     "card": "ROG-OUT-005",
+     "key": "gem2",
+     "card": "ROG-OUT-001",
      "colors": [
       "r"
      ]

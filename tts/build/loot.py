@@ -20,11 +20,18 @@ from openpyxl import load_workbook
 from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.styles import Font, PatternFill, Alignment
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from render_cards import SWORD, STAR as CAST    # same power / cast symbols as the encounter cards
 HERE = os.path.dirname(os.path.abspath(__file__))
 FRAME = os.path.join(HERE, "card_frame")
 ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
 TIERS = (2, 3, 4)
-BASE_DAMAGE = {2: 1, 3: 2, 4: 2}             # the weapon's own "Activate: recycle a card - N{r}"
+BASE_DAMAGE = {2: 1, 3: 2, 4: 2}             # weapon Power by tier (or the heal on an Activate weapon)
+ACTIVATE = {"Priest"}                          # these classes' weapons have no Power: an Activate ability instead
+def base_line(w):
+    n = BASE_DAMAGE[w["tier"]]
+    if w["class"] in ACTIVATE: return f"Activate - Recycle a card: Heal an ally {n}."
+    return "Activate - Recycle a card: Deal its Power to an enemy."
 SLOTS = {2: ["minor"], 3: ["minor", "major"], 4: ["minor", "major", "major"]}
 SUB_WEIGHT = 2                                # subclass cards are picked this many times as often as core cards
 
@@ -69,28 +76,27 @@ def kw(c, k): return k.lower() in (c["keywords"] or "").lower()
 def says(c, *words): return any(w.lower() in c["text"].lower() for w in words)
 
 BONUSES = [
+    # Every bonus buffs the named card itself (Nolan, 2026-11-25): more gems, an extra rider, or a keyword.
     # key, slot, who, weight, text, eligible(card)
-    ("gem",       "minor", None, 5, "{n} gets +1{c}.",                                    lambda c: colors(c)),
-    ("shield",    "minor", None, 2, "When you play {n}, gain 1 Shield.",                   lambda c: True),
-    ("heal",      "minor", None, 2, "When you play {n}, heal 1.",                          lambda c: not says(c, "heal")),
-    ("killdraw",  "minor", None, 2, "If {n} defeats an enemy, draw a card.",               deals),
-    ("sharpen",   "minor", None, 2, "When you play {n}, this weapon gets +1 Power this turn.", lambda c: True),
+    ("gem",       "minor", None, 10, "{n} gets +1{c}.",                                   lambda c: colors(c)),
+    ("shield",    "minor", None, 2, "{n} also gives you 1 Shield.",                        lambda c: not says(c, "shield")),
+    ("heal",      "minor", None, 2, "{n} also heals you 1.",                               lambda c: not says(c, "heal")),
+    ("killdraw",  "minor", None, 2, "If {n} defeats an enemy, draw a card.",               lambda c: deals(c) and not says(c, "draw")),
     ("calm",      "minor", None, 1, "{n} loses Aggro.",                                    lambda c: kw(c, "Aggro")),
-    ("burn",      "minor", {"Fire"}, 4, "When you play {n}, apply 1 burn to an enemy.",    lambda c: True),
-    ("frost",     "minor", {"Ice"}, 4, "When {n} deals damage, apply Frost to that enemy.", lambda c: deals(c) and not says(c, "frost")),
-    ("ember",     "minor", {"Dragonheart"}, 4, "When you play {n}, gain 1 Ember.",         lambda c: True),
-    ("renown",    "minor", {"Outlaw"}, 4, "If {n} defeats an enemy, gain renown.",         lambda c: deals(c) and not says(c, "renown")),
-    ("fade",      "minor", {"Assassin"}, 4, "If {n} defeats an enemy, enter stealth.",     lambda c: deals(c) and not says(c, "stealth")),
-    ("mend",      "minor", {"Priest"}, 3, "When you play {n}, heal an ally 1.",             lambda c: True),
+    ("burn",      "minor", {"Fire"}, 3, "{n} also applies 1 burn to an enemy.",            lambda c: True),
+    ("frost",     "minor", {"Ice"}, 3, "{n} also applies Frost to each enemy it damages.", lambda c: deals(c) and not says(c, "frost")),
+    ("ember",     "minor", {"Dragonheart"}, 3, "{n} also gains you 1 Ember.",              lambda c: not says(c, "ember")),
+    ("renown",    "minor", {"Outlaw"}, 3, "If {n} defeats an enemy, gain renown.",         lambda c: deals(c) and not says(c, "renown")),
+    ("fade",      "minor", {"Assassin"}, 3, "If {n} defeats an enemy, enter stealth.",     lambda c: deals(c) and not says(c, "stealth")),
+    ("mend",      "minor", {"Priest"}, 3, "{n} also heals an ally 1.",                     lambda c: not says(c, "heal")),
     ("ward",      "minor", {"Ironclad"}, 3, "While you have Shield, {n} gets +1{c}.",      lambda c: colors(c)),
-    ("flourish",  "minor", {"Blade Dancer"}, 4, "When you play {n}, untap this weapon.",   lambda c: True),
-    ("gem2",      "major", None, 4, "{n} gets +2{c}.",                                     lambda c: colors(c)),
+    ("flourish",  "minor", {"Blade Dancer"}, 3, "{n} also untaps a weapon you control.",   lambda c: not says(c, "untap")),
+    ("gem2",      "major", None, 5, "{n} gets +2{c}.",                                     lambda c: colors(c)),
     ("twin",      "major", None, 3, "{n} gets +1{c} and +1{c2}.",                          lambda c: len(colors(c)) >= 2),
     ("quick",     "major", None, 3, "{n} has Quickcast.",                                  lambda c: c["card_type"] == "Skill" and not kw(c, "Quickcast")),
-    ("rearm",     "major", None, 2, "When you play {n}, untap this weapon.",               lambda c: True),
-    ("imbue",     "major", {"Priest"}, 4, "{n} is always Imbued.",                         lambda c: says(c, "imbued")),
-    ("whelp",     "major", {"Broodmother"}, 3, "When you play {n}, create a Whelp token.", lambda c: True),
-    ("stoke",     "major", {"Scaleborn"}, 3, "When you play {n}, gain 2 Embers.",          lambda c: True),
+    ("imbue",     "major", {"Priest"}, 3, "{n} is always Imbued.",                         lambda c: says(c, "imbued")),
+    ("whelp",     "major", {"Broodmother"}, 3, "{n} also creates a Whelp token.",          lambda c: True),
+    ("stoke",     "major", {"Scaleborn"}, 3, "{n} also gains you 2 Embers.",               lambda c: True),
 ]
 BONUS = {b[0]: b for b in BONUSES}
 
@@ -119,7 +125,6 @@ def roll_bonuses(rng, tier, cls_name, sub_name, pool, by_id):
         options = []
         for key, bslot, who, w, _t, ok in BONUSES:
             if bslot != slot or key in used_keys or _t in used_keys: continue
-            if key == "rearm" and sub_name == "Blade Dancer": continue     # they get untap as their minor already
             if who and cls_name not in who and sub_name not in who: continue
             for c in pool:
                 if c["id"] in used_cards or not ok(c): continue
@@ -153,7 +158,7 @@ def roll_weapon(rng, tier, cls_name, sub_name, pool, by_id, taken, wid):
             "bonuses": roll_bonuses(rng, tier, cls_name, sub_name, pool, by_id)}
 
 def weapon_text(w, by_id):
-    parts = [f"Weapon {ROMAN[w['tier']]}. Activate: recycle a card - {BASE_DAMAGE[w['tier']]}{{r}}."]
+    parts = [f"Weapon {ROMAN[w['tier']]}. " + base_line(w)]
     parts += [bonus_text(b["key"], by_id[b["card"]], b["colors"]) for b in w["bonuses"]]
     return " ".join(parts)
 
@@ -176,7 +181,12 @@ def safe(name): return re.sub(r'[<>:"/\\|?*]', "", name)
 def card_html(w, by_id):
     tier, tint = w["tier"], FLAVOR[w["subclass"]][2]
     def gems(t): return re.sub(r"\{([rgb])\}", r'<span class="gem \1"></span>', t)
-    lines = [f'<p><b>Activate</b> - Recycle a card: {BASE_DAMAGE[tier]}<span class="gem r"></span></p>']
+    bl = html.escape(base_line(w), quote=False).replace("Activate - ", "<b>Activate</b> - ", 1)
+    lines = [f'<p class="base">{bl}</p>']
+    if w["class"] in ACTIVATE:
+        stat = f'<div class="power act" title="Activate">{CAST}</div>'
+    else:
+        stat = f'<div class="power">{SWORD}<span>{BASE_DAMAGE[tier]}</span></div>'
     for b in w["bonuses"]:
         c = by_id[b["card"]]
         t = html.escape(bonus_text(b["key"], c, b["colors"]), quote=False)
@@ -185,8 +195,8 @@ def card_html(w, by_id):
     return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css"></head><body>
 <div class="card weapon" id="card">
   <div class="head"><div class="titles"><div class="name" id="name">{html.escape(w["name"])}</div>
-    <div class="typeline"><span class="t">{html.escape(w["class"])} Weapon — {html.escape(w["subclass"])}</span></div></div>
-    <div class="stats"><div class="power tier"><span>{ROMAN[tier]}</span></div></div></div>
+    <div class="typeline"><span class="t">{html.escape(w["class"])} Weapon — {html.escape(w["subclass"])} · Tier {ROMAN[tier]}</span></div></div>
+    <div class="stats">{stat}</div></div>
   <div class="art loot" style="--tint:{tint}"><span>{ROMAN[tier]}</span></div>
   <div class="rule"><div class="l"></div><div class="d"></div><div class="o"></div><div class="d"></div><div class="l"></div></div>
   <div class="text" id="text">{"".join(lines)}</div>
@@ -199,7 +209,7 @@ FIT = """() => {
   const n = document.getElementById('name');
   let f = 19; while (n.scrollWidth > n.clientWidth && f > 12) { f -= 0.5; n.style.fontSize = f + 'px'; }
   const t = document.getElementById('text');
-  f = 15; while (t.scrollHeight > t.clientHeight && f > 10) { f -= 0.5; t.style.fontSize = f + 'px'; }
+  f = 19; while (t.scrollHeight > t.clientHeight && f > 13) { f -= 0.5; t.style.fontSize = f + 'px'; }
   return { name: n.scrollWidth <= n.clientWidth, text: t.scrollHeight <= t.clientHeight };
 }"""
 
@@ -271,7 +281,7 @@ def main():
     for w in weapons:
         cards.append({"id": w["id"], "name": w["name"], "set": f"LOOT-{cls_code[w['class']]}", "card_type": "Weapon",
                       "traits": f"{w['class']} Weapon - {w['subclass']}", "keywords": None, "text": weapon_text(w, by_id),
-                      "power": BASE_DAMAGE[w["tier"]], "health": None, "channel": None, "qty": 1,
+                      "power": None if w["class"] in ACTIVATE else BASE_DAMAGE[w["tier"]], "health": None, "channel": None, "qty": 1,
                       "source_file": f"cards/loot/{w['class']}/{safe(w['name'])}.png",
                       "notes": f"Rolled loot, tier {ROMAN[w['tier']]} (tts/build/loot.py)"})
     for c in cards:
@@ -289,7 +299,7 @@ def main():
 
     # readable list for review
     md = [f"# Journeys loot: rolled weapons\n", f"Made by `tts/build/loot.py` (seed {used_seed}). "
-          f"Base: recycle a card - {BASE_DAMAGE[2]}/{BASE_DAMAGE[3]}/{BASE_DAMAGE[4]}{{r}} at tier II/III/IV.\n"]
+          f"Power {BASE_DAMAGE[2]}/{BASE_DAMAGE[3]}/{BASE_DAMAGE[4]} at tier II/III/IV; Priest weapons have no Power and heal an ally that much instead.\n"]
     for r in subs:
         md.append(f"\n## {r['class']} - {r['subclass']}\n")
         for w in [x for x in weapons if x["subclass"] == r["subclass"] and x["class"] == r["class"]]:
