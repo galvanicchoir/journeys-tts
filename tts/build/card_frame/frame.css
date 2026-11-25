@@ -79,3 +79,14 @@ html, body { margin: 0; padding: 0; background: #1b1612; }
 /* footer */
 .foot { height: 14px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 6px; color: #b39a6c;
   font-family: Cinzel, serif; font-weight: 700; font-size: 9.5px; letter-spacing: .8px; }
+
+/* loot weapons (tts/build/loot.py) */
+.weapon .head { background: linear-gradient(180deg, #4d535c, #1f2328); }
+.power.tier span { top: 12px; font-size: 21px; letter-spacing: -0.5px; }
+.art.loot { height: 170px; background: radial-gradient(circle at 50% 45%, var(--tint) 0%, #2b2420 75%); }
+.art.loot span { font-family: Cinzel, serif; font-weight: 800; font-size: 96px; color: rgba(246,231,193,.85);
+  text-shadow: 0 2px 0 #000, 0 0 18px rgba(0,0,0,.6); line-height: 1; }
+.text .cn { font-family: Cinzel, serif; font-weight: 700; font-size: .9em; color: #5a1a14; }
+.text p.bonus { padding-left: 14px; position: relative; }
+.text p.bonus::before { content: ""; position: absolute; left: 1px; top: .45em; width: 6px; height: 6px; transform: rotate(45deg); background: #8a6a2e; }
+.text p.bonus.major::before { background: #c9a24a; box-shadow: 0 0 0 1.5px #5a1a14; }

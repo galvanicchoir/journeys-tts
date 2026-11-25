@@ -1396,6 +1396,14 @@ local function charPanel(c)
     lvl = lvl .. uBtn(c .. "_create", "Create Character", "j_ui_create", 320, 58, UC.green, 24)
   end
   body = body .. hRow(62, lvl)
+  if s.built then                                -- rolled loot weapons for this class + subclass (tts/build/loot.py)
+    local loot = uText("Loot", 20, UC.dim, 'preferredWidth="130" minWidth="130"') .. uText("Roll a weapon:", 18, UC.text, 'preferredWidth="150"')
+    for _, t in ipairs({2, 3, 4}) do
+      loot = loot .. uBtn(c .. "_loot_" .. t, "Tier " .. ROMAN[t] .. "  (" .. #lootFor(s, t) .. ")", "j_ui_loot", 170, 46, UC.btn, 20)
+    end
+    body = body .. hRow(62, loot .. uText("Spawns on Weapon 2", 16, UC.dim, 'flexibleWidth="1"'))
+    rows = rows + 1
+  end
 
   local core = {}
   for _, id in ipairs(SETS[cls.core].cards) do if id ~= cls.weapon then core[#core + 1] = id end end
@@ -1634,6 +1642,27 @@ function j_ui_seal(player, _, id)
 end
 function j_ui_create(player, _, id) buildCharacter(idParts(id)[1], player.color) end
 function j_ui_remove(player, _, id) removeCharacter(idParts(id)[1]) end
+-- ---------------- Loot: a random rolled weapon for the seat's class + subclass and the chosen tier
+ROMAN = {"I", "II", "III", "IV"}
+function lootFor(s, tier)
+  local r = {}
+  for _, w in ipairs(LOOT or {}) do
+    if w.class == s.class and w.subclass == s.subclass and w.tier == tier then r[#r + 1] = w.id end
+  end
+  return r
+end
+function rollWeapon(seat, tier)
+  local s, obj = STATE.seats[seat], matOf(seat)
+  if not (s and s.built and obj) then return end
+  local pool = lootFor(s, tier)
+  if #pool == 0 then broadcastToColor("No tier " .. ROMAN[tier] .. " " .. s.subclass .. " weapons rolled yet.", seat, {1, 0.6, 0.2}) return end
+  local id = pool[math.random(#pool)]
+  local sl = slot("Weapon 2")
+  spawnCards({id}, imageToWorld(obj, sl.x, 1.5, sl.z), obj.getRotation().y, false, {"J_Seat_" .. seat}, seat)
+  broadcastToAll(seat .. " found " .. CARDS[id].name .. " (Tier " .. ROMAN[tier] .. ")", stringColorToRGB(seat))
+end
+function j_ui_loot(player, _, id) local p = idParts(id) rollWeapon(p[1], tonumber(p[3])) end
+
 function j_ui_level(player, _, id) local p = idParts(id) changeLevel(p[1], player.color, tonumber(p[3])) end
 
 function j_ui_tab(player, _, id) local p = idParts(id) ui(p[1]).tab = p[3] buildUI() end

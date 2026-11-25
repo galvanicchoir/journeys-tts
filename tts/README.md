@@ -10,7 +10,8 @@
 Two buttons sit in the **bottom-right corner of the screen**; each opens a near-full-screen panel only you can see.
 - **Character** - click a Class, Subclass and Ancestry along the top; the cards below show exactly what you'll get
   (hero, weapon, ancestry, core, subclass), so it doubles as a card browser. Set the level, then **Create Character**.
-  Once built: level -/+ and **Remove Character**.
+  Once built: level -/+ and **Remove Character**, and **Loot**: Tier II / III / IV buttons that put a random rolled
+  weapon for your class and subclass on your Weapon 2 slot (the number on each button is how many are in the pool).
 - **Forge** (tab in the Character panel) - socket gems into any card (hero, weapon, ancestry, deck cards), max 2 per card,
   +1/+2 of the same colour stack. Pick a gem from the pool, click a card; right-click removes a *pending* gem.
   **Seal** makes them permanent and puts the gem stickers on the real cards (wherever they are - deck, hand, table).

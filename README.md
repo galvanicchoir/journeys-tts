@@ -19,6 +19,16 @@ python3 tts/build/build.py <repo folder> https://raw.githubusercontent.com/galva
 ```
 Every image link gets `?v=<content hash>`, so a changed image always gets a new link and TTS never shows a stale cached copy.
 
+## Loot weapons
+`tts/build/loot.py` rolls a pool of class-locked weapons (tiers II-IV, 3 per subclass per tier). Each bonus names a card
+from that class's core set or the weapon's subclass. The pool is kept in `data/loot-weapons.json` (readable list:
+`data/loot-weapons.md`) and only changes with `--reroll`. Run it after `catalog.py` and before `build.py`:
+```
+python3 tts/build/loot.py <repo folder>            # reuse the pool, re-render the cards
+python3 tts/build/loot.py <repo folder> --reroll   # roll a new pool (--seed N to repeat a roll, --per N for pool size)
+```
+The bonus tables, names and base damage are at the top of `loot.py`.
+
 ## Encounter card frame
 ```
 pip install playwright openpyxl pillow
