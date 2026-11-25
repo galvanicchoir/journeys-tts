@@ -15,6 +15,9 @@ Give card ids to render only those (e.g. TWG-004 IGK-003)."""
 import html, os, re, sys
 from openpyxl import load_workbook
 from PIL import Image, ImageChops
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
+import die_icons
+DIE_FAMILY = "eyes"                         # boss die symbols: eyes, claws, flames or pips (see card_frame/die_icons.py)
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
 ONLY = set(sys.argv[2:])
@@ -61,6 +64,10 @@ SWORD = ('<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e
 SHIELD = ('<svg width="44" height="50" viewBox="0 0 30 33"><path d="M15 1.5 27.5 5.5v10c0 8-6 13.5-12.5 16C8.5 29 2.5 23.5 2.5 15.5v-10z" '
           'fill="{fill}" stroke="#e6c46a" stroke-width="1.6"/><path d="M15 4 25 7.2v8.3c0 6.6-4.9 11.2-10 13.3-5.1-2.1-10-6.7-10-13.3V7.2z" '
           'fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="0.8"/></svg>')
+STAR = ('<svg width="34" height="34" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.2" fill="none" stroke="#b89cf0" stroke-width="1" opacity=".7"/>'
+        '<circle cx="12" cy="12" r="7.2" fill="none" stroke="#e6c46a" stroke-width="0.8" stroke-dasharray="1.2 2.2"/>'
+        '<path d="M12 2.5 13.7 10.3 21.5 12 13.7 13.7 12 21.5 10.3 13.7 2.5 12 10.3 10.3Z" fill="#fbecc4" stroke="#e6c46a" stroke-width=".6" stroke-linejoin="round"/>'
+        '<path d="M12 7.5 12.8 11.2 16.5 12 12.8 12.8 12 16.5 11.2 12.8 7.5 12 11.2 11.2Z" fill="#c9a6ff"/></svg>')
 PICTURE = ('<svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#6d5f4c" stroke-width="1.4" stroke-linecap="round" '
            'stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>')
 
@@ -81,7 +88,8 @@ def rules_html(text, keywords):
     out = re.sub(r"\{([rgb])\}", r'<span class="gem \1"></span>', out)
     lead = "".join(f"<p><b>{html.escape(k)}</b></p>" for k in kws if k.lower() not in t.lower())
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
-    out = re.sub(r"\s(?=<b>[ABC]</b> - )", "</p><p>", out)
+    out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
+    out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
     return lead + (f"<p>{out}</p>" if out else "")
 
 def clear_html(channel):
@@ -122,11 +130,13 @@ def card_html(c, set_name):
     name = html.escape(s(c["name"]))
     tl = rank_svg(ti["rank"]) if ti["rank"] else ""
     tl += f'<span class="t">{html.escape(ti["type"])}</span>'
-    if ti["joins"]: tl += f'<span class="chip">{CHAIN}{html.escape(ti["joins"])}</span>'
     right = ""
     if kind == "Enemy":
         hp = s(c["health"]) or "–"
-        right = (f'<div class="stats"><div class="power">{SWORD}<span>{html.escape(s(c["power"]) or "0")}</span></div>'
+        acts = s(c["power"]) in ("", "0") and re.search(r"\bAct\s-", s(c["text"]))
+        power = (f'<div class="power act" title="Acts">{STAR}</div>' if acts else
+                 f'<div class="power">{SWORD}<span>{html.escape(s(c["power"]) or "0")}</span></div>')
+        right = (f'<div class="stats">{power}'
                  f'<div class="health">{SHIELD.format(fill="#2f5fb0" if horde else "#a82a24")}'
                  f'<span class="{"small" if len(hp) > 2 else ""}">{html.escape(hp)}</span></div></div>')
     elif kind == "Obstacle" and s(c["channel"]):

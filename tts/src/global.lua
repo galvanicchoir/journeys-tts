@@ -1044,19 +1044,9 @@ function addToStack(id, obj, color, from)
     layoutStack(id)
     return
   end
-  local info, card = stackInfo(obj)
-  local ok = info.with == "Any" or #list == 0
-  for _, g in ipairs(list) do
-    local o = getObjectFromGUID(g)
-    if o then
-      local si, oc = stackInfo(o)
-      if si.role == info.with or (oc and oc.name:find(info.with, 1, true)) then ok = true end
-    end
-  end
+  -- Any enemy can join any stack (stack-linking was dropped 2026-11-24); its rank still sets where it sits.
+  local info = stackInfo(obj)
   table.insert(list, ruleIndex(list, info), obj.getGUID())
-  if not ok then
-    broadcastToAll((card and card.name or "That enemy") .. " normally stacks with " .. info.with .. ".", {0.9, 0.8, 0.5})
-  end
   -- A unit joining a stack pulls its aggro onto the player who put it there (the one who drew it).
   if color and SEATS[color] then STATE.aggro[id] = color end
   layoutStack(id)
