@@ -25,6 +25,12 @@ cards, sets, classes, advs, journey, bosses = (rows(wb[n]) for n in ("Cards", "S
 enhs = [r for r in rows(wb["Enhancements"]) if r.get("enh_id") and not str(r["enh_id"]).startswith("(example)")] if "Enhancements" in wb.sheetnames else []
 set_by = {s["set"]: s for s in sets}
 
+# A card drawn in the new frame by render_cards.py (cards/framed/...) replaces its export; delete it to go back.
+def card_image(c):
+    rel = str(c["source_file"]).replace("\\", "/")
+    framed = os.path.join(ROOT, "cards", "framed", rel[len("cards/"):] if rel.startswith("cards/") else rel)
+    return framed if os.path.exists(framed) else os.path.join(ROOT, c["source_file"])
+
 # ---------- deck sheets, one per back type ----------
 os.makedirs(os.path.join(TTS, "sheets"), exist_ok=True); os.makedirs(os.path.join(TTS, "images"), exist_ok=True)
 sheets, card_out = [], {}
@@ -39,7 +45,7 @@ for back in ("player", "encounter"):
         img = Image.new("RGB", (CW * cols, CH * rws), (25, 25, 25))
         os.makedirs(os.path.join(TTS, "images", "cards"), exist_ok=True)
         for i, c in enumerate(chunk):
-            im = Image.open(os.path.join(ROOT, c["source_file"])).convert("RGB").resize((CW, CH), Image.LANCZOS)
+            im = Image.open(card_image(c)).convert("RGB").resize((CW, CH), Image.LANCZOS)
             im.resize((300, 420), Image.LANCZOS).save(os.path.join(TTS, "images", "cards", c["id"] + ".png"), optimize=True)
             img.paste(im, ((i % cols) * CW, (i // cols) * CH))
             card_out[c["id"]] = (n, i)

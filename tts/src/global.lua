@@ -22,7 +22,7 @@ ENC_DISC_POS  = {-11.6, 1.5, -1.8}
 STACK_X0      = -7.75              -- x of Stack 1 (west); the others follow every STACK_DX
 STACK_DX      = 2.7
 STACK_REAR_Z  = 2.3                -- centre of a stack's rear card (north end of the column)
-STACK_STEP    = 0.75               -- how far each card in front sits below the one behind (shows its name)
+STACK_STEP    = 0.65               -- how far each card in front sits below the one behind (shows its header + DMG counter)
 STACK_SPAN    = 3.0                -- longest cascade (rear card centre to front card centre)
 STACK_ZMIN, STACK_ZMAX = -2.45, 3.95   -- a stack column's extent along z
 STACK_BAR_Z   = -3.05              -- aggro token + Aggro button row
@@ -899,7 +899,8 @@ function j_aggro_S5(o, pc) setAggro("S5", pc) end
 function j_aggro_S6(o, pc) setAggro("S6", pc) end
 
 -- ------------------------------------------------------------------ enemy health / horde bodies
--- Every enemy in a stack gets a counter in its top-right corner (the part that stays visible in a cascade).
+-- Every enemy in a stack gets a counter just under its header, on the right (power and health sit in the header's
+-- top-right corner on the new frame; this row still shows in a cascade).
 -- Normal enemies count damage taken, starting at 0. Hordes count bodies: a horde enters with its health
 -- (x players if starred) in bodies, damage removes bodies, Reinforce adds one.
 -- Click +1, right-click -1. STATE.hp[guid] = damage (or bodies for a horde).
@@ -935,7 +936,7 @@ function drawEnemyHP(o)
     tip = "Damage taken" .. (hp > 0 and (" (health " .. hp .. ")") or "") .. ". Click: +1   |   Right-click: -1"
   end
   o.createButton({click_function = "j_enemyHP", function_owner = Global, label = label, tooltip = tip,
-    position = {0.62, 0.3, -1.2}, rotation = {0, 0, 0}, width = 360, height = 120, font_size = 90,
+    position = {0.62, 0.3, -1.0}, rotation = {0, 0, 0}, width = 360, height = 120, font_size = 90,
     color = {0.45, 0.08, 0.08, 0.92}, font_color = {1, 1, 1}})
 end
 function initEnemyHP(o)
