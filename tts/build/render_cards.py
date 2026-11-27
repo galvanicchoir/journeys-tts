@@ -98,6 +98,11 @@ def rules_html(text, keywords):
     out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
     return lead + (f"<p>{out}</p>" if out else "")
 
+def is_short(rules):
+    """Short text (up to two lines/paragraphs, e.g. a keyword line + one ability): centre it across as well as down."""
+    words = re.sub(r"<[^>]+>", "", rules)
+    return len(re.findall(r"<p[ >]", rules)) <= 2 and len(words) <= 110
+
 def clear_html(channel):
     parts = []
     for tok in re.findall(r"\{([rgb])\}|(\|)", s(channel)):
@@ -148,13 +153,14 @@ def card_html(c, set_name):
     elif kind == "Obstacle" and s(c["channel"]):
         right = clear_html(c["channel"])
     art = art_for(c)
+    rules = rules_html(c["text"], c["keywords"])
     art_html = (f'<img src="file://{art}">' if art else f'<div class="ph">{PICTURE}<span>ART</span></div>')
     return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css"></head><body>
 <div class="card {cls}" id="card">
   <div class="head"><div class="titles"><div class="name" id="name">{name}</div><div class="typeline">{tl}</div></div>{right}</div>
   <div class="art">{art_html}</div>
   <div class="rule"><div class="l"></div><div class="d"></div><div class="o"></div><div class="d"></div><div class="l"></div></div>
-  <div class="text" id="text">{rules_html(c["text"], c["keywords"])}</div>
+  <div class="text{' short' if is_short(rules) else ''}" id="text">{rules}</div>
   <div class="foot"><span>{html.escape(set_name)}</span><span>{html.escape(s(c["id"]))}</span></div>
 </div></body></html>"""
 
@@ -162,7 +168,7 @@ FIT = """() => {
   const n = document.getElementById('name');
   let f = 19; while (n.scrollWidth > n.clientWidth && f > 13) { f -= 0.5; n.style.fontSize = f + 'px'; }
   const t = document.getElementById('text');
-  f = 15; while (t.scrollHeight > t.clientHeight && f > 10) { f -= 0.5; t.style.fontSize = f + 'px'; }
+  f = 19; while (t.scrollHeight > t.clientHeight && f > 11) { f -= 0.5; t.style.fontSize = f + 'px'; }
   return { name: n.scrollWidth <= n.clientWidth, text: t.scrollHeight <= t.clientHeight };
 }"""
 

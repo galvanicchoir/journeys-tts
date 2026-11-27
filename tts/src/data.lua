@@ -5,17 +5,17 @@ SHEETS = {{
     ["w"] = 10,
     ["h"] = 7
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-02-41cc9643.png?v=f98b5de1",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-02-b451182a.png?v=ef449b55",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-player.png?v=c92a287b",
     ["w"] = 10,
     ["h"] = 7
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-03-e55a5d03.png?v=f949b52e",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/player-03-8b49e239.png?v=bf2403a0",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-player.png?v=c92a287b",
     ["w"] = 7,
     ["h"] = 5
   }, {
-    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-04-1dc7444d.png?v=0d16b3f1",
+    ["face"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/encounter-04-36e0d82d.png?v=164b8eb4",
     ["back"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/sheets/back-encounter.png?v=45748297",
     ["w"] = 8,
     ["h"] = 5
@@ -3238,385 +3238,385 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ROG-OUT-005.png?v=e5399d00"
   }, {
     ["name"] = "TWG-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-001.png?v=e8e4bb92"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-001.png?v=a201ed13"
   }, {
     ["name"] = "TWG-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-002.png?v=854b57ca"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-002.png?v=6bad2ab1"
   }, {
     ["name"] = "TWG-003",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-003.png?v=e90bae08"
   }, {
     ["name"] = "TWG-004",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-004.png?v=7e10b1b9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-004.png?v=452514be"
   }, {
     ["name"] = "TWG-005",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-005.png?v=e39d7427"
   }, {
     ["name"] = "TWG-006",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-006.png?v=52107a9f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-006.png?v=240b7cda"
   }, {
     ["name"] = "TWG-007",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-007.png?v=6622d2f8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-007.png?v=4319b85d"
   }, {
     ["name"] = "TWG-008",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-008.png?v=c5c5d652"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-008.png?v=30028486"
   }, {
     ["name"] = "TWG-009",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-009.png?v=697b32cd"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-009.png?v=a97790f3"
   }, {
     ["name"] = "TWG-010",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-010.png?v=a5c68f84"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TWG-010.png?v=b8625bab"
   }, {
     ["name"] = "IGK-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-001.png?v=b664aed9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-001.png?v=e98366cb"
   }, {
     ["name"] = "IGK-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-002.png?v=9cf7897a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-002.png?v=044cfa03"
   }, {
     ["name"] = "IGK-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-003.png?v=aa805553"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-003.png?v=a0e9d8eb"
   }, {
     ["name"] = "IGK-004",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-004.png?v=30c25dde"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/IGK-004.png?v=5360809f"
   }, {
     ["name"] = "MMS-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-001.png?v=b185f2eb"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-001.png?v=41bab3c3"
   }, {
     ["name"] = "MMS-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-002.png?v=02cd5fd6"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-002.png?v=1aa8cfb9"
   }, {
     ["name"] = "MMS-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-003.png?v=08f18150"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-003.png?v=d8ed42c7"
   }, {
     ["name"] = "MMS-004",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-004.png?v=2f353dcf"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/MMS-004.png?v=521660e1"
   }, {
     ["name"] = "PTP-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/PTP-001.png?v=2c423b3a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/PTP-001.png?v=02f57749"
   }, {
     ["name"] = "TAT-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=4ce4f787"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-001.png?v=24430ea1"
   }, {
     ["name"] = "TAT-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=8632a093"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-002.png?v=5687269e"
   }, {
     ["name"] = "TAT-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=47d8b8d4"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/TAT-003.png?v=8d2dad22"
   }, {
     ["name"] = "SOL-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-001.png?v=30b0a9ce"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-001.png?v=a3da4c52"
   }, {
     ["name"] = "SOL-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-002.png?v=b639f9a5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-002.png?v=f6055710"
   }, {
     ["name"] = "SOL-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-003.png?v=b854b082"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-003.png?v=d602731d"
   }, {
     ["name"] = "SOL-004",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-004.png?v=1663a9a3"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-004.png?v=e4db933e"
   }, {
     ["name"] = "SOL-005",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-005.png?v=f58b6976"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-005.png?v=93a136fe"
   }, {
     ["name"] = "SOL-006",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-006.png?v=1e4508ce"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-006.png?v=b06dbd49"
   }, {
     ["name"] = "SOL-007",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-007.png?v=1add5ffa"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/SOL-007.png?v=55928b11"
   }, {
     ["name"] = "BOS-001",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=4881dae0"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-001.png?v=95624305"
   }, {
     ["name"] = "BOS-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-002.png?v=fe349724"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-002.png?v=333c1c4c"
   }, {
     ["name"] = "BOS-003",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-003.png?v=d2131d5a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-003.png?v=f1c1b08e"
   }, {
     ["name"] = "BOS-004",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-004.png?v=8aa5ab45"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-004.png?v=88c28b18"
   }, {
     ["name"] = "BOS-005",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-005.png?v=13caf692"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-005.png?v=73a1dd58"
   }, {
     ["name"] = "BOS-006",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-006.png?v=e2fec466"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/BOS-006.png?v=cb43ec79"
   }, {
     ["name"] = "ETK-001",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-001.png?v=568c5a21"
   }, {
     ["name"] = "ETK-002",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-002.png?v=34eb2a95"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/ETK-002.png?v=f2c4d241"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-01.png?v=51c24023"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-01.png?v=23893306"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-02.png?v=93ef976f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-02.png?v=ecfb3ddb"
   }, {
     ["name"] = "LOOT-MAG-FIR-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-03.png?v=cb3f536e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-II-03.png?v=cb167511"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-01.png?v=bf722e4a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-01.png?v=eda2d867"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-02.png?v=bd62a033"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-02.png?v=1136094c"
   }, {
     ["name"] = "LOOT-MAG-FIR-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-03.png?v=b668e9e8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-III-03.png?v=f30ef8cd"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-01.png?v=162c7982"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-01.png?v=92e571e8"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-02.png?v=587181ca"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-02.png?v=75044b74"
   }, {
     ["name"] = "LOOT-MAG-FIR-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-03.png?v=8b01c9f1"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-FIR-IV-03.png?v=80a185a4"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-01.png?v=af4ee838"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-01.png?v=42f5aa02"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-02.png?v=4ab7507e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-02.png?v=ce6db771"
   }, {
     ["name"] = "LOOT-MAG-ICE-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-03.png?v=014f9c91"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-II-03.png?v=06784713"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-01.png?v=8f72b1ba"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-01.png?v=7912283c"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-02.png?v=8be63c12"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-02.png?v=c9e24382"
   }, {
     ["name"] = "LOOT-MAG-ICE-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-03.png?v=34ed4142"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-III-03.png?v=0a2acc9a"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-01.png?v=cfcc4ef9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-01.png?v=35f77290"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-02.png?v=39d8ff75"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-02.png?v=0fca9bfb"
   }, {
     ["name"] = "LOOT-MAG-ICE-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-03.png?v=49ab8d8e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-MAG-ICE-IV-03.png?v=dc44655f"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-01.png?v=376c106b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-01.png?v=ceebf6e1"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-02.png?v=705d62b2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-02.png?v=8ebb124e"
   }, {
     ["name"] = "LOOT-WAR-BLD-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-03.png?v=70cdc275"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-II-03.png?v=6101ed3d"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-01.png?v=8aac9954"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-01.png?v=26befe76"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-02.png?v=1cda4692"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-02.png?v=53917d16"
   }, {
     ["name"] = "LOOT-WAR-BLD-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-03.png?v=ea3fded5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-III-03.png?v=97316b42"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-01.png?v=7f77115a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-01.png?v=3be8bc88"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-02.png?v=e249d2dc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-02.png?v=987272d8"
   }, {
     ["name"] = "LOOT-WAR-BLD-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-03.png?v=3be877d7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-BLD-IV-03.png?v=19467a40"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-01.png?v=ceb8a267"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-01.png?v=67ee943f"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-02.png?v=a2785d9b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-02.png?v=4f0b1651"
   }, {
     ["name"] = "LOOT-WAR-IRC-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-03.png?v=2bba2845"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-II-03.png?v=42be3339"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-01.png?v=e00b764c"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-01.png?v=13483feb"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-02.png?v=a389f5c9"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-02.png?v=ae356712"
   }, {
     ["name"] = "LOOT-WAR-IRC-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-03.png?v=f91e0945"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-III-03.png?v=4b6f13ca"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-01.png?v=8a438d29"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-01.png?v=b25d8d30"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-02.png?v=4b1f1e32"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-02.png?v=ae765f3b"
   }, {
     ["name"] = "LOOT-WAR-IRC-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-03.png?v=615b7b09"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-WAR-IRC-IV-03.png?v=c6fd5794"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-01.png?v=ad3b3658"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-01.png?v=eada8f11"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-02.png?v=571e55ff"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-02.png?v=6024ad44"
   }, {
     ["name"] = "LOOT-PRI-ANO-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-03.png?v=137d1a3a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-II-03.png?v=0f880d97"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-01.png?v=557ed691"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-01.png?v=87912f3a"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-02.png?v=4cc554e7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-02.png?v=80507f1f"
   }, {
     ["name"] = "LOOT-PRI-ANO-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-03.png?v=c0c43330"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-III-03.png?v=efdea617"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-01.png?v=f00d8b21"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-01.png?v=320619fa"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-02.png?v=f3ee916a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-02.png?v=235b9700"
   }, {
     ["name"] = "LOOT-PRI-ANO-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-03.png?v=dc0ab714"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-ANO-IV-03.png?v=39961efc"
   }, {
     ["name"] = "LOOT-PRI-SER-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-01.png?v=ade82404"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-01.png?v=109c3ec8"
   }, {
     ["name"] = "LOOT-PRI-SER-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-02.png?v=3a85837d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-02.png?v=dee2f0b5"
   }, {
     ["name"] = "LOOT-PRI-SER-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-03.png?v=4441bc1e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-II-03.png?v=c918aaec"
   }, {
     ["name"] = "LOOT-PRI-SER-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-01.png?v=90c9ad79"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-01.png?v=f28a4c92"
   }, {
     ["name"] = "LOOT-PRI-SER-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-02.png?v=25229918"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-02.png?v=d9651e98"
   }, {
     ["name"] = "LOOT-PRI-SER-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-03.png?v=3ec45ed6"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-III-03.png?v=5e5e3de7"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-01.png?v=9d619de2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-01.png?v=9834e00e"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-02",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-02.png?v=6a1cc3ed"
   }, {
     ["name"] = "LOOT-PRI-SER-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-03.png?v=718e5943"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-PRI-SER-IV-03.png?v=11cb387f"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-01.png?v=7e6abcb5"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-01.png?v=19d84715"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-02.png?v=058b6a26"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-02.png?v=23d9982a"
   }, {
     ["name"] = "LOOT-DRG-BRD-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-03.png?v=0e028e30"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-II-03.png?v=adf68ba6"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-01.png?v=db99aee1"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-01.png?v=628c283d"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-02.png?v=4382f8ac"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-02.png?v=9f4e421e"
   }, {
     ["name"] = "LOOT-DRG-BRD-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-03.png?v=3515e60e"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-III-03.png?v=eae1ffed"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-01.png?v=48150582"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-01.png?v=e7ebfc9f"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-02.png?v=0e4e8469"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-02.png?v=8e0281e4"
   }, {
     ["name"] = "LOOT-DRG-BRD-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-03.png?v=ebd94bb3"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-BRD-IV-03.png?v=1e046ce8"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-01.png?v=4c24c14f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-01.png?v=eb4ec86e"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-02.png?v=d07e17fa"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-02.png?v=c899d648"
   }, {
     ["name"] = "LOOT-DRG-SCB-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-03.png?v=5de62358"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-II-03.png?v=38a09084"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-01.png?v=fdd2f0e8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-01.png?v=18db3c5d"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-02.png?v=0802a95c"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-02.png?v=c7aba92a"
   }, {
     ["name"] = "LOOT-DRG-SCB-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-03.png?v=e68e9fa8"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-III-03.png?v=4581f7a2"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-01.png?v=8ca72c8a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-01.png?v=794a22ff"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-02.png?v=854be68f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-02.png?v=f2da397c"
   }, {
     ["name"] = "LOOT-DRG-SCB-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-03.png?v=afb77d4f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-DRG-SCB-IV-03.png?v=60802936"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-01.png?v=cf3ac364"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-01.png?v=f6b818bd"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-02.png?v=e043c7b2"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-02.png?v=cb761133"
   }, {
     ["name"] = "LOOT-ROG-ASN-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-03.png?v=0ec2abab"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-II-03.png?v=b1935e0a"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-01.png?v=4863a1b3"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-01.png?v=239423b1"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-02.png?v=e6d8b710"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-02.png?v=d972a8b4"
   }, {
     ["name"] = "LOOT-ROG-ASN-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-03.png?v=46ff33aa"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-III-03.png?v=fdb3cb4b"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-01.png?v=81875630"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-01.png?v=faa7032a"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-02.png?v=b679ab60"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-02.png?v=b70a3dc1"
   }, {
     ["name"] = "LOOT-ROG-ASN-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-03.png?v=e0013b70"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-ASN-IV-03.png?v=22c27ef6"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-01.png?v=f1005dde"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-01.png?v=94afa2b3"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-02.png?v=412ac678"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-02.png?v=3c34f82c"
   }, {
     ["name"] = "LOOT-ROG-OUT-II-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-03.png?v=3d4c5c07"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-II-03.png?v=a99f3bfd"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-01.png?v=4fe1a934"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-01.png?v=6751977a"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-02.png?v=7b89273d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-02.png?v=8f9ec766"
   }, {
     ["name"] = "LOOT-ROG-OUT-III-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-03.png?v=09c7d9da"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-III-03.png?v=7104dd80"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-01",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-01.png?v=601109f4"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-01.png?v=850d8041"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-02",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-02.png?v=64d2cd8f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-02.png?v=798b41ff"
   }, {
     ["name"] = "LOOT-ROG-OUT-IV-03",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=a2b3bd0d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=09af53de"
   }, {
     ["name"] = "MAP_TWG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=7f75cf1f"
