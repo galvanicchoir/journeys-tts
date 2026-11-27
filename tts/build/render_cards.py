@@ -17,6 +17,7 @@ from openpyxl import load_workbook
 from PIL import Image, ImageChops
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import die_icons
+import gem_icons
 DIE_FAMILY = "solid"                        # boss die symbols (A circle, B triangle, C square): solid, outline or ink
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
@@ -78,29 +79,40 @@ PICTURE = ('<svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="
 
 # ---------------------------------------------------------------- rules text
 LEAD = r"(Enter|Act|Defeat|Tap|Activate|Action|Imbued|A|B|C)"
-def rules_html(text, keywords):
-    t = s(text)
+def rules_html(text, keywords, name=""):
+    t = s(text).replace("{name}", s(name)) if name else s(text)   # "{name}" in card text = the card's own name
+    nm = html.escape(s(name), quote=False)
     kws = [k.strip() for k in s(keywords).split(",") if k.strip()]
     flavor = t.startswith('"') and t.endswith('"')
     out = html.escape(t, quote=False)
     if flavor:
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
-    out = re.sub(r"(^|(?<=[.:,] ))" + LEAD + r"(\s-\s)", r"\1<b>\2</b>\3", out)    # "Enter - ", "A - " ...
+    out = re.sub(r"(^|(?<=[.:,] ))(" + LEAD + r"(?:, [A-Za-z ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - "
+    if nm: out = out.replace(nm, "\x00")                                      # the card's own name never gets keyword-bolded
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     out = re.sub(r"(?<![\w>])(reinforces?|cascade)(?![\w<])", r"<b>\1</b>", out, flags=re.I)
-    out = re.sub(r"\{([rgb])\}", r'<span class="gem \1"></span>', out)
-    lead = "".join(f"<p><b>{html.escape(k)}</b></p>" for k in kws if k.lower() not in t.lower())
+    if nm: out = out.replace("\x00", nm)
+    out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), out)
+    gemify = lambda x: re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), x)
+    body = t.replace(s(name), "") if name else t
+    missing = [gemify(html.escape(k)) for k in kws if k.lower() not in body.lower()]   # e.g. "Lasting 2{g}"
+    lead = f"<p><b>{' \u00b7 '.join(missing)}</b></p>" if missing else ""            # all keywords on one line: "Focus · Aggro"
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
     out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
     return lead + (f"<p>{out}</p>" if out else "")
 
+def is_short(rules):
+    """Short text (up to two lines/paragraphs, e.g. a keyword line + one ability): centre it across as well as down."""
+    words = re.sub(r"<[^>]+>", "", rules)
+    return len(re.findall(r"<p[ >]", rules)) <= 2 and len(words) <= 110
+
 def clear_html(channel):
     parts = []
     for tok in re.findall(r"\{([rgb])\}|(\|)", s(channel)):
-        parts.append(f'<i class="{tok[0]}"></i>' if tok[0] else "<em>|</em>")
+        parts.append(gem_icons.svg(tok[0], 19, "#e6c46a", "pip") if tok[0] else "<em>|</em>")
     return f'<div class="clear"><b>CLEAR</b>{"".join(parts)}</div>'
 
 # ---------------------------------------------------------------- art
@@ -147,13 +159,14 @@ def card_html(c, set_name):
     elif kind == "Obstacle" and s(c["channel"]):
         right = clear_html(c["channel"])
     art = art_for(c)
+    rules = rules_html(c["text"], c["keywords"], c["name"])
     art_html = (f'<img src="file://{art}">' if art else f'<div class="ph">{PICTURE}<span>ART</span></div>')
     return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css"></head><body>
 <div class="card {cls}" id="card">
   <div class="head"><div class="titles"><div class="name" id="name">{name}</div><div class="typeline">{tl}</div></div>{right}</div>
   <div class="art">{art_html}</div>
   <div class="rule"><div class="l"></div><div class="d"></div><div class="o"></div><div class="d"></div><div class="l"></div></div>
-  <div class="text" id="text">{rules_html(c["text"], c["keywords"])}</div>
+  <div class="text{' short' if is_short(rules) else ''}" id="text">{rules}</div>
   <div class="foot"><span>{html.escape(set_name)}</span><span>{html.escape(s(c["id"]))}</span></div>
 </div></body></html>"""
 
@@ -161,7 +174,7 @@ FIT = """() => {
   const n = document.getElementById('name');
   let f = 19; while (n.scrollWidth > n.clientWidth && f > 13) { f -= 0.5; n.style.fontSize = f + 'px'; }
   const t = document.getElementById('text');
-  f = 15; while (t.scrollHeight > t.clientHeight && f > 10) { f -= 0.5; t.style.fontSize = f + 'px'; }
+  f = 19; while (t.scrollHeight > t.clientHeight && f > 11) { f -= 0.5; t.style.fontSize = f + 'px'; }
   return { name: n.scrollWidth <= n.clientWidth, text: t.scrollHeight <= t.clientHeight };
 }"""
 

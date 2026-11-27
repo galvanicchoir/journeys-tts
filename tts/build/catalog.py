@@ -25,8 +25,8 @@ CARDS = [
 # --- mage
 ("MAG-W01","Gnarled Staff","MAG","Weapon","Mage Weapon","","Weapon I. Activate: recycle a card - 1{r}.","","","","classes/mage/Gnarled Staff x1.png","Weapon icon read as recycle -> 1{r}; confirm"),
 ("MAG-001","Arcane Barrier","MAG","Skill","Mage Defense Skill","","Gain 2{g} Shield.","","","","classes/mage/Arcane Barrier x1.png",""),
-("MAG-002","Comeback","MAG","Skill","Mage Defense Skill","","Return 1{b} banished Subclass card you own to your hand.","","","","classes/mage/Comeback x1.png","Placeholder art"),
-("MAG-003","Knowledge","MAG","Skill","Mage Defense Skill","Quickcast","Recycle any number of cards. Then Draw 2{b} cards.","","","","classes/mage/Knowledge x1.png",""),
+("MAG-002","Counterspell","MAG","Skill","Mage Defense Skill","Quickcast","Play anytime after you draw a non-elite encounter card. Shuffle that card back into the encounter deck, then banish {name}.","","","","classes/mage/Counterspell x1.png","Replaced Comeback (2026-11-26)"),
+("MAG-003","Knowledge","MAG","Skill","Mage Defense Skill","Quickcast","Recycle any number of cards. Then Draw 1{b} card.","","","","classes/mage/Knowledge x1.png",""),
 ("MAG-004","Magic Missile","MAG","Skill","Mage Attack Skill","Focus","Deal 1{b} to any number of enemies.","","","","classes/mage/Magic Missile x1.png",""),
 ("MAG-FIR-001","Cinder","MAG-FIR","Skill","Fire Attack Skill","","Cinder has Quickcast if it targets an enemy with burn. Deal 2{r} to an enemy.","","","","classes/mage/fire/Cinder x1.png",""),
 ("MAG-FIR-002","Fire Tornado","MAG-FIR","Skill","Fire Attack Skill","","Distribute 2{b} burn among enemies.","","","","classes/mage/fire/Fire Tornado x1.png",""),

@@ -282,21 +282,21 @@
    "class": "Mage",
    "subclass": "Ice",
    "tier": 3,
-   "name": "Stave of Sleet",
+   "name": "Wand of the Glacier",
    "bonuses": [
     {
-     "key": "shield",
-     "card": "MAG-ICE-001",
+     "key": "killdraw",
+     "card": "MAG-ICE-002",
      "colors": [
-      "b",
-      "g"
+      "r",
+      "b"
      ]
     },
     {
-     "key": "gem2",
-     "card": "MAG-002",
+     "key": "quick",
+     "card": "MAG-001",
      "colors": [
-      "b"
+      "g"
      ]
     }
    ]
@@ -306,20 +306,21 @@
    "class": "Mage",
    "subclass": "Ice",
    "tier": 3,
-   "name": "Stave of Stillness",
+   "name": "Stave of the Long Winter",
    "bonuses": [
     {
-     "key": "gem",
-     "card": "MAG-002",
+     "key": "frost",
+     "card": "MAG-004",
      "colors": [
       "b"
      ]
     },
     {
      "key": "gem2",
-     "card": "MAG-ICE-004",
+     "card": "MAG-ICE-001",
      "colors": [
-      "b"
+      "b",
+      "g"
      ]
     }
    ]

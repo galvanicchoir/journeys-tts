@@ -1,9 +1,3 @@
 {
-  "_comment": "Images uploaded to Steam Cloud (via TTS). Key = path under tts/, value = the Steam link. The build uses the link instead of the local file when one is listed here.",
-  "images/stickers/gem-R1.png": "https://steamusercontent-a.akamaihd.net/ugc/10290688558618405537/9F29CB5436449614D5C1878FFEDBFCA54D8CA3B3/",
-  "images/stickers/gem-R2.png": "https://steamusercontent-a.akamaihd.net/ugc/11322701738256103911/F3420416B70E562B106597BE75D376927202AD62/",
-  "images/stickers/gem-B1.png": "https://steamusercontent-a.akamaihd.net/ugc/16084211439322185352/24E62A1266483DEF652E0CC659BD1310E1ADF2AF/",
-  "images/stickers/gem-B2.png": "https://steamusercontent-a.akamaihd.net/ugc/15718018506705896764/C3DBB74316CBF205E015A30420F6A8C24B3E9B07/",
-  "images/stickers/gem-G1.png": "https://steamusercontent-a.akamaihd.net/ugc/13719821655164692434/7C2083AEC3041B366B313BCAE9F9475483807CE8/",
-  "images/stickers/gem-G2.png": "https://steamusercontent-a.akamaihd.net/ugc/12677380092518905965/29ECBAFA7FDB56F5ACCF9F7388C6DF341CB8065E/"
+  "_comment": "Images uploaded to Steam Cloud (via TTS). Key = path under tts/, value = the Steam link. The build uses the link instead of the local file when one is listed here. The gem stickers moved back to GitHub on 2026-11-26 (redrawn as shaped gems)."
 }

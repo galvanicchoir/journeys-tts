@@ -275,14 +275,17 @@ def url(rel):  # rel = path under tts/
     return CLOUD.get(rel, f"{ASSET}/tts/{rel}")
 
 # ---------- Forge stickers: gem badges + enhancement banners ----------
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
+import gem_icons   # Red cut gem, Green hexagon, Blue teardrop
 os.makedirs(os.path.join(TTS, "images", "stickers"), exist_ok=True)
-GEM_RGB = {"R": (225, 45, 45), "B": (105, 130, 240), "G": (35, 195, 90)}
+GEM_RGB = {"R": (255, 20, 20), "B": (46, 102, 234), "G": (0, 201, 79)}   # same saturated colours as card_frame/gem_icons.py
 GEMS_L = []
 for col, rgb in GEM_RGB.items():
     for size in (1, 2):
         im = Image.new("RGBA", (256, 256), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
-        d.ellipse((8, 8, 248, 248), fill=rgb + (255,), outline=(255, 245, 215, 255), width=14)
-        d.text((128, 132), f"+{size}", fill=(255, 255, 255, 255), font=font(110), anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0, 255))
+        d.polygon(gem_icons.polygon(col, (8, 8, 248, 248)), fill=rgb + (255,), outline=(255, 245, 215, 255), width=14)   # shape per colour
+        d.polygon(gem_icons.facet(col, (8, 8, 248, 248)), fill=tuple(int(c + (255 - c) * 0.45) for c in rgb) + (255,))   # lighter facet, as on the cards
+        d.text((128, gem_icons.label_y(col, (8, 8, 248, 248))), f"+{size}", fill=(255, 255, 255, 255), font=font(84), anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0, 255))
         key = f"{col}{size}"; fname = f"gem-{key}.png"; im.save(os.path.join(TTS, "images", "stickers", fname))
         GEMS_L.append({"key": key, "color": col, "size": size, "rgb": [round(c / 255, 3) for c in rgb],
                        "label": f"+{size} {dict(R='Red', B='Blue', G='Green')[col]}", "image": url(f"images/stickers/{fname}")})
@@ -326,7 +329,7 @@ for c in cards:
     stats = " ".join(x for x in [f"P {c['power']}" if c["power"] not in (None, "") else "",
                                  f"H {c['health']}" if c["health"] not in (None, "") else "",
                                  f"Channel {pretty(str(c['channel']))}" if c["channel"] else ""] if x)
-    desc = "\n".join(x for x in [c["traits"] or "", stats, pretty(c["text"])] if x)
+    desc = "\n".join(x for x in [c["traits"] or "", stats, pretty(str(c["text"] or "").replace("{name}", str(c["name"])))] if x)   # {name} = the card's own name
     CARDS_L[c["id"]] = {"name": c["name"], "set": c["set"], "type": c["card_type"] or "", "text": desc,
                         "qty": int(c["qty"] or 1), "sheet": n, "idx": i,
                         "enc": set_by[c["set"]]["back"] == "encounter"}

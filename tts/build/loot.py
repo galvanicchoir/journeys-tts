@@ -21,6 +21,8 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.styles import Font, PatternFill, Alignment
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
+import gem_icons
 from render_cards import SWORD, STAR as CAST    # same power / cast symbols as the encounter cards
 HERE = os.path.dirname(os.path.abspath(__file__))
 FRAME = os.path.join(HERE, "card_frame")
@@ -180,7 +182,7 @@ def safe(name): return re.sub(r'[<>:"/\\|?*]', "", name)
 # ------------------------------------------------------------------ rendering (same frame as the encounter cards)
 def card_html(w, by_id):
     tier, tint = w["tier"], FLAVOR[w["subclass"]][2]
-    def gems(t): return re.sub(r"\{([rgb])\}", r'<span class="gem \1"></span>', t)
+    def gems(t): return re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), t)
     bl = html.escape(base_line(w), quote=False).replace("Activate - ", "<b>Activate</b> - ", 1)
     lines = [f'<p class="base">{bl}</p>']
     if w["class"] in ACTIVATE:
