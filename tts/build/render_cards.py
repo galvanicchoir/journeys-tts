@@ -17,6 +17,7 @@ from openpyxl import load_workbook
 from PIL import Image, ImageChops
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import die_icons
+import gem_icons
 DIE_FAMILY = "solid"                        # boss die symbols (A circle, B triangle, C square): solid, outline or ink
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
@@ -90,7 +91,7 @@ def rules_html(text, keywords):
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     out = re.sub(r"(?<![\w>])(reinforces?|cascade)(?![\w<])", r"<b>\1</b>", out, flags=re.I)
-    out = re.sub(r"\{([rgb])\}", r'<span class="gem \1"></span>', out)
+    out = re.sub(r"\{([rgb])\}", lambda m: gem_icons.svg(m.group(1)), out)
     lead = "".join(f"<p><b>{html.escape(k)}</b></p>" for k in kws if k.lower() not in t.lower())
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
@@ -100,7 +101,7 @@ def rules_html(text, keywords):
 def clear_html(channel):
     parts = []
     for tok in re.findall(r"\{([rgb])\}|(\|)", s(channel)):
-        parts.append(f'<i class="{tok[0]}"></i>' if tok[0] else "<em>|</em>")
+        parts.append(gem_icons.svg(tok[0], 19, "#e6c46a", "pip") if tok[0] else "<em>|</em>")
     return f'<div class="clear"><b>CLEAR</b>{"".join(parts)}</div>'
 
 # ---------------------------------------------------------------- art

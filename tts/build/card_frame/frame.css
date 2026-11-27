@@ -46,7 +46,7 @@ html, body { margin: 0; padding: 0; background: #1b1612; }
 .clear { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 3px; background: #2a221b;
   box-shadow: inset 0 0 0 1.5px #c9a24a; flex-shrink: 0; }
 .clear b { font-family: Cinzel, serif; font-weight: 800; font-size: 12px; letter-spacing: 1px; color: #e6c46a; }
-.clear i { display: inline-block; width: 15px; height: 15px; transform: rotate(45deg); box-shadow: 0 0 0 1.5px #e6c46a; }
+.clear svg.pip { display: block; }
 .clear em { font-style: normal; color: #f0d58c; font-weight: 800; font-family: Cinzel, serif; font-size: 16px; line-height: 1; margin: 0 1px; }
 
 /* art */
@@ -70,8 +70,8 @@ html, body { margin: 0; padding: 0; background: #1b1612; }
 .text b { color: #5a1a14; }
 .text i { color: #5e4a36; }
 .text .flavor { font-style: italic; color: #5e4a36; text-align: center; }
-.gem { display: inline-block; width: 10px; height: 10px; transform: rotate(45deg); box-shadow: 0 0 0 1.5px #8a6a2e; margin: 0 3px; }
-.gem.r, .clear i.r { background: #d2413a; } .gem.g, .clear i.g { background: #36a865; } .gem.b, .clear i.b { background: #3b74d9; }
+/* gems: Red diamond, Green hexagon, Blue teardrop (card_frame/gem_icons.py) */
+svg.gem { display: inline-block; vertical-align: -2px; margin: 0 2px; }
 
 .die { display: inline-block; vertical-align: -4px; margin-right: 2px; }
 .die svg { display: block; }

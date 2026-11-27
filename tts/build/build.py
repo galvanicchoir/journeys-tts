@@ -275,14 +275,16 @@ def url(rel):  # rel = path under tts/
     return CLOUD.get(rel, f"{ASSET}/tts/{rel}")
 
 # ---------- Forge stickers: gem badges + enhancement banners ----------
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
+import gem_icons   # Red diamond, Green hexagon, Blue teardrop
 os.makedirs(os.path.join(TTS, "images", "stickers"), exist_ok=True)
 GEM_RGB = {"R": (225, 45, 45), "B": (105, 130, 240), "G": (35, 195, 90)}
 GEMS_L = []
 for col, rgb in GEM_RGB.items():
     for size in (1, 2):
         im = Image.new("RGBA", (256, 256), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
-        d.ellipse((8, 8, 248, 248), fill=rgb + (255,), outline=(255, 245, 215, 255), width=14)
-        d.text((128, 132), f"+{size}", fill=(255, 255, 255, 255), font=font(110), anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0, 255))
+        d.polygon(gem_icons.polygon(col, (8, 8, 248, 248)), fill=rgb + (255,), outline=(255, 245, 215, 255), width=14)   # shape per colour
+        d.text((128, 150 if col == "B" else 132), f"+{size}", fill=(255, 255, 255, 255), font=font(110), anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0, 255))
         key = f"{col}{size}"; fname = f"gem-{key}.png"; im.save(os.path.join(TTS, "images", "stickers", fname))
         GEMS_L.append({"key": key, "color": col, "size": size, "rgb": [round(c / 255, 3) for c in rgb],
                        "label": f"+{size} {dict(R='Red', B='Blue', G='Green')[col]}", "image": url(f"images/stickers/{fname}")})
