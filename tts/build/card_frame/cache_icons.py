@@ -1,11 +1,11 @@
 """Cache sigils (chosen by Nolan, 2026-11-27): joined-ring marks, drawn in dark ink in card text.
-    &  = Fan      %  = Wave      $  = Bowl
+    &  = Wave     %  = Bowl      $  = Fan
 Card text keeps using & % $; render_cards.py swaps them for these sigils."""
 RING_R = 10.2
 SIGIL = {   # viewBox 0 0 24 24; strokes run out to the ring and are clipped by it
-    "&": ("Fan",  "M12 20.6 3 6.4M12 20.6V1.4M12 20.6 21 6.4", None),
-    "%": ("Wave", "M1.9 9.6Q7 4.2 12 9.6T22.1 9.6M2.2 15.4Q7 10 12 15.4T21.8 15.4", None),
-    "$": ("Bowl", "M3.2 7Q12 27.5 20.8 7", (12, 8.2, 2.1)),
+    "&": ("Wave", "M1.9 9.6Q7 4.2 12 9.6T22.1 9.6M2.2 15.4Q7 10 12 15.4T21.8 15.4", None),
+    "%": ("Bowl", "M3.2 7Q12 27.5 20.8 7", (12, 8.2, 2.1)),
+    "$": ("Fan",  "M12 20.6 3 6.4M12 20.6V1.4M12 20.6 21 6.4", None),
 }
 INK = "#2c1f14"
 
