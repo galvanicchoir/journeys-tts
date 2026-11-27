@@ -79,8 +79,9 @@ PICTURE = ('<svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="
 
 # ---------------------------------------------------------------- rules text
 LEAD = r"(Enter|Act|Defeat|Tap|Activate|Action|Imbued|A|B|C)"
-def rules_html(text, keywords):
+def rules_html(text, keywords, name=""):
     t = s(text)
+    nm = html.escape(s(name), quote=False)
     kws = [k.strip() for k in s(keywords).split(",") if k.strip()]
     flavor = t.startswith('"') and t.endswith('"')
     out = html.escape(t, quote=False)
@@ -88,11 +89,16 @@ def rules_html(text, keywords):
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
     out = re.sub(r"(^|(?<=[.:,] ))" + LEAD + r"(\s-\s)", r"\1<b>\2</b>\3", out)    # "Enter - ", "A - " ...
+    if nm: out = out.replace(nm, "\x00")                                      # the card's own name never gets keyword-bolded
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     out = re.sub(r"(?<![\w>])(reinforces?|cascade)(?![\w<])", r"<b>\1</b>", out, flags=re.I)
+    if nm: out = out.replace("\x00", nm)
     out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), out)
-    lead = "".join(f"<p><b>{html.escape(k)}</b></p>" for k in kws if k.lower() not in t.lower())
+    gemify = lambda x: re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), x)
+    body = t.replace(s(name), "") if name else t
+    missing = [gemify(html.escape(k)) for k in kws if k.lower() not in body.lower()]   # e.g. "Lasting 2{g}"
+    lead = f"<p><b>{' \u00b7 '.join(missing)}</b></p>" if missing else ""            # all keywords on one line: "Focus · Aggro"
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
     out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
@@ -153,7 +159,7 @@ def card_html(c, set_name):
     elif kind == "Obstacle" and s(c["channel"]):
         right = clear_html(c["channel"])
     art = art_for(c)
-    rules = rules_html(c["text"], c["keywords"])
+    rules = rules_html(c["text"], c["keywords"], c["name"])
     art_html = (f'<img src="file://{art}">' if art else f'<div class="ph">{PICTURE}<span>ART</span></div>')
     return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css"></head><body>
 <div class="card {cls}" id="card">
