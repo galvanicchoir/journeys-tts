@@ -2,7 +2,7 @@
 
     python3 tts/build/render_cards.py <repo folder> [card id ...]
 
-Reads the encounter cards (sets with the encounter back) from data/journeys-cards.xlsx and draws each one with
+Reads every card except the loot weapons (those are drawn by loot.py): encounter cards, heroes, class cards, starting weapons, ancestries from data/journeys-cards.xlsx and draws each one with
 the frame in tts/build/card_frame/ (HTML + CSS, rendered by headless Chromium at 762x1067).
 
   art      art/encounters/<card name>.png (or .jpg). Missing art is cut out of the card's current export in cards/
@@ -88,7 +88,7 @@ def rules_html(text, keywords, name=""):
     if flavor:
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
-    out = re.sub(r"(^|(?<=[.:,] ))(" + LEAD + r"(?:, [A-Za-z ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - "
+    out = re.sub(r"(^|(?<=[.:,)>] ))(" + LEAD + r"(?:, [A-Za-z0-9 ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - "
     if nm: out = out.replace(nm, "\x00")                                      # the card's own name never gets keyword-bolded
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
@@ -116,20 +116,29 @@ def clear_html(channel):
     return f'<div class="clear"><b>CLEAR</b>{"".join(parts)}</div>'
 
 # ---------------------------------------------------------------- art
+HERO_ART_BOX = (60, 150, 702, 810)           # where the art sits on the old hero exports
+PLAYER_ART_BOX = (58, 164, 704, 592)          # skills, auras, allies, ancestries
+WEAPON_ART_BOX = (60, 194, 702, 624)
 def art_for(c):
+    hero = s(c["card_type"]) == "Hero"
+    player = is_player(c)
+    folder = os.path.join(ROOT, "art", "heroes" if hero else "players") if player else ART
     for ext in (".png", ".jpg", ".jpeg", ".webp"):
-        p = os.path.join(ART, c["name"] + ext)
+        p = os.path.join(folder, c["name"] + ext)
         if os.path.exists(p): return p
     src = os.path.join(ROOT, s(c["source_file"]))
     if not os.path.exists(src): return None
-    crop = Image.open(src).convert("RGB").resize((762, 1067)).crop(OLD_ART_BOX)
+    box = HERO_ART_BOX if hero else WEAPON_ART_BOX if s(c["card_type"]) == "Weapon" else PLAYER_ART_BOX if player else OLD_ART_BOX
+    crop = Image.open(src).convert("RGB").resize((762, 1067)).crop(box)
     r, g, b = crop.resize((80, 57)).split()
     lo = ImageChops.darker(r, ImageChops.darker(g, b))          # darkest channel per pixel
     white = sum(lo.histogram()[233:]) / (80 * 57)
     if white > 0.30:                                   # the old placeholder silhouette on white: no real art yet
         return None
-    os.makedirs(ART, exist_ok=True)
-    p = os.path.join(ART, c["name"] + ".png"); crop.save(p, optimize=True)
+    if s(c["card_type"]) == "Weapon":                  # the grey "I" panel on the old weapon exports is not art
+        return None
+    os.makedirs(folder, exist_ok=True)
+    p = os.path.join(folder, c["name"] + ".png"); crop.save(p, optimize=True)
     return p
 
 def framed_path(root, source_file):
@@ -138,12 +147,36 @@ def framed_path(root, source_file):
     rel = rel[len("cards/"):] if rel.startswith("cards/") else rel
     return os.path.join(root, "cards", "framed", rel)
 
+PLAYER_SETS = set()                           # filled in main(): sets with the player back (not loot)
+def is_player(c): return s(c["set"]) in PLAYER_SETS
+
+# header colour per class / subclass set (top, bottom of the gradient)
+PLAYER_HEAD = {
+    "CHR": ("#5a4a2a", "#241c0e"), "ANC": ("#56603a", "#1f2414"),
+    "MAG": ("#33508f", "#141d3a"), "MAG-FIR": ("#a04c17", "#3d1907"), "MAG-ICE": ("#3a7f99", "#10303d"),
+    "WAR": ("#6a5238", "#2a1d12"), "WAR-BLD": ("#7c2b4c", "#2c0e1b"), "WAR-IRC": ("#56636f", "#1c2228"),
+    "ROG": ("#36504c", "#121c1b"), "ROG-ASN": ("#4a2f5e", "#1a1022"), "ROG-OUT": ("#8a6a2a", "#352710"),
+    "PRI": ("#9a8650", "#3e3418"), "PRI-ANO": ("#5d7d9c", "#1e2c3a"), "PRI-SER": ("#4f8a6a", "#173024"),
+    "DRG": ("#8a5a1a", "#352006"), "DRG-BRD": ("#5e3a6e", "#22122a"), "DRG-SCB": ("#6e2a3a", "#2a0e16"),
+}
+# Aggro: a blocky red "!" at the left of the header
+AGGRO = ('<svg class="aggro" width="21" height="45" viewBox="0 0 24 52" aria-label="Aggro" style="flex-shrink:0;margin:0 -2px 0 -4px;'
+         'filter:drop-shadow(0 2px 2px rgba(0,0,0,.7))">'
+         '<path d="M4 2.5H20L17 34H7Z" fill="#ff1414" stroke="#120c07" stroke-width="3" stroke-linejoin="round"/>'
+         '<path d="M7.2 5.5H12L11 30.5H9.2Z" fill="#ff8a7a" opacity=".55"/>'
+         '<rect x="5.5" y="38.5" width="13" height="11" fill="#ff1414" stroke="#120c07" stroke-width="3" stroke-linejoin="round"/></svg>')
+ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
+
+HERO_HEALTH = 10
+HERO_CLASS = {"CHR-MAG": "mage", "CHR-WAR": "warrior", "CHR-ROG": "rogue", "CHR-PRI": "priest", "CHR-DRG": "dragonheart"}
+
 # ---------------------------------------------------------------- one card
 def card_html(c, set_name):
     kind = s(c["card_type"])
     ti = type_info(s(c["traits"]), kind)
     horde = kind == "Enemy" and ("Horde" in s(c["name"]) or "reinforce" in s(c["keywords"]).lower())
-    cls = {"Enemy": "horde" if horde else "enemy", "Event": "event", "Obstacle": "obstacle"}.get(kind, "event")
+    cls = {"Enemy": "horde" if horde else "enemy", "Event": "event", "Obstacle": "obstacle",
+           "Hero": "hero " + HERO_CLASS.get(s(c["id"]), "")}.get(kind, "event")
     name = html.escape(s(c["name"]))
     tl = rank_svg(ti["rank"]) if ti["rank"] else ""
     tl += f'<span class="t">{html.escape(ti["type"])}</span>'
@@ -156,15 +189,35 @@ def card_html(c, set_name):
         right = (f'<div class="stats">{power}'
                  f'<div class="health">{SHIELD.format(fill="#2f5fb0" if horde else "#a82a24")}'
                  f'<span class="{"small" if len(hp) > 2 else ""}">{html.escape(hp)}</span></div></div>')
+    elif kind == "Weapon":                    # starting weapons, laid out like the loot weapons (tier I, power 1)
+        right = f'<div class="stats"><div class="power">{SWORD}<span>1</span></div></div>'
+    elif kind == "Hero":                      # heroes start at 10 health
+        tl = f'<span class="t">Hero \u2014 {html.escape(s(c["traits"]) or s(c["name"]))}</span>'
+        right = (f'<div class="stats"><div class="health">{SHIELD.format(fill="#a82a24")}'
+                 f'<span>{HERO_HEALTH}</span></div></div>')
     elif kind == "Obstacle" and s(c["channel"]):
         right = clear_html(c["channel"])
     art = art_for(c)
-    rules = rules_html(c["text"], c["keywords"], c["name"])
+    text = c["text"]
+    if kind == "Weapon":                      # "Weapon I. Activate: recycle a card - 1{r}." -> the loot wording
+        text = re.sub(r"^Weapon [IV]+\.\s*", "", s(text))
+        text = re.sub(r"(?i)^Activate:\s*recycle a card - 1\{r\}\.?$", "Activate - Recycle a card: Deal its Power to an enemy.", text)
+        tl = f'<span class="t">{html.escape(s(c["traits"]))} \u00b7 Tier I</span>'
+    rules = rules_html(text, c["keywords"], c["name"])
+    badge = AGGRO if "aggro" in s(c["keywords"]).lower() else ""
+    style = ""
+    if is_player(c) and kind != "Hero":
+        cls = "player" + (" weapon" if kind == "Weapon" else "")
+        top, bot = PLAYER_HEAD.get(s(c["set"]), PLAYER_HEAD["CHR"])
+        if kind != "Weapon": style = f'<style>.head{{background:linear-gradient(180deg,{top},{bot})}}</style>'
     art_html = (f'<img src="file://{art}">' if art else f'<div class="ph">{PICTURE}<span>ART</span></div>')
-    return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css"></head><body>
+    art_cls = "art"
+    if kind == "Weapon" and not art:
+        art_cls, art_html = 'art loot" style="--tint:#59606a', "<span>I</span>"
+    return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="frame.css">{style}</head><body>
 <div class="card {cls}" id="card">
-  <div class="head"><div class="titles"><div class="name" id="name">{name}</div><div class="typeline">{tl}</div></div>{right}</div>
-  <div class="art">{art_html}</div>
+  <div class="head">{badge}<div class="titles"><div class="name" id="name">{name}</div><div class="typeline">{tl}</div></div>{right}</div>
+  <div class="{art_cls}">{art_html}</div>
   <div class="rule"><div class="l"></div><div class="d"></div><div class="o"></div><div class="d"></div><div class="l"></div></div>
   <div class="text{' short' if is_short(rules) else ''}" id="text">{rules}</div>
   <div class="foot"><span>{html.escape(set_name)}</span><span>{html.escape(s(c["id"]))}</span></div>
@@ -183,7 +236,9 @@ def main():
     wb = load_workbook(os.path.join(ROOT, "data", "journeys-cards.xlsx"), read_only=True)
     cards, sets = rows(wb["Cards"]), rows(wb["Sets"])
     set_by = {x["set"]: x for x in sets}
-    todo = [c for c in cards if set_by.get(c["set"], {}).get("back") == "encounter" and (not ONLY or c["id"] in ONLY)]
+    PLAYER_SETS.update(x["set"] for x in sets if x.get("back") == "player" and not str(x["set"]).startswith("LOOT"))
+    todo = [c for c in cards if (set_by.get(c["set"], {}).get("back") == "encounter" or is_player(c))
+            and (not ONLY or c["id"] in ONLY)]
     tmp = os.path.join(FRAME, "_card.html")
     problems = []
     with sync_playwright() as p:
