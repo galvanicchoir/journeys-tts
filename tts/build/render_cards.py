@@ -18,6 +18,7 @@ from PIL import Image, ImageChops
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import die_icons
 import gem_icons
+import cache_icons
 DIE_FAMILY = "solid"                        # boss die symbols (A circle, B triangle, C square): solid, outline or ink
 
 ROOT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
@@ -84,7 +85,8 @@ def rules_html(text, keywords, name=""):
     nm = html.escape(s(name), quote=False)
     kws = [k.strip() for k in s(keywords).split(",") if k.strip()]
     flavor = t.startswith('"') and t.endswith('"')
-    out = html.escape(t, quote=False)
+    t_marked = re.sub(r"[&%$]", lambda m: {"&": "\x01", "%": "\x02", "$": "\x03"}[m.group(0)], t)   # cache markers, swapped for sigils below
+    out = html.escape(t_marked, quote=False)
     if flavor:
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
@@ -102,6 +104,7 @@ def rules_html(text, keywords, name=""):
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
     out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
+    out = re.sub("[\x01\x02\x03]", lambda m: cache_icons.svg({"\x01": "&", "\x02": "%", "\x03": "$"}[m.group(0)]), out)
     return lead + (f"<p>{out}</p>" if out else "")
 
 def is_short(rules):

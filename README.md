@@ -42,6 +42,7 @@ Then run the build as above. The frame is `tts/build/card_frame/frame.css` (font
 - Card data comes from the Cards sheet. The type line's role (`Goblin - Backline`) becomes the rank bar; Unique gets a gold star instead, since uniques stack by their own rules. Bracket text is no longer shown: any enemy can join any stack.
 - Boss die results in rules text (`A - ...`, `B - ...`, `C - ...`) become the die symbols. A is a circle, B a triangle, C a square, in ivory on a dark coin (`DIE_FAMILY` in `render_cards.py`; drawn in `card_frame/die_icons.py`, which also has a plain-ink style for the physical die).
 - An enemy with 0 power and an `Act -` ability shows a cast symbol in place of its power.
+- Cache markers in card text become the cache sigils: `&` = Wave, `%` = Bowl, `$` = Fan (`card_frame/cache_icons.py`).
 - Gems have a shape per colour so they read without colour: Red cut gem, Green hexagon, Blue teardrop. A number in front of a gem (`2{r}`, `+1{g}`) is drawn inside it (`card_frame/gem_icons.py`, also used for the Forge gem stickers).
 - Art: drop a file named after the card into `art/encounters/`. With none, the art is cut from the card's old export, unless that only has a placeholder silhouette; then the card shows an ART box.
 - Long names and rules text shrink to fit; the script prints CHECK lines for any that still don't.

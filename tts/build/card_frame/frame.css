@@ -87,6 +87,8 @@ svg.gem { display: inline-block; vertical-align: -8px; margin: -2px 1px; }   /* 
 .die { display: inline-block; vertical-align: -4px; margin-right: 2px; }
 .die svg { display: block; }
 
+svg.cache { display: inline-block; vertical-align: -6px; margin: -2px 1px; }   /* & % $ cache sigils (card_frame/cache_icons.py) */
+
 /* footer */
 .foot { height: 14px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 6px; color: #b39a6c;
   font-family: Cinzel, serif; font-weight: 700; font-size: 9.5px; letter-spacing: .8px; }
