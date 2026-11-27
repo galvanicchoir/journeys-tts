@@ -284,6 +284,7 @@ for col, rgb in GEM_RGB.items():
     for size in (1, 2):
         im = Image.new("RGBA", (256, 256), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
         d.polygon(gem_icons.polygon(col, (8, 8, 248, 248)), fill=rgb + (255,), outline=(255, 245, 215, 255), width=14)   # shape per colour
+        d.polygon(gem_icons.facet(col, (8, 8, 248, 248)), fill=tuple(int(c + (255 - c) * 0.45) for c in rgb) + (255,))   # lighter facet, as on the cards
         d.text((128, gem_icons.label_y(col, (8, 8, 248, 248))), f"+{size}", fill=(255, 255, 255, 255), font=font(84), anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0, 255))
         key = f"{col}{size}"; fname = f"gem-{key}.png"; im.save(os.path.join(TTS, "images", "stickers", fname))
         GEMS_L.append({"key": key, "color": col, "size": size, "rgb": [round(c / 255, 3) for c in rgb],

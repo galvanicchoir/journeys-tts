@@ -3631,22 +3631,22 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-twg.png?v=554e50bf"
   }, {
     ["name"] = "GEM_R1",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/10290688558618405537/9F29CB5436449614D5C1878FFEDBFCA54D8CA3B3/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-R1.png?v=1d30c933"
   }, {
     ["name"] = "GEM_R2",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/11322701738256103911/F3420416B70E562B106597BE75D376927202AD62/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-R2.png?v=9cc2f67f"
   }, {
     ["name"] = "GEM_B1",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/16084211439322185352/24E62A1266483DEF652E0CC659BD1310E1ADF2AF/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-B1.png?v=14d5f84a"
   }, {
     ["name"] = "GEM_B2",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/15718018506705896764/C3DBB74316CBF205E015A30420F6A8C24B3E9B07/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-B2.png?v=366c94b8"
   }, {
     ["name"] = "GEM_G1",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/13719821655164692434/7C2083AEC3041B366B313BCAE9F9475483807CE8/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-G1.png?v=f8974aab"
   }, {
     ["name"] = "GEM_G2",
-    ["url"] = "https://steamusercontent-a.akamaihd.net/ugc/12677380092518905965/29ECBAFA7FDB56F5ACCF9F7388C6DF341CB8065E/"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-G2.png?v=76786b1c"
   }}
 GEMS = {{
     ["key"] = "R1",
@@ -3654,42 +3654,42 @@ GEMS = {{
     ["size"] = 1,
     ["rgb"] = {1.0, 0.078, 0.078},
     ["label"] = "+1 Red",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/10290688558618405537/9F29CB5436449614D5C1878FFEDBFCA54D8CA3B3/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-R1.png?v=1d30c933"
   }, {
     ["key"] = "R2",
     ["color"] = "R",
     ["size"] = 2,
     ["rgb"] = {1.0, 0.078, 0.078},
     ["label"] = "+2 Red",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/11322701738256103911/F3420416B70E562B106597BE75D376927202AD62/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-R2.png?v=9cc2f67f"
   }, {
     ["key"] = "B1",
     ["color"] = "B",
     ["size"] = 1,
     ["rgb"] = {0.18, 0.4, 0.918},
     ["label"] = "+1 Blue",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/16084211439322185352/24E62A1266483DEF652E0CC659BD1310E1ADF2AF/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-B1.png?v=14d5f84a"
   }, {
     ["key"] = "B2",
     ["color"] = "B",
     ["size"] = 2,
     ["rgb"] = {0.18, 0.4, 0.918},
     ["label"] = "+2 Blue",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/15718018506705896764/C3DBB74316CBF205E015A30420F6A8C24B3E9B07/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-B2.png?v=366c94b8"
   }, {
     ["key"] = "G1",
     ["color"] = "G",
     ["size"] = 1,
     ["rgb"] = {0.0, 0.788, 0.31},
     ["label"] = "+1 Green",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/13719821655164692434/7C2083AEC3041B366B313BCAE9F9475483807CE8/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-G1.png?v=f8974aab"
   }, {
     ["key"] = "G2",
     ["color"] = "G",
     ["size"] = 2,
     ["rgb"] = {0.0, 0.788, 0.31},
     ["label"] = "+2 Green",
-    ["image"] = "https://steamusercontent-a.akamaihd.net/ugc/12677380092518905965/29ECBAFA7FDB56F5ACCF9F7388C6DF341CB8065E/"
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-G2.png?v=76786b1c"
   }}
 ENHANCEMENTS = {}
 ADVENTURE_BY_ID = {}

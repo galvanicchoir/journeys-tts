@@ -60,3 +60,10 @@ def polygon(color, box):
 
 def label_y(color, box):
     return _P(box)(12, TEXT_Y[color.lower()])[1]
+
+def facet(color, box):
+    """The lighter facet as Pillow points (teardrop: a sliver on the upper left)."""
+    c = color.lower(); P = _P(box)
+    if c == "r": return [P(6.6, 2.4), P(12, 2.4), P(8.4, 8.6), P(2.4, 8.6)]
+    if c == "g": return [P(12, 1.2), P(21.6, 6.6), P(18.6, 8.4), P(12, 4.6)]
+    return [P(11.2, 5.8), P(9.6, 9.6), P(9, 11.8), P(7.2, 11.2), P(8.6, 8.4)]
