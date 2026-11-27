@@ -278,7 +278,7 @@ def url(rel):  # rel = path under tts/
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_frame"))
 import gem_icons   # Red cut gem, Green hexagon, Blue teardrop
 os.makedirs(os.path.join(TTS, "images", "stickers"), exist_ok=True)
-GEM_RGB = {"R": (255, 20, 20), "B": (31, 91, 255), "G": (0, 201, 79)}   # same saturated colours as card_frame/gem_icons.py
+GEM_RGB = {"R": (255, 20, 20), "B": (46, 102, 234), "G": (0, 201, 79)}   # same saturated colours as card_frame/gem_icons.py
 GEMS_L = []
 for col, rgb in GEM_RGB.items():
     for size in (1, 2):

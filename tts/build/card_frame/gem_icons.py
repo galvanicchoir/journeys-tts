@@ -4,8 +4,8 @@ svg(color, size, outline, cls, label) -> inline SVG for the card renderers ("2{r
 polygon(color, box) and label_y(color, box) -> Pillow drawing for the Forge stickers."""
 import math
 
-FILL = {"r": "#ff1414", "g": "#00c94f", "b": "#1f5bff"}   # fully saturated, red most of all (Nolan, 2026-11-26)
-SHINE = {"r": "#ff7a6e", "g": "#7dffb0", "b": "#8fb2ff"}
+FILL = {"r": "#ff1414", "g": "#00c94f", "b": "#2e66ea"}   # fully saturated, red most of all (Nolan, 2026-11-26)
+SHINE = {"r": "#ff7a6e", "g": "#7dffb0", "b": "#98b6f4"}
 NAME = {"r": "Red", "g": "Green", "b": "Blue"}
 
 # viewBox 0 0 24 24
