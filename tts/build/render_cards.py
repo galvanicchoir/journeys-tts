@@ -94,8 +94,8 @@ def rules_html(text, keywords, name=""):
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     out = re.sub(r"(?<![\w>])(reinforces?|cascade)(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     if nm: out = out.replace("\x00", nm)
-    out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), out)
-    gemify = lambda x: re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), x)
+    out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), out)
+    gemify = lambda x: re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), x)
     body = t.replace(s(name), "") if name else t
     missing = [gemify(html.escape(k)) for k in kws if k.lower() not in body.lower()]   # e.g. "Lasting 2{g}"
     lead = f"<p><b>{' \u00b7 '.join(missing)}</b></p>" if missing else ""            # all keywords on one line: "Focus · Aggro"

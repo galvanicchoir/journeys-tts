@@ -73,8 +73,7 @@ html, body { margin: 0; padding: 0; background: #1b1612; }
 .text i { color: #5e4a36; }
 .text .flavor { font-style: italic; color: #5e4a36; text-align: center; }
 /* gems: Red cut gem, Green hexagon, Blue teardrop; "2{r}" puts the number inside (card_frame/gem_icons.py) */
-svg.gem { display: inline-block; vertical-align: -2px; margin: 0 2px; }
-svg.gem.num { vertical-align: -8px; margin: -2px 1px; }
+svg.gem { display: inline-block; vertical-align: -8px; margin: -2px 1px; }   /* every gem in text is one size, with or without a number */
 
 .die { display: inline-block; vertical-align: -4px; margin-right: 2px; }
 .die svg { display: block; }
