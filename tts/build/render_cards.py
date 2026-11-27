@@ -80,7 +80,7 @@ PICTURE = ('<svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="
 # ---------------------------------------------------------------- rules text
 LEAD = r"(Enter|Act|Defeat|Tap|Activate|Action|Imbued|A|B|C)"
 def rules_html(text, keywords, name=""):
-    t = s(text)
+    t = s(text).replace("{name}", s(name)) if name else s(text)   # "{name}" in card text = the card's own name
     nm = html.escape(s(name), quote=False)
     kws = [k.strip() for k in s(keywords).split(",") if k.strip()]
     flavor = t.startswith('"') and t.endswith('"')
@@ -88,7 +88,7 @@ def rules_html(text, keywords, name=""):
     if flavor:
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
-    out = re.sub(r"(^|(?<=[.:,] ))" + LEAD + r"(\s-\s)", r"\1<b>\2</b>\3", out)    # "Enter - ", "A - " ...
+    out = re.sub(r"(^|(?<=[.:,] ))(" + LEAD + r"(?:, [A-Za-z ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - "
     if nm: out = out.replace(nm, "\x00")                                      # the card's own name never gets keyword-bolded
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
