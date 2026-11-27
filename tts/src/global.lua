@@ -19,6 +19,7 @@ BOARD_SCALE   = 5
 -- in the middle (all facing south), the 2x2 obstacle block at the east end.
 ENC_DECK_POS  = {-11.6, 1.5, 1.8}
 ENC_DISC_POS  = {-11.6, 1.5, -1.8}
+OBSTACLE_SPOTS = {{9.0, 1.5, 1.8}, {11.6, 1.5, 1.8}, {9.0, 1.5, -1.8}, {11.6, 1.5, -1.8}}   -- the 2x2 obstacle block
 STACK_X0      = -7.75              -- x of Stack 1 (west); the others follow every STACK_DX
 STACK_DX      = 2.7
 STACK_REAR_Z  = 2.3                -- centre of a stack's rear card (north end of the column)
@@ -31,7 +32,7 @@ ADV_TILE_POS  = {12, 1.2, 1.5}     -- where the chosen adventure tile goes
 SUPPLY_X      = {22.5, 24.7}       -- token bags: two columns along the right edge of the table
 SUPPLY_Z0     = 6.5                -- first bag (north end); the rest step south
 SUPPLY_DZ     = 2.1
-PHASES        = {"Start of Turn", "Encounter", "Player Phase", "Enemy Phase", "End of Turn"}
+PHASES        = {"Encounter", "Hero", "Enemy", "Rally"}
 DEFAULT_AP    = 2
 BOSS_DIE      = {"A", "A", "A", "B", "B", "C"}   -- six faces
 DIE_NAME      = {A = "Circle", B = "Triangle", C = "Square"}   -- how the faces are shown (cards use these shapes)
@@ -334,35 +335,66 @@ function ACTIONS.summon(args)            -- summon:<card id>:<n>
                     callback_function = function(card) if target then addToStack(target, card, nil, nil) end end})
   end
 end
--- Stack objects onto the encounter deck spot face down, merge them, shuffle; then call after(deck).
+-- Every encounter pile (deck or loose card) sitting on a spot: the encounter deck / discard spots on the board.
+function encPilesAt(spot)
+  local out = {}
+  for _, o in ipairs(getAllObjects()) do
+    if (o.type == "Deck" or o.type == "Card") and not o.held_by_color then
+      local p = o.getPosition()
+      if math.abs((p.x or p[1]) - spot[1]) < 1.3 and math.abs((p.z or p[3]) - spot[3]) < 1.8 and isEncounter(o) then
+        out[#out + 1] = o
+      end
+    end
+  end
+  return out
+end
+
+-- Stack objects onto the encounter deck spot face down, merge them into one deck, shuffle; then call after(deck).
+-- Merging is checked and repeated: a pile that was still landing when group() ran gets swept in on the next pass.
 function rebuildEncounterDeck(list, after)
   local objs, seen = {}, {}
-  for _, o in ipairs(list) do if not seen[o] then seen[o] = true objs[#objs + 1] = o end end
+  for _, o in ipairs(list) do if o and not seen[o] and not o.isDestroyed() then seen[o] = true objs[#objs + 1] = o end end
   for i, o in ipairs(objs) do
     o.setRotation({0, 180, 180})
     o.setPosition({ENC_DECK_POS[1], ENC_DECK_POS[2] + i * 0.6, ENC_DECK_POS[3]})
   end
-  Wait.time(function()
-    local grouped = group(objs) or {}
-    Wait.time(function()
-      for _, g in ipairs(grouped) do if g.type == "Deck" then g.shuffle() end end
-      if after then after(grouped[1]) end
-    end, 0.5)
-  end, 1.0)
+  local tries = 0
+  local function finish()
+    tries = tries + 1
+    local piles = encPilesAt(ENC_DECK_POS)
+    if #piles > 1 and tries < 4 then
+      group(piles)
+      Wait.time(finish, 0.8)
+      return
+    end
+    local deck = piles[1]
+    if deck and deck.type == "Deck" then deck.shuffle() Wait.time(function() if not deck.isDestroyed() then deck.shuffle() end end, 0.3) end
+    if after then after(deck) end
+  end
+  Wait.time(function() group(objs) Wait.time(finish, 0.8) end, 1.0)
 end
 
-function ACTIONS.shuffle(args)           -- shuffle:SET,SET
+-- shuffle:SET,SET - the encounter deck, its discard pile and the named staged sets become one shuffled deck.
+function ACTIONS.shuffle(args)
   local objs = {}
-  for _, o in ipairs(zoneCards("J_EncZone")) do objs[#objs + 1] = o end
-  for _, o in ipairs(zoneCards("J_DiscZone")) do objs[#objs + 1] = o end
+  for _, o in ipairs(encPilesAt(ENC_DECK_POS)) do objs[#objs + 1] = o end
+  for _, o in ipairs(encPilesAt(ENC_DISC_POS)) do objs[#objs + 1] = o end
+  local pending, sets = 0, 0
+  local function arrived(o)
+    if o then objs[#objs + 1] = o end
+    pending = pending - 1
+    if pending == 0 then rebuildEncounterDeck(objs) end
+  end
   for set in tostring(args[1]):gmatch("[^,]+") do
     local bag, idx = bagIndex('"staged":%s*"' .. esc(set) .. '"')
     if bag then
-      objs[#objs + 1] = bag.takeObject({index = idx, position = {ENC_DECK_POS[1], ENC_DECK_POS[2] + 6, ENC_DECK_POS[3]},
-                                        rotation = {0, 180, 180}, smooth = false})
+      pending, sets = pending + 1, sets + 1
+      bag.takeObject({index = idx, position = {ENC_DECK_POS[1], ENC_DECK_POS[2] + 6, ENC_DECK_POS[3]},
+                      rotation = {0, 180, 180}, smooth = false, callback_function = arrived})
     end
   end
-  rebuildEncounterDeck(objs)
+  if sets == 0 then rebuildEncounterDeck(objs) end
+  broadcastToAll("The encounter deck and discard pile are shuffled together" .. (sets > 0 and " with the new cards." or "."), {0.9, 0.8, 0.5})
 end
 function ACTIONS.boss(args)              -- boss:<id>[:armor=<n>]
   local b = BOSSES[args[1]]
@@ -477,7 +509,7 @@ function refreshTurnBar()
   if STATE.turn then buildUI() end
 end
 
--- Draw up to hand size. With reshuffle (End Turn): draw the deck dry, shuffle the discard pile in as the new
+-- Draw up to hand size. With reshuffle (Rally): draw the deck dry, shuffle the discard pile in as the new
 -- deck, then keep drawing.
 local function dealTo(seat, pile, n)
   if n <= 0 or not pile then return end
@@ -585,7 +617,8 @@ local MAT_SX, MAT_SZ = MAT_LAYOUT.w / 2, MAT_LAYOUT.d / 2
 local SQUASH = MAT_SZ / MAT_SX              -- keeps button text from stretching on the wide mat
 TRACK_X = 0.84                              -- Health / Shield / Actions: top-right corner of the mat (image coords)
 TRACK_Z = {-0.84, -0.72, -0.60}
-END_TURN_POS = {0.80, 0.87}               -- End Turn: bottom-right, under the Discard slot
+RALLY_POS = {0.80, 0.87}                  -- Rally: bottom-right, under the Discard slot
+DRAW_POS  = {0.57, 0.87}                  -- Draw Encounter: next to Rally, under the Deck slot
 local TRACK_K = 0.5                         -- shrink factor for the tracker buttons
 local TRACK_SCALE = {SQUASH * TRACK_K, 1, TRACK_K}
 
@@ -635,17 +668,20 @@ function drawMat(obj)
     local tip = "Click: +1   |   Right-click: -1"
     local x = TRACK_X
     button(obj, "j_hp",     "Health " .. s.hp .. " / " .. s.maxhp, x, TRACK_Z[1], 340, 42, 42, tip, {0.5, 0.12, 0.12, 0.95}, TRACK_SCALE)
-    button(obj, "j_shield", "Shield " .. s.shield,                 x, TRACK_Z[2], 340, 42, 42, tip .. "\n(clears at End Turn)", {0.25, 0.3, 0.45, 0.95}, TRACK_SCALE)
-    button(obj, "j_ap",     "Actions " .. s.ap,                    x, TRACK_Z[3], 340, 42, 42, tip .. "\n(resets to " .. DEFAULT_AP .. " at End Turn)", {0.5, 0.42, 0.12, 0.95}, TRACK_SCALE)
-    button(obj, "j_endTurn", "End Turn", END_TURN_POS[1], END_TURN_POS[2], 340, 54, 46,
+    button(obj, "j_shield", "Shield " .. s.shield,                 x, TRACK_Z[2], 340, 42, 42, tip .. "\n(clears when you Rally)", {0.25, 0.3, 0.45, 0.95}, TRACK_SCALE)
+    button(obj, "j_ap",     "Actions " .. s.ap,                    x, TRACK_Z[3], 340, 42, 42, tip .. "\n(resets to " .. DEFAULT_AP .. " when you Rally)", {0.5, 0.42, 0.12, 0.95}, TRACK_SCALE)
+    button(obj, "j_endTurn", "Rally", RALLY_POS[1], RALLY_POS[2], 340, 54, 46,
       "Ready (straighten) your exhausted cards, draw up to " .. HAND_SIZE .. ", reset Actions to " .. DEFAULT_AP .. " and Shield to 0",
       {0.18, 0.4, 0.22, 0.95}, TRACK_SCALE)
+    button(obj, "j_matDraw", "Draw Encounter", DRAW_POS[1], DRAW_POS[2], 340, 54, 36,
+      "Draw the top encounter card face up onto this playmat. If the deck is empty, the discard is shuffled in first.",
+      {0.45, 0.36, 0.12, 0.95}, TRACK_SCALE)
     return
   end
   button(obj, "j_noop", "Open  Character  (bottom-right of your screen)\nto create your hero", 0, 0.45, 520, 60, 30, "", {0, 0, 0, 0}, SQUASH)
 end
 
--- End Turn (per mat): ready exhausted cards on the mat, draw up to hand size, reset Actions and Shield.
+-- Rally (per mat): ready exhausted cards on the mat, draw up to hand size, reset Actions and Shield.
 function endTurn(seat)
   local mat, s = matOf(seat), STATE.seats[seat]
   if not (mat and s and s.built) then return end
@@ -666,7 +702,7 @@ function endTurn(seat)
   drawToHandSize(seat, true)
   s.ap, s.shield = DEFAULT_AP, 0
   drawMat(mat)
-  broadcastToAll(seat .. " ends their turn" .. (readied > 0 and (" (readied " .. readied .. " card" .. (readied > 1 and "s" or "") .. ")") or "") .. ".",
+  broadcastToAll(seat .. " rallies" .. (readied > 0 and (" (readied " .. readied .. " card" .. (readied > 1 and "s" or "") .. ")") or "") .. ".",
     stringColorToRGB(seat))
 end
 function j_endTurn(obj) endTurn(obj.getGMNotes()) end
@@ -825,11 +861,14 @@ function drawBattlefield()
           tooltip = "Take this stack's aggro" .. (who and (" (now: " .. who .. ")") or "")})
       end
     end
-    bf.createButton({click_function = "j_drawEncounter", function_owner = Global, label = "Draw Encounter",
-      position = {-ENC_DISC_POS[1] / sx, 0.2, -3.82 / sz}, rotation = {0, 180, 0},
-      width = 470, height = 42, font_size = 34, scale = {2.62 / sx, 1, 2.62 / sz},
-      color = {0.45, 0.36, 0.12, 0.95}, font_color = {1, 1, 1},
-      tooltip = "Draw the top encounter card face up onto your playmat. If the deck is empty, the discard is shuffled in first."})
+    -- magnets: encounter deck, discard, and the four obstacle spaces (local = world / board half-size)
+    local snaps = {}
+    local spots = {ENC_DECK_POS, ENC_DISC_POS}
+    for _, o in ipairs(OBSTACLE_SPOTS) do spots[#spots + 1] = o end
+    for _, p in ipairs(spots) do
+      snaps[#snaps + 1] = {position = {p[1] / sx, 0.2, p[3] / sz}, rotation = {0, 180, 0}, rotation_snap = true}
+    end
+    bf.setSnapPoints(snaps)
   end
   syncAggroTokens()
 end
@@ -869,7 +908,8 @@ local function drawOne(pile, color)
     pile.setPositionSmooth({x, y, z}, false, true)
   end
 end
-function j_drawEncounter(o, color)
+function j_matDraw(mat) drawEncounter(mat.getGMNotes()) end      -- Draw Encounter on a playmat: draws for that seat
+function drawEncounter(color)
   if not SEATS[color] then return end
   local deck = encPile(ENC_DECK_POS)
   if deck then drawOne(deck, color) broadcastToAll(color .. " draws an encounter card.", stringColorToRGB(color)) return end
@@ -1538,8 +1578,8 @@ function buildUI()
   if STATE.turn then          -- turn bar: bottom-right above the launcher, clear of the hand; everyone sees the same thing
     x[#x + 1] = '<Panel id="j_turnbar" rectAlignment="LowerRight" offsetXY="-16 128" width="300" height="108">' ..
       '<VerticalLayout spacing="8" childAlignment="LowerRight">' ..
-      uBtn("j_phaseBtn", phaseLabel(), "j_ui_nextPhase", 300, 50, "#2E4A30F0", 20, 'tooltip="Click: next phase   |   Right-click: back one\nJust a tracker - it does nothing automatically."') ..
-      uBtn("j_dieBtn", dieLabel(), "j_ui_rollDie", 300, 50, "#5A2020F0", 20, 'tooltip="Roll the boss die (3 circles, 2 triangles, 1 square)"') ..
+      uBtn("j_phaseBtn", phaseLabel(), "j_ui_nextPhase", 300, 50, "#2E4A30F0", 20) ..
+      uBtn("j_dieBtn", dieLabel(), "j_ui_rollDie", 300, 50, "#5A2020F0", 20) ..
       '</VerticalLayout></Panel>'
   end
   for _, c in ipairs(SEAT_ORDER) do

@@ -29,19 +29,19 @@ Two buttons sit in the **bottom-right corner of the screen**; each opens a near-
 ## During play
 - **Playmat** slots: Hero, Weapon, Weapon 2, Cycle, Deck, Discard (cards snap into them).
   - **Cycle**: drop a card (or a small stack) here and it goes to the bottom of your deck.
-- **Playmat trackers** (top-right of the mat, after Create Character): Health, Shield, Actions - click -1, right-click +1.
-- **End Turn** (under the trackers): readies (straightens) any sideways cards on your mat, draws you up to 4,
+- **Playmat trackers** (top-right of the mat, after Create Character): Health, Shield, Actions - click +1, right-click -1.
+- **Rally** (bottom-right of the mat): readies (straightens) any sideways cards on your mat, draws you up to 4,
   resets Actions to 2 and Shield to 0.
 - **Turn bar** (bottom-right of the screen above the menu buttons, while an adventure runs): shows the round and
-  phase for everyone. Click to move on, right-click to go back. It's only a tracker - it never moves cards.
-  The boss die button under it rolls A A A B B C.
+  phase for everyone (Encounter, Hero, Enemy, Rally). Click to move on, right-click to go back. It is only a tracker - it never moves cards.
+  The boss die button under it rolls 3 circles, 2 triangles, 1 square.
 - **Token supply** (column along the right edge): bottomless bags of Burn, Frost, Stun, +1 Power, Armor, Strength,
   Intellect, Agility (stack them to count) and a blue number Counter (TTS's own counter, for Horde bodies etc.).
 - **Class tokens** spawn on the top-left of the playmat when you create a character that uses them:
   Ember bag (Dragonheart), Renown bag (Rogue - Outlaw), one Stealth token (Rogue). Edit the TOKENS list in
   tts/build/build.py to add more (the owner column is a class or subclass set code).
 - All +/- buttons: click +1, right-click -1.
-- **End Turn** draws your deck dry, then shuffles your discard pile in as the new deck and keeps drawing.
+- **Rally** draws your deck dry, then shuffles your discard pile in as the new deck and keeps drawing.
 
 ## Changing content
 Everything comes from `data/journeys-cards.xlsx` (Cards, Sets, Classes, Adventures, Journey, Bosses tabs) + the images in `cards/`.
@@ -77,4 +77,6 @@ Don't edit `tts/src/data.lua` by hand – it's regenerated.
   - They enter with health x players in bodies (Goblin Horde: 2 per player).
   - Click +1 to reinforce, right-click -1 for damage.
   - The counter shows +1P once the card's body threshold is reached.
-- **Draw Encounter** (under the Discard): puts the top encounter card face up at the top middle of your playmat. If the deck is empty, the discard is shuffled face down into a new deck first.
+- **Draw Encounter** (bottom-right of each playmat, next to Rally): puts the top encounter card face up at the top middle of that playmat. If the deck is empty, the discard is shuffled face down into a new deck first.
+- **Magnets** on the Battlefield hold the Encounter Deck, the Discard and the four Obstacle spaces.
+- **Moving along the journey** to a stage that shuffles in new sets puts the encounter deck, its discard pile and the new cards together into one shuffled deck.
