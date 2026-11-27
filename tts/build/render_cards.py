@@ -2,7 +2,7 @@
 
     python3 tts/build/render_cards.py <repo folder> [card id ...]
 
-Reads the encounter cards (sets with the encounter back) from data/journeys-cards.xlsx and draws each one with
+Reads the encounter cards (sets with the encounter back) and the hero cards from data/journeys-cards.xlsx and draws each one with
 the frame in tts/build/card_frame/ (HTML + CSS, rendered by headless Chromium at 762x1067).
 
   art      art/encounters/<card name>.png (or .jpg). Missing art is cut out of the card's current export in cards/
@@ -116,20 +116,23 @@ def clear_html(channel):
     return f'<div class="clear"><b>CLEAR</b>{"".join(parts)}</div>'
 
 # ---------------------------------------------------------------- art
+HERO_ART_BOX = (60, 150, 702, 810)           # where the art sits on the old hero exports
 def art_for(c):
+    hero = s(c["card_type"]) == "Hero"
+    folder = os.path.join(ROOT, "art", "heroes") if hero else ART
     for ext in (".png", ".jpg", ".jpeg", ".webp"):
-        p = os.path.join(ART, c["name"] + ext)
+        p = os.path.join(folder, c["name"] + ext)
         if os.path.exists(p): return p
     src = os.path.join(ROOT, s(c["source_file"]))
     if not os.path.exists(src): return None
-    crop = Image.open(src).convert("RGB").resize((762, 1067)).crop(OLD_ART_BOX)
+    crop = Image.open(src).convert("RGB").resize((762, 1067)).crop(HERO_ART_BOX if hero else OLD_ART_BOX)
     r, g, b = crop.resize((80, 57)).split()
     lo = ImageChops.darker(r, ImageChops.darker(g, b))          # darkest channel per pixel
     white = sum(lo.histogram()[233:]) / (80 * 57)
     if white > 0.30:                                   # the old placeholder silhouette on white: no real art yet
         return None
-    os.makedirs(ART, exist_ok=True)
-    p = os.path.join(ART, c["name"] + ".png"); crop.save(p, optimize=True)
+    os.makedirs(folder, exist_ok=True)
+    p = os.path.join(folder, c["name"] + ".png"); crop.save(p, optimize=True)
     return p
 
 def framed_path(root, source_file):
@@ -138,12 +141,16 @@ def framed_path(root, source_file):
     rel = rel[len("cards/"):] if rel.startswith("cards/") else rel
     return os.path.join(root, "cards", "framed", rel)
 
+HERO_HEALTH = 10
+HERO_CLASS = {"CHR-MAG": "mage", "CHR-WAR": "warrior", "CHR-ROG": "rogue", "CHR-PRI": "priest", "CHR-DRG": "dragonheart"}
+
 # ---------------------------------------------------------------- one card
 def card_html(c, set_name):
     kind = s(c["card_type"])
     ti = type_info(s(c["traits"]), kind)
     horde = kind == "Enemy" and ("Horde" in s(c["name"]) or "reinforce" in s(c["keywords"]).lower())
-    cls = {"Enemy": "horde" if horde else "enemy", "Event": "event", "Obstacle": "obstacle"}.get(kind, "event")
+    cls = {"Enemy": "horde" if horde else "enemy", "Event": "event", "Obstacle": "obstacle",
+           "Hero": "hero " + HERO_CLASS.get(s(c["id"]), "")}.get(kind, "event")
     name = html.escape(s(c["name"]))
     tl = rank_svg(ti["rank"]) if ti["rank"] else ""
     tl += f'<span class="t">{html.escape(ti["type"])}</span>'
@@ -156,6 +163,10 @@ def card_html(c, set_name):
         right = (f'<div class="stats">{power}'
                  f'<div class="health">{SHIELD.format(fill="#2f5fb0" if horde else "#a82a24")}'
                  f'<span class="{"small" if len(hp) > 2 else ""}">{html.escape(hp)}</span></div></div>')
+    elif kind == "Hero":                      # heroes start at 10 health
+        tl = f'<span class="t">Hero \u2014 {html.escape(s(c["traits"]) or s(c["name"]))}</span>'
+        right = (f'<div class="stats"><div class="health">{SHIELD.format(fill="#a82a24")}'
+                 f'<span>{HERO_HEALTH}</span></div></div>')
     elif kind == "Obstacle" and s(c["channel"]):
         right = clear_html(c["channel"])
     art = art_for(c)
@@ -183,7 +194,8 @@ def main():
     wb = load_workbook(os.path.join(ROOT, "data", "journeys-cards.xlsx"), read_only=True)
     cards, sets = rows(wb["Cards"]), rows(wb["Sets"])
     set_by = {x["set"]: x for x in sets}
-    todo = [c for c in cards if set_by.get(c["set"], {}).get("back") == "encounter" and (not ONLY or c["id"] in ONLY)]
+    todo = [c for c in cards if (set_by.get(c["set"], {}).get("back") == "encounter" or s(c["card_type"]) == "Hero")
+            and (not ONLY or c["id"] in ONLY)]
     tmp = os.path.join(FRAME, "_card.html")
     problems = []
     with sync_playwright() as p:

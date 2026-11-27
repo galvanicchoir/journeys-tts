@@ -29,6 +29,15 @@ html, body { margin: 0; padding: 0; background: #1b1612; }
   background: rgba(0,0,0,.35); border: 1px solid #c9a24a; font-family: Cinzel, serif; font-size: 10.5px; font-weight: 700; color: #f0d58c; line-height: 1; }
 .rank { flex-shrink: 0; display: block; }
 
+/* hero cards: gold border, taller art, header in the class colour */
+.hero { border-color: #c9a24a; }
+.hero .art { height: 300px; }
+.hero.mage .head        { background: linear-gradient(180deg, #33508f, #141d3a); }
+.hero.warrior .head     { background: linear-gradient(180deg, #6a5238, #2a1d12); }
+.hero.rogue .head       { background: linear-gradient(180deg, #36504c, #121c1b); }
+.hero.priest .head      { background: linear-gradient(180deg, #9a8650, #3e3418); }
+.hero.dragonheart .head { background: linear-gradient(180deg, #8a5a1a, #352006); }
+
 /* stats */
 .stats { flex-shrink: 0; display: flex; align-items: center; gap: 6px; }
 .power { position: relative; width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #3a2f25, #17110c);
