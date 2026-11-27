@@ -77,6 +77,7 @@ Don't edit `tts/src/data.lua` by hand – it's regenerated.
   - They enter with health x players in bodies (Goblin Horde: 2 per player).
   - Click +1 to reinforce, right-click -1 for damage.
   - The counter shows +1P once the card's body threshold is reached.
+- **Phase highlights:** in the Encounter phase each player's Draw Encounter button glows gold, and in the Rally phase their Rally button does, until that player presses it.
 - **Draw Encounter** (bottom-right of each playmat, next to Rally): puts the top encounter card face up at the top middle of that playmat. If the deck is empty, the discard is shuffled face down into a new deck first.
 - **Magnets** on the Battlefield hold the Encounter Deck, the Discard and the four Obstacle spaces.
 - **Moving along the journey** to a stage that shuffles in new sets puts the encounter deck, its discard pile and the new cards together into one shuffled deck.

@@ -555,8 +555,25 @@ function stepPhase(dir)
     else t.phase = t.phase - 1 end
   end
   if t.round > 0 then broadcastToAll("Round " .. t.round .. " - " .. PHASES[t.phase], {0.95, 0.85, 0.55}) end
+  t.acted = {}                                   -- who has pressed this phase's highlighted button
   refreshTurnBar()
+  refreshMats()
 end
+
+-- Phase highlights: in the Encounter phase each player's Draw Encounter button glows, in the Rally phase their
+-- Rally button does, until that player presses it.
+function phaseWants(seat, phaseName)
+  local t = STATE.turn
+  return t and t.round > 0 and PHASES[t.phase] == phaseName and not (t.acted and t.acted[seat]) and true or false
+end
+function markActed(seat, phaseName)
+  local t = STATE.turn
+  if t and t.round > 0 and PHASES[t.phase] == phaseName then
+    t.acted = t.acted or {}
+    if not t.acted[seat] then t.acted[seat] = true local m = matOf(seat) if m then drawMat(m) end end
+  end
+end
+function refreshMats() for _, m in ipairs(getObjectsWithTag("J_Mat")) do drawMat(m) end end
 function j_ui_nextPhase(player, btn) stepPhase(btn == "-2" and -1 or 1) end
 
 -- ------------------------------------------------------------------ token supply
@@ -670,12 +687,14 @@ function drawMat(obj)
     button(obj, "j_hp",     "Health " .. s.hp .. " / " .. s.maxhp, x, TRACK_Z[1], 340, 42, 42, tip, {0.5, 0.12, 0.12, 0.95}, TRACK_SCALE)
     button(obj, "j_shield", "Shield " .. s.shield,                 x, TRACK_Z[2], 340, 42, 42, tip .. "\n(clears when you Rally)", {0.25, 0.3, 0.45, 0.95}, TRACK_SCALE)
     button(obj, "j_ap",     "Actions " .. s.ap,                    x, TRACK_Z[3], 340, 42, 42, tip .. "\n(resets to " .. DEFAULT_AP .. " when you Rally)", {0.5, 0.42, 0.12, 0.95}, TRACK_SCALE)
-    button(obj, "j_endTurn", "Rally", RALLY_POS[1], RALLY_POS[2], 340, 54, 46,
+    local GLOW, GLOW_TEXT = {1, 0.82, 0.25, 1}, {0.15, 0.1, 0.02}       -- your turn to press this one
+    local rallyOn, drawOn = phaseWants(color, "Rally"), phaseWants(color, "Encounter")
+    button(obj, "j_endTurn", rallyOn and "> Rally <" or "Rally", RALLY_POS[1], RALLY_POS[2], 340, 54, 46,
       "Ready (straighten) your exhausted cards, draw up to " .. HAND_SIZE .. ", reset Actions to " .. DEFAULT_AP .. " and Shield to 0",
-      {0.18, 0.4, 0.22, 0.95}, TRACK_SCALE)
-    button(obj, "j_matDraw", "Draw Encounter", DRAW_POS[1], DRAW_POS[2], 340, 54, 36,
+      rallyOn and GLOW or {0.18, 0.4, 0.22, 0.95}, TRACK_SCALE, rallyOn and GLOW_TEXT or nil)
+    button(obj, "j_matDraw", drawOn and "> Draw Encounter <" or "Draw Encounter", DRAW_POS[1], DRAW_POS[2], 340, 54, drawOn and 32 or 36,
       "Draw the top encounter card face up onto this playmat. If the deck is empty, the discard is shuffled in first.",
-      {0.45, 0.36, 0.12, 0.95}, TRACK_SCALE)
+      drawOn and GLOW or {0.45, 0.36, 0.12, 0.95}, TRACK_SCALE, drawOn and GLOW_TEXT or nil)
     return
   end
   button(obj, "j_noop", "Open  Character  (bottom-right of your screen)\nto create your hero", 0, 0.45, 520, 60, 30, "", {0, 0, 0, 0}, SQUASH)
@@ -705,7 +724,7 @@ function endTurn(seat)
   broadcastToAll(seat .. " rallies" .. (readied > 0 and (" (readied " .. readied .. " card" .. (readied > 1 and "s" or "") .. ")") or "") .. ".",
     stringColorToRGB(seat))
 end
-function j_endTurn(obj) endTurn(obj.getGMNotes()) end
+function j_endTurn(obj) local seat = obj.getGMNotes() endTurn(seat) markActed(seat, "Rally") end
 
 local function tweak(obj, field, alt, hiField)
   local _, s = seatOf(obj)
@@ -908,7 +927,7 @@ local function drawOne(pile, color)
     pile.setPositionSmooth({x, y, z}, false, true)
   end
 end
-function j_matDraw(mat) drawEncounter(mat.getGMNotes()) end      -- Draw Encounter on a playmat: draws for that seat
+function j_matDraw(mat) local seat = mat.getGMNotes() drawEncounter(seat) markActed(seat, "Encounter") end      -- Draw Encounter on a playmat: draws for that seat
 function drawEncounter(color)
   if not SEATS[color] then return end
   local deck = encPile(ENC_DECK_POS)
