@@ -329,7 +329,7 @@ for c in cards:
     stats = " ".join(x for x in [f"P {c['power']}" if c["power"] not in (None, "") else "",
                                  f"H {c['health']}" if c["health"] not in (None, "") else "",
                                  f"Channel {pretty(str(c['channel']))}" if c["channel"] else ""] if x)
-    desc = "\n".join(x for x in [c["traits"] or "", stats, pretty(c["text"])] if x)
+    desc = "\n".join(x for x in [c["traits"] or "", stats, pretty(str(c["text"] or "").replace("{name}", str(c["name"])))] if x)   # {name} = the card's own name
     CARDS_L[c["id"]] = {"name": c["name"], "set": c["set"], "type": c["card_type"] or "", "text": desc,
                         "qty": int(c["qty"] or 1), "sheet": n, "idx": i,
                         "enc": set_by[c["set"]]["back"] == "encounter"}

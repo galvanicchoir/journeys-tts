@@ -21,8 +21,8 @@ Made by `tts/build/loot.py` (seed 1125). Power 1/2/2 at tier II/III/IV; Priest w
 - **Glacial Staff** (Tier II): Frostbite gets +1{b}.
 - **Glacial Rod** (Tier II): Frostbite gets +1{b}.
 - **Staff of Stillness** (Tier III): Frostbite gets +1{b}. / Shatter gets +2{r}.
-- **Stave of Sleet** (Tier III): Chilling Air also gives you 1 Shield. / Comeback gets +2{b}.
-- **Stave of Stillness** (Tier III): Comeback gets +1{b}. / Frostbite gets +2{b}.
+- **Wand of the Glacier** (Tier III): If Damage defeats an enemy, draw a card. / Arcane Barrier has Quickcast.
+- **Stave of the Long Winter** (Tier III): Magic Missile also applies Frost to each enemy it damages. / Chilling Air gets +2{b}.
 - **Shivering Stave of Sleet** (Tier IV): Knowledge gets +1{b}. / Damage gets +1{r} and +1{b}. / Shatter gets +2{b}.
 - **Wintry Stave of Stillness** (Tier IV): Frostbite gets +1{b}. / Arcane Barrier gets +2{g}. / Freeze has Quickcast.
 - **Shivering Scepter of the Glacier** (Tier IV): Freeze also heals you 1. / Frostbite gets +2{b}. / Arcane Barrier has Quickcast.
