@@ -182,7 +182,7 @@ def safe(name): return re.sub(r'[<>:"/\\|?*]', "", name)
 # ------------------------------------------------------------------ rendering (same frame as the encounter cards)
 def card_html(w, by_id):
     tier, tint = w["tier"], FLAVOR[w["subclass"]][2]
-    def gems(t): return re.sub(r"\{([rgb])\}", lambda m: gem_icons.svg(m.group(1)), t)
+    def gems(t): return re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), t)
     bl = html.escape(base_line(w), quote=False).replace("Activate - ", "<b>Activate</b> - ", 1)
     lines = [f'<p class="base">{bl}</p>']
     if w["class"] in ACTIVATE:

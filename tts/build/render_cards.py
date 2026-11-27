@@ -91,7 +91,7 @@ def rules_html(text, keywords):
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
     out = re.sub(r"(?<![\w>])(reinforces?|cascade)(?![\w<])", r"<b>\1</b>", out, flags=re.I)
-    out = re.sub(r"\{([rgb])\}", lambda m: gem_icons.svg(m.group(1)), out)
+    out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28 if m.group(1) else 14, label=m.group(1) or ""), out)
     lead = "".join(f"<p><b>{html.escape(k)}</b></p>" for k in kws if k.lower() not in t.lower())
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
