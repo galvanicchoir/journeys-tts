@@ -24,13 +24,17 @@ TEXT_Y = {"r": 11.2, "g": 12.4, "b": 15.4}   # optical centre of each shape (whe
 def svg(color, size=14, outline="#8a6a2e", cls="gem", label=""):
     c = color.lower()
     num = ""
-    if label:   # a big digit; a leading "+" is drawn smaller so the number stays readable
-        plus, digits = ("+", label[1:]) if label.startswith("+") else ("", label)
-        body = (f'<tspan font-size="9" dy="-0.6">+</tspan><tspan font-size="15" dy="0.6">{digits}</tspan>' if plus
-                else f'<tspan font-size="15.5">{digits}</tspan>')
-        num = (f'<text x="12" y="{TEXT_Y[c]}" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" '
-               f'font-weight="800" letter-spacing="-0.4" fill="#fff" stroke="#1b1612" stroke-width="2.6" paint-order="stroke" '
-               f'stroke-linejoin="round">{body}</text>')
+    if label:   # a big digit; a leading "+" is drawn as a bold cross so it can't be mistaken for a minus
+        plus, digits = (True, label[1:]) if label.startswith("+") else (False, label)
+        y = TEXT_Y[c]
+        cross = ""
+        if plus:
+            cx = 7.4
+            cross = (f'<path d="M{cx - 3.1} {y}H{cx + 3.1}M{cx} {y - 3.1}V{y + 3.1}" stroke="#1b1612" stroke-width="4.4" stroke-linecap="square"/>'
+                     f'<path d="M{cx - 3.1} {y}H{cx + 3.1}M{cx} {y - 3.1}V{y + 3.1}" stroke="#fff" stroke-width="1.9" stroke-linecap="square"/>')
+        num = cross + (f'<text x="{15 if plus else 12}" y="{y}" text-anchor="middle" dominant-baseline="central" font-family="Cinzel, serif" '
+               f'font-weight="800" font-size="{14 if plus else 15.5}" fill="#fff" stroke="#1b1612" stroke-width="2.6" paint-order="stroke" '
+               f'stroke-linejoin="round">{digits}</text>')
     title = f"{label} {NAME[c]}" if label else f"{NAME[c]} gem"
     return (f'<svg class="{cls} {c}{" num" if label else ""}" width="{size}" height="{size}" viewBox="0 0 24 24" aria-label="{title}">'
             f'<path d="{SHAPE[c]}" fill="{FILL[c]}" stroke="{outline}" stroke-width="1.6" stroke-linejoin="round"/>'
