@@ -270,9 +270,9 @@ function setupAdventure(adv)
     local ids, isAside = {}, {}
     for _, id in ipairs(e.set_aside or {}) do isAside[id] = true end
     local rest = after(e.use, "cache:")
-    local cacheSig, only
+    local cacheSig, only = nil, nil   -- MoonSharp: uninitialised locals in loops can keep stale values
     if rest then cacheSig, only = split2(rest) end
-    local onlySet
+    local onlySet = nil   -- MoonSharp: uninitialised locals in loops can keep stale values
     if only then onlySet = {} for id in only:gmatch("[^,%s]+") do onlySet[id] = true end end
     for _, id in ipairs(expand(set.cards)) do
       if onlySet then
@@ -305,7 +305,7 @@ function setupAdventure(adv)
   if j then
     for _, a in ipairs(j.nodes[j.start].actions) do
       local rest = after(a, "cachetop:")
-      local sig, n
+      local sig, n = nil, nil   -- MoonSharp: uninitialised locals in loops can keep stale values
       if rest then sig, n = split2(rest) n = n or "" end
       if sig then
         local k = cacheKey(sig)
@@ -567,7 +567,7 @@ function ACTIONS.awaits(args)
     local deck = encPilesAt(ENC_DECK_POS)[1]
     if not deck then broadcastToAll("The encounter deck ran out before an Elite came up.", {1, 0.6, 0.2}) return end
     local target = emptyStack(0)
-    local card
+    local card = nil   -- MoonSharp: uninitialised locals in loops can keep stale values
     if deck.type == "Deck" then card = deck.takeObject({position = {ENC_DECK_POS[1], 3, ENC_DECK_POS[3]}, rotation = {0, 180, 0}, smooth = false})
     else card = deck card.setRotation({0, 180, 0}) end
     Wait.frames(function()
@@ -874,7 +874,7 @@ end
 function seatPile(seat, name)
   local mat = matOf(seat)
   if not mat then return end
-  local best, bestN
+  local best, bestN = nil, nil   -- MoonSharp: uninitialised locals in loops can keep stale values
   for _, o in ipairs(getAllObjects()) do
     if (o.type == "Card" or o.type == "Deck") and not o.held_by_color and onSlot(mat, o.getPosition(), name) then
       local n = o.type == "Deck" and o.getQuantity() or 1
@@ -1107,7 +1107,7 @@ end
 
 -- The encounter deck / discard pile: the biggest encounter pile sitting on that spot.
 local function encPile(spot)
-  local best, bestN
+  local best, bestN = nil, nil   -- MoonSharp: uninitialised locals in loops can keep stale values
   for _, o in ipairs(getAllObjects()) do
     if (o.type == "Deck" or o.type == "Card") and not o.held_by_color then
       local p = o.getPosition()
@@ -1199,7 +1199,7 @@ function drawEnemyHP(o)
   local v = STATE.hp[o.getGUID()]
   if v == nil then return end
   local c = enemyCard(o)
-  local label, tip
+  local label, tip = nil, nil   -- MoonSharp: uninitialised locals in loops can keep stale values
   if isHorde(c) then
     local need, bonus = (c.text or ""):match("(%d+) or more bodies, it gets %+(%d+)P")
     label = v .. " bodies" .. ((need and v >= tonumber(need)) and (" +" .. bonus .. "P") or "")
@@ -1405,7 +1405,7 @@ function buildCharacter(seat, color)
   if s.built then return end
   local cls = CLASSES[s.class]
   fixPick(s)
-  local anc
+  local anc = nil   -- MoonSharp: uninitialised locals in loops can keep stale values
   for _, v in ipairs(ANCESTRIES) do if v.name == s.ancestry then anc = v end end
 
   -- level 1 starting deck: class core + subclass + ancestry
@@ -1645,7 +1645,7 @@ local function charPanel(c)
   local cls = CLASSES[s.class]
   fixPick(s)
   local sub = subclassOf(s)
-  local anc; for _, v in ipairs(ANCESTRIES) do if v.name == s.ancestry then anc = v end end
+  local anc = nil for _, v in ipairs(ANCESTRIES) do if v.name == s.ancestry then anc = v end end
   local body = header(c, s.built and ("Your Character - " .. c .. " seat") or ("Create a Character - " .. c .. " seat"), "char") ..
     hRow(50, uBtn(c .. "_ctab_char", "Character", "j_ui_ctab", 220, 46, u.ctab ~= "forge" and UC.sel or UC.btn, 20) ..
              uBtn(c .. "_ctab_forge", "Forge", "j_ui_ctab", 220, 46, u.ctab == "forge" and UC.sel or UC.btn, 20))
