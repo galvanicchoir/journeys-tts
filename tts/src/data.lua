@@ -4285,6 +4285,21 @@ AGGRO_TOKENS = {
   ["Blue"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/aggro-blue.png?v=65498072"
 }
 PHASE_IMAGE = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/phase-tracker.png?v=9c0ddf44"
+CACHE_TOKENS = {
+  ["&"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cache-wave.png?v=60e1a27d",
+  ["%"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cache-bowl.png?v=b2015eb1",
+  ["$"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cache-fan.png?v=e3094a46"
+}
+TRACKER_IMAGES = {
+  ["Descent:4"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/track-descent-4.png?v=70cb5714"
+}
+TRACK_GRID = {
+  ["x0"] = 0.28,
+  ["x1"] = 0.96,
+  ["y0"] = 0.25,
+  ["y1"] = 0.95,
+  ["label_x"] = 0.04
+}
 JOURNEYS = {
   ["TWG"] = {
     ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=76d5e98a",
@@ -4341,7 +4356,7 @@ JOURNEYS = {
         ["rules"] = "Setup: shuffle the top 4 cards of the encounter deck into the % Cache. Start - Place each hero's aggro token at the top of the silken caves. Here - Each hero has Exhaust Action - Move down 1 floor. When you Rally, if all surviving heroes are at the bottom floor, Journey Forward.",
         ["local"] = {-0.668, -0.375},
         ["next"] = {"B1", "C1"},
-        ["actions"] = {"cachetop:%:4"}
+        ["actions"] = {"cachetop:%:4", "track:Descent:4"}
       },
       ["B1"] = {
         ["name"] = "What Awaits",

@@ -288,6 +288,62 @@ for seat, rgb in SEAT_RGB.items():
     fn = f"aggro-{seat.lower()}.png"; t.save(os.path.join(TTS, "images", fn))
     AGGRO_TOKENS[seat] = f"{ASSET}/tts/images/{fn}"
 
+# ---------- cache tokens: the & % $ sigils, set beside each cache pile ----------
+def _quad(p0, c, p1, n=24):
+    return [((1-t)**2*p0[0] + 2*(1-t)*t*c[0] + t*t*p1[0], (1-t)**2*p0[1] + 2*(1-t)*t*c[1] + t*t*p1[1]) for t in [i / n for i in range(n + 1)]]
+CACHE_STROKES = {   # same marks as card_frame/cache_icons.py (24-unit box)
+    "&": [_quad((1.9, 9.6), (7, 4.2), (12, 9.6)) + _quad((12, 9.6), (17, 15), (22.1, 9.6)),
+          _quad((2.2, 15.4), (7, 10), (12, 15.4)) + _quad((12, 15.4), (17, 20.8), (21.8, 15.4))],
+    "%": [_quad((3.2, 7), (12, 27.5), (20.8, 7))],
+    "$": [[(12, 20.6), (3, 6.4)], [(12, 20.6), (12, 1.4)], [(12, 20.6), (21, 6.4)]],
+}
+CACHE_TOKENS = {}
+for sym, nm in [("&", "Wave"), ("%", "Bowl"), ("$", "Fan")]:
+    S, k = 512, 512 / 24
+    ink = (236, 222, 184, 255)
+    mark = Image.new("RGBA", (S, S), (0, 0, 0, 0)); md = ImageDraw.Draw(mark)
+    for line in CACHE_STROKES[sym]:
+        pts = [(x * k, y * k) for x, y in line]
+        md.line(pts, fill=ink, width=int(1.9 * k), joint="curve")
+        for x, y in (pts[0], pts[-1]):
+            r = 0.95 * k; md.ellipse((x - r, y - r, x + r, y + r), fill=ink)
+    if sym == "%":
+        r = 2.1 * k; md.ellipse((12 * k - r, 8.2 * k - r, 12 * k + r, 8.2 * k + r), fill=ink)
+    clip = Image.new("L", (S, S), 0); ImageDraw.Draw(clip).ellipse((12 * k - 10.2 * k,) * 2 + (12 * k + 10.2 * k,) * 2, fill=255)
+    mark.putalpha(Image.composite(mark.getchannel("A"), Image.new("L", (S, S), 0), clip))
+    t = Image.new("RGBA", (S, S), (0, 0, 0, 0)); td = ImageDraw.Draw(t)
+    td.ellipse((8, 8, S - 8, S - 8), fill=(40, 32, 46, 255), outline=(210, 180, 100, 255), width=16)
+    t.alpha_composite(mark)
+    td.ellipse((12 * k - 10.2 * k,) * 2 + (12 * k + 10.2 * k,) * 2, outline=ink, width=int(1.4 * k))
+    t = t.resize((256, 256), Image.LANCZOS)
+    fn = f"cache-{nm.lower()}.png"; t.save(os.path.join(TTS, "images", fn))
+    CACHE_TOKENS[sym] = f"{ASSET}/tts/images/{fn}"
+
+# ---------- journey trackers (e.g. The Silken Dark's Descent): a square board east of the Battlefield ----------
+# Rows = floors (top to bottom), columns = seats; global.lua puts a clickable cell over each square (TRACK_GRID).
+TRACK_GRID = {"x0": 0.28, "x1": 0.96, "y0": 0.25, "y1": 0.95, "label_x": 0.04}   # fractions of the image
+TRACKER_IMAGES = {}
+def tracker_image(title, rows):
+    S = 800; im = Image.new("RGB", (S, S), (28, 25, 36)); d = ImageDraw.Draw(im)
+    d.rounded_rectangle((8, 8, S - 8, S - 8), radius=30, outline=(210, 180, 100), width=8)
+    d.text((S / 2, 70), title.upper(), font=font(64), fill=(236, 210, 140), anchor="mm")
+    g = TRACK_GRID; x0, x1, y0, y1 = g["x0"] * S, g["x1"] * S, g["y0"] * S, g["y1"] * S
+    cw, rh = (x1 - x0) / 4, (y1 - y0) / len(rows)
+    for i, seat in enumerate(["White", "Red", "Green", "Blue"]):
+        d.text((x0 + (i + 0.5) * cw, y0 - 30), seat.upper(), font=font(26), fill=SEAT_RGB[seat], anchor="mm")
+    for r, label in enumerate(rows):
+        yc = y0 + (r + 0.5) * rh
+        d.line((40, y0 + r * rh, S - 40, y0 + r * rh), fill=(70, 60, 80), width=2)
+        lines = label.split("\n")
+        for j, ln in enumerate(lines):
+            d.text((g["label_x"] * S + 8, yc + (j - (len(lines) - 1) / 2) * 34), ln, font=font(30), fill=(220, 205, 170), anchor="lm")
+        for i in range(4):
+            cx = x0 + (i + 0.5) * cw
+            d.ellipse((cx - 42, yc - 42, cx + 42, yc + 42), outline=(90, 80, 100), width=4)
+    fn = f"track-{title.lower()}-{len(rows)}.png"; im.save(os.path.join(TTS, "images", fn))
+    return f"{ASSET}/tts/images/{fn}"
+TRACKER_IMAGES["Descent:4"] = tracker_image("Descent", ["Top of\nthe Caves", "Floor 2", "Floor 3", "Bottom\nFloor"])
+
 # ---------- Steam Cloud links (tts/build/cloud_urls.json): used instead of local files where listed ----------
 _cloud_path = os.path.join(TTS, "build", "cloud_urls.json")
 CLOUD = {k: v for k, v in json.load(open(_cloud_path)).items() if not k.startswith("_")} if os.path.exists(_cloud_path) else {}
@@ -403,6 +459,9 @@ data += "TOKENS = " + lua(TOKENS_L) + "\n"
 data += f"BATTLEFIELD_IMAGE = {lua(BATTLEFIELD_IMAGE)}\nBF_W, BF_D = {BF_W}, {BF_D}\n"
 data += "AGGRO_TOKENS = " + lua(AGGRO_TOKENS) + "\n"
 data += "PHASE_IMAGE = " + lua(PHASE_IMAGE) + "\n"
+data += "CACHE_TOKENS = " + lua(CACHE_TOKENS) + "\n"
+data += "TRACKER_IMAGES = " + lua(TRACKER_IMAGES) + "\n"
+data += "TRACK_GRID = " + lua(TRACK_GRID) + "\n"
 data += "JOURNEYS = " + lua(JOURNEYS_L) + "\n"
 data += "BOSSES = " + lua(BOSSES_L) + "\n"
 # Every link to one of our own files gets ?v=<content hash>, so when an image changes its link changes too and

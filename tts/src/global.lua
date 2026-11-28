@@ -212,6 +212,7 @@ function initTable()
   end
   for _, t in ipairs(getObjectsWithTag("J_AdvTile")) do destroyObject(t) end   -- tiles from older builds
   for _, b in ipairs(getObjectsWithTag("J_Board")) do drawBoard(b) end
+  for _, t in ipairs(getObjectsWithTag("J_Track")) do drawTracker(t) end
   for _, b in ipairs(getObjectsWithTag("J_Boss")) do drawBoss(b) end
   for _, p in ipairs(getObjectsWithTag("J_Phase")) do destroyObject(p) end   -- tracker tiles from older builds
   if #getObjectsWithTag("J_Supply") == 0 then spawnSupply() end
@@ -234,6 +235,20 @@ function startAdventure(id, color)
   setupAdventure(adv)
   broadcastToAll("Adventure: " .. adv.name .. " (Level " .. adv.level .. ")", {0.95, 0.85, 0.55})
   buildUI()
+end
+
+local function players()
+  local n = 0
+  for _, s in pairs(STATE.seats) do if s.built then n = n + 1 end end
+  if n == 0 then n = #getSeatedPlayers() end
+  return math.max(n, 1)
+end
+
+local function starred(v)               -- "2*" -> 2 x players, "3" -> 3
+  v = tostring(v)
+  local n = tonumber(v:match("%d+")) or 0
+  if v:find("%*") then n = n * players() end
+  return n
 end
 
 function setupAdventure(adv)
@@ -276,25 +291,42 @@ function setupAdventure(adv)
       for _, id in ipairs(ids) do bagItems[#bagItems + 1] = cardData(id, tags) end
     end
   end
+  -- A start stage that moves the top of the encounter deck into a cache (The Silken Dark's A1) is done here, on the
+  -- card lists, before anything spawns: moving cards out of a deck that is still loading can lose the whole deck in TTS.
+  deck = shuffle(deck)
+  local j = JOURNEYS[adv.id]
+  local preDone = {}
+  if j then
+    for _, a in ipairs(j.nodes[j.start].actions) do
+      local sig, n = a:match("^cachetop:([^:]+):?(.*)$")
+      if sig then
+        local k = cacheKey(sig)
+        n = math.min(starred(n ~= "" and n or "1"), #deck)
+        caches[k] = caches[k] or {}
+        for _ = 1, n do table.insert(caches[k], table.remove(deck, 1)) end
+        preDone[a] = true
+        broadcastToAll("The top " .. n .. " encounter cards are shuffled into the " .. CACHE_NAME[k] .. " Cache (" .. k .. ").", {0.9, 0.8, 0.5})
+      end
+    end
+  end
   spawnObjectData({data = {Name = "Bag", Nickname = "Set Aside", Description = "Cards this adventure keeps out of the encounter deck.",
     Tags = {"J_Setup", "J_SetAsideBag"}, ContainedObjects = bagItems, Transform = T(0, 0, 0, 180),
     ColorDiffuse = {r = 0.55, g = 0.4, b = 0.25}}, position = BAG_POS})
-  spawnCards(shuffle(deck), ENC_DECK_POS, 180, true, tags)
+  spawnCards(deck, ENC_DECK_POS, 180, true, tags)
   spawnZone(ENC_DECK_POS, "J_EncZone"); spawnZone(ENC_DISC_POS, "J_DiscZone")
   for _, k in ipairs(CACHE_ORDER) do
     if caches[k] then
       local p = CACHE_POS[k]
       if #caches[k] > 0 then spawnCards(shuffle(caches[k]), p, 180, true, tags) end
-      spawnLabel(CACHE_NAME[k] .. " Cache  " .. k, {p[1], 1.05, p[3] - 2.0}, tags)
+      spawnCacheToken(k, tags)
     end
   end
   STATE.turn = {round = 0, phase = 0, die = nil}
-  local j = JOURNEYS[adv.id]
   if j then
     STATE.journey = {adv = adv.id, node = nil, visited = {}, boss = nil, summoned = 0}
     spawnObjectData({data = tile(j.board, adv.name .. " - Journey", "", adv.id, {"J_Setup", "J_Board"},
       BOARD_POS, 180, BOARD_SCALE), callback_function = function(b)
-        Wait.frames(function() enterNode(j.start) end, 5)
+        Wait.frames(function() enterNode(j.start, preDone) end, 5)
       end})
   end
 end
@@ -326,18 +358,6 @@ function resetTable(color)
 end
 
 -- ------------------------------------------------------------------ journey board
-local function players()
-  local n = 0
-  for _, s in pairs(STATE.seats) do if s.built then n = n + 1 end end
-  if n == 0 then n = #getSeatedPlayers() end
-  return math.max(n, 1)
-end
-local function starred(v)               -- "2*" -> 2 x players, "3" -> 3
-  v = tostring(v)
-  local n = tonumber(v:match("%d+")) or 0
-  if v:find("%*") then n = n * players() end
-  return n
-end
 local function zoneCards(tag)
   local z = first(tag); local r = {}
   if not z then return r end
@@ -428,6 +448,77 @@ function ACTIONS.shuffle(args)
   broadcastToAll("The encounter deck and discard pile are shuffled together" .. (sets > 0 and " with the new cards." or "."), {0.9, 0.8, 0.5})
 end
 -- The cache pile for a sigil: the encounter pile sitting on its spot.
+-- Run fn once obj has finished spawning and loading its images (TTS loses decks that are moved while loading).
+function whenReady(obj, fn)
+  if not obj then fn(obj) return end
+  Wait.condition(function() fn(obj) end,
+    function() return obj.isDestroyed() or (not obj.spawning and not obj.loading_custom) end, 10, function() fn(obj) end)
+end
+
+-- A round sigil token beside each cache pile, so players can tell & % $ apart.
+CACHE_TOKEN_DX = -2.0
+function spawnCacheToken(k, tags)
+  local p = CACHE_POS[k]
+  local t = tile(CACHE_TOKENS[k], CACHE_NAME[k] .. " Cache  " .. k, "The " .. CACHE_NAME[k] .. " Cache. Card text marks it with " .. k .. ".",
+    "", tags, {p[1] + CACHE_TOKEN_DX, 1.05, p[3]}, 180, 0.55)
+  t.CustomImage.CustomTile.Type = 2
+  spawnObjectData({data = t})
+end
+
+-- track:<Name>:<rows> - a seat-by-row tracker board east of the Battlefield (The Silken Dark's Descent).
+-- Each seat starts on the top row; click a square to move that seat's marker there.
+TRACK_POS, TRACK_SCALE_TILE = {17.4, 1.05, 0}, 3.6
+function ACTIONS.track(args)
+  local js = STATE.journey
+  local key = args[1] .. ":" .. (args[2] or "4")
+  if not TRACKER_IMAGES[key] then return end
+  if not (js.track and js.track.key == key) then
+    js.track = {key = key, name = args[1], rows = tonumber(args[2]) or 4, at = {}, done = false}
+  end
+  for _, o in ipairs(getObjectsWithTag("J_Track")) do if o.getGMNotes() == key then drawTracker(o) return end end
+  spawnObjectData({data = tile(TRACKER_IMAGES[key], args[1], "Click a square to move that hero's marker there.", key,
+    {"J_Setup", "J_Track"}, TRACK_POS, 180, TRACK_SCALE_TILE), callback_function = function(o) drawTracker(o) end})
+end
+
+function drawTracker(obj)
+  obj.clearButtons()
+  local tr = STATE.journey and STATE.journey.track
+  if not tr then return end
+  local g = TRACK_GRID
+  local cw, rh = (g.x1 - g.x0) / 4, (g.y1 - g.y0) / tr.rows
+  for i, seat in ipairs(SEAT_ORDER) do
+    local at = tr.at[seat] or 1
+    for r = 1, tr.rows do
+      local fx, fy = g.x0 + (i - 0.5) * cw, g.y0 + (r - 0.5) * rh
+      local fn = "j_trk_" .. i .. "_" .. r
+      _G[fn] = function(_, color, alt) moveTracker(seat, r) end
+      local here = (at == r)
+      local rgb = stringColorToRGB(seat)
+      button(obj, fn, here and "●" or "", 2 * fx - 1, 2 * fy - 1, 110, 110, 80,
+        here and (seat .. " is here") or ("Move " .. seat .. " here"),
+        here and {rgb.r, rgb.g, rgb.b, 0.95} or {1, 1, 1, 0.04}, nil, here and {0.1, 0.08, 0.12} or nil)
+    end
+  end
+end
+
+function moveTracker(seat, row)
+  local tr = STATE.journey and STATE.journey.track
+  if not tr then return end
+  tr.at[seat] = row
+  for _, o in ipairs(getObjectsWithTag("J_Track")) do drawTracker(o) end
+  local all, any = true, false
+  for _, s in ipairs(SEAT_ORDER) do
+    if (Player[s] and Player[s].seated) or (STATE.seats[s] and STATE.seats[s].built) then
+      any = true
+      if (tr.at[s] or 1) < tr.rows then all = false end
+    end
+  end
+  if any and all and not tr.done then
+    tr.done = true
+    broadcastToAll("Every hero has reached the bottom. Journey Forward when you Rally.", {0.95, 0.85, 0.55})
+  elseif not all then tr.done = false end
+end
+
 function cachePile(sig) return encPilesAt(CACHE_POS[cacheKey(sig)] or {0, 0, 999})[1] end
 
 -- cachetop:<sigil>:<n> - shuffle the top n cards of the encounter deck into that cache (n may be starred)
@@ -436,8 +527,8 @@ function ACTIONS.cachetop(args)
   local p = CACHE_POS[k]
   if not p then return end
   Wait.frames(function()
-    local deck = encPilesAt(ENC_DECK_POS)[1]
-    if not deck then return end
+    whenReady(encPilesAt(ENC_DECK_POS)[1], function(deck)
+    if not deck or deck.isDestroyed() then return end
     local moved = {}
     local have = cachePile(k)
     if have then moved[#moved + 1] = have end
@@ -455,6 +546,7 @@ function ACTIONS.cachetop(args)
       Wait.time(function() local c = encPilesAt(p)[1] if c and c.type == "Deck" then c.shuffle() end end, 0.6)
     end, 0.8)
     broadcastToAll("The top " .. n .. " encounter cards are shuffled into the " .. CACHE_NAME[k] .. " Cache (" .. k .. ").", {0.9, 0.8, 0.5})
+    end)
   end, 10)
 end
 
@@ -511,18 +603,26 @@ function ACTIONS.boss(args)              -- boss:<id>[:armor=<n>]
   broadcastToAll(b.name .. " has been summoned! (" .. hp .. " health" .. (armor > 0 and (", " .. armor .. " armor") or "") .. ")", {0.9, 0.3, 0.3})
 end
 
-function enterNode(id)
+function enterNode(id, skip)
   local js = STATE.journey
   local node = JOURNEYS[js.adv].nodes[id]
   js.node = id; js.visited[id] = true
   local board = first("J_Board")
   if board then board.setDescription("Current stage: " .. id .. " " .. node.name .. "\n" .. node.rules) drawBoard(board) end
   broadcastToAll("Journey: " .. id .. " " .. node.name, {0.95, 0.85, 0.55})
+  local keepTrack = {}
+  for _, a in ipairs(node.actions) do local t = a:match("^track:(.+)$") if t then keepTrack[t] = true end end
+  for _, o in ipairs(getObjectsWithTag("J_Track")) do
+    if not keepTrack[o.getGMNotes()] then destroyObject(o) end
+  end
+  if js.track and not keepTrack[js.track.key] then js.track = nil end
   for _, a in ipairs(node.actions) do
-    local parts = {}
-    for p in a:gmatch("[^:]+") do parts[#parts + 1] = p end
-    local fn = ACTIONS[table.remove(parts, 1)]
-    if fn then fn(parts) end
+    if not (skip and skip[a]) then
+      local parts = {}
+      for p in a:gmatch("[^:]+") do parts[#parts + 1] = p end
+      local fn = ACTIONS[table.remove(parts, 1)]
+      if fn then fn(parts) end
+    end
   end
 end
 

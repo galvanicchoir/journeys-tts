@@ -220,7 +220,7 @@ JOURNEY = [  # adventure_id, node, name, col, row, next, actions, rules
  "Shuffle Ire of the Goblin King along with the discard pile into the encounter deck. Summon The Goblin King. When The Goblin King is defeated, you win!"),
 ("TWG","C1","The Wizard's Tower",2,2,"","shuffle:MMS,PTP;boss:GK-TOWER:armor=1*",
  "Shuffle Portal to Problems and Magical Mishaps along with the discard pile into the encounter deck. Summon The Goblin King, then put 1* Armor Counters on him. When The Goblin King is defeated, you win!"),
-("SDK","A1","Descending through Silk",0,1,"B1,C1","cachetop:%:4",
+("SDK","A1","Descending through Silk",0,1,"B1,C1","cachetop:%:4; track:Descent:4",
  "Setup: shuffle the top 4 cards of the encounter deck into the % Cache. Start - Place each hero's aggro token at the top of the silken caves. Here - Each hero has Exhaust Action - Move down 1 floor. When you Rally, if all surviving heroes are at the bottom floor, Journey Forward."),
 ("SDK","B1","What Awaits",1,0,"D1","awaits:$",
  "Enter - Discard cards from the top of the encounter deck until an Elite is discarded. Spawn that enemy and attach the What Awaits card from the $ Cache to it. When you Rally, if the What Awaits enemy is defeated, Journey Forward."),
