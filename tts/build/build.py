@@ -122,7 +122,7 @@ MAT_LAYOUT = {"w": MAT_W, "d": MAT_D, "slots": [{"name": n, "x": x, "z": z} for 
 # ---------- journey boards + boss tiles ----------
 BOARD_PX = 1024
 NODE_X = [170, 512, 854]; NODE_Y = [190, 320, 450]; NODE_W, NODE_H = 280, 96
-BOSS_FRAME = (287, 545, 737, 995)      # where the boss tile sits on the board (pixels)
+BOSS_FRAME = (62, 540, 842, 969)       # where the boss tile sits on the board (pixels): landscape, 1200x660 tile; boss buttons go in the gap to its right
 def px_to_local(x, y): return round((x / BOARD_PX - 0.5) * 2, 3), round((y / BOARD_PX - 0.5) * 2, 3)  # image down = local +z
 
 def box_edge(c, toward, pad=6):
@@ -164,7 +164,7 @@ for aid in dict.fromkeys(j["adventure_id"] for j in journey):
     fname = f"journey-{aid.lower()}.png"; im.save(os.path.join(TTS, "images", fname))
     bx, bz = px_to_local((fx1 + fx2) / 2, (fy1 + fy2) / 2)
     JOURNEYS_L[aid] = {"board": f"{ASSET}/tts/images/{fname}", "start": nodes[0]["node"], "boss_pos": [bx, bz],
-        "boss_scale": round((fx2 - fx1) / BOARD_PX * 5, 3),   # frame width as a share of a scale-5 board
+        "boss_scale": round((fx2 - fx1) / BOARD_PX * 5, 3), "boss_scale_z": round((fy2 - fy1) / BOARD_PX * 5, 3),   # frame size as a share of a scale-5 board
         "order": [n["node"] for n in nodes],
         "node_w": round(NODE_W / BOARD_PX * 2, 3), "node_h": round(NODE_H / BOARD_PX * 2, 3),
         "nodes": {n["node"]: {"name": n["name"], "rules": pretty(n["rules"]), "local": list(px_to_local(*pos[n["node"]])),
@@ -173,27 +173,32 @@ for aid in dict.fromkeys(j["adventure_id"] for j in journey):
 
 BOSSES_L = {}
 for b in bosses:
-    im = Image.new("RGB", (BOARD_PX, BOARD_PX), (245, 242, 236)); d = ImageDraw.Draw(im)
-    d.rounded_rectangle((10, 10, 1014, 1014), radius=40, outline=(150, 40, 40), width=16)
-    d.text((512, 85), b["name"], fill=(40, 30, 30), font=font(70), anchor="mm")
-    d.text((512, 155), b["traits"], fill=(90, 80, 80), font=font(36, False), anchor="mm")
-    d.text((512, 225), f"Power {b['power']}     Health {b['health']}", fill=(150, 30, 30), font=font(48), anchor="mm")
-    y = 290; body = font(34, False)
-    def die_shape(k, x, yy, s=30, fill=(40, 30, 30)):   # boss die faces: A circle, B triangle, C square (as on the cards)
-        if k == "A": d.ellipse((x, yy, x + s, yy + s), fill=fill)
-        elif k == "B": d.polygon([(x + s / 2, yy), (x + s, yy + s), (x, yy + s)], fill=fill)
-        else: d.rectangle((x + 2, yy + 2, x + s - 2, yy + s - 2), fill=fill)
-    def para(text, face=None):
-        global y
-        x0 = 110 if face else 62
-        if face: die_shape(face, 62, y + 6)
-        lines = wrap(d, pretty(text), body, 962 - x0)
-        for i, ln in enumerate(lines):
-            d.text((x0, y), ln, fill=(30, 30, 30), font=body); y += 44
-        y += 18
-    para(b["text"])
-    for k in ("A", "B", "C"): para(b[k], k)
-    fname = f"boss-{b['boss_id'].lower()}.png"; im.save(os.path.join(TTS, "images", fname))
+    fname = f"boss-{b['boss_id'].lower()}.png"
+    framed = os.path.join(ROOT, "cards", "framed", "bosses", f"{b['boss_id'].lower()}.png")   # from render_bosses.py
+    if os.path.exists(framed):
+        Image.open(framed).convert("RGB").save(os.path.join(TTS, "images", fname))
+    else:
+      im = Image.new("RGB", (BOARD_PX, BOARD_PX), (245, 242, 236)); d = ImageDraw.Draw(im)
+      d.rounded_rectangle((10, 10, 1014, 1014), radius=40, outline=(150, 40, 40), width=16)
+      d.text((512, 85), b["name"], fill=(40, 30, 30), font=font(70), anchor="mm")
+      d.text((512, 155), b["traits"], fill=(90, 80, 80), font=font(36, False), anchor="mm")
+      d.text((512, 225), f"Power {b['power']}     Health {b['health']}", fill=(150, 30, 30), font=font(48), anchor="mm")
+      y = 290; body = font(34, False)
+      def die_shape(k, x, yy, s=30, fill=(40, 30, 30)):   # boss die faces: A circle, B triangle, C square (as on the cards)
+          if k == "A": d.ellipse((x, yy, x + s, yy + s), fill=fill)
+          elif k == "B": d.polygon([(x + s / 2, yy), (x + s, yy + s), (x, yy + s)], fill=fill)
+          else: d.rectangle((x + 2, yy + 2, x + s - 2, yy + s - 2), fill=fill)
+      def para(text, face=None):
+          global y
+          x0 = 110 if face else 62
+          if face: die_shape(face, 62, y + 6)
+          lines = wrap(d, pretty(text), body, 962 - x0)
+          for i, ln in enumerate(lines):
+              d.text((x0, y), ln, fill=(30, 30, 30), font=body); y += 44
+          y += 18
+      para(b["text"])
+      for k in ("A", "B", "C"): para(b[k], k)
+      im.save(os.path.join(TTS, "images", fname))
     hp = str(b["health"]); per = hp.endswith("*")
     BOSSES_L[b["boss_id"]] = {"name": b["name"], "image": f"{ASSET}/tts/images/{fname}", "power": int(b["power"] or 0),
         "health": int(hp.rstrip("*") or 0), "per_player": per, "abc": [pretty(b[k]) for k in "ABC"],

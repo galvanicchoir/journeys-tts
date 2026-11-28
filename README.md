@@ -5,6 +5,7 @@ A plug-and-play Tabletop Simulator mod for playtesting **Journeys**, a co-op leg
 ## Layout
 - `cards/` - the exported card images (the source for everything else).
 - `cards/framed/` - encounter cards drawn in the new frame by `tts/build/render_cards.py`. The build uses one of these in place of the export whenever it exists.
+- `cards/framed/bosses/` - the landscape boss tiles (name and type top left, power and health top right, art left, passive and die results right), drawn by `tts/build/render_bosses.py` from the Bosses sheet. Boss art goes in `art/bosses/<boss id>.png`; until then the tile shows an ART placeholder.
 - `art/encounters/` - card art for the new frame, one file per card name (`Goblin Horde.png`).
 - `art/heroes/` - hero card art for the new frame (`Mage.png`). Hero cards get a gold border, taller art, a class-coloured header and 10 health.
 - `art/players/` - art for class cards and ancestries (`Fireball.png`). Every card except the loot weapons is drawn by `render_cards.py`; class cards get a header in their class/subclass colour, Aggro cards a red `!`.

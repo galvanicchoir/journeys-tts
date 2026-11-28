@@ -204,7 +204,7 @@ ADVENTURES = [  # adventure_id, name, level, players, set, use, set_aside (card 
 ("SDK","The Silken Dark",1,"1-4","SDK","cache:&:SDK-007","","Webbed cards start in the & cache"),
 ("SDK","The Silken Dark",1,"1-4","SDK","cache:$:SDK-009","","What Awaits starts in the $ cache"),
 ("SDK","The Silken Dark",1,"1-4","COC","cache:%","","Cocooned cards start in the % cache (the doc's # cache)"),
-("SDK","The Silken Dark",1,"1-4","SDK","setaside","","Poisons, rooms and the other Silken Dark spiders, face up"),
+("SDK","The Silken Dark",1,"1-4","SDK","all","","The rest of The Silken Dark (Poisons, rooms, spiders) is shuffled in too"),
 ]
 # Journey map. col/row place the node on the board (col 0-2 left->right, row 0-2 top->bottom).
 # actions (run when the party journeys to the node), separated by ';':

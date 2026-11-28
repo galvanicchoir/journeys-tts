@@ -3354,8 +3354,8 @@ ADVENTURES = {{
     ["level"] = 1,
     ["players"] = "1-4",
     ["description"] = "",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-sdk.png?v=0a7cd59b",
-    ["summary"] = "Silken Dark Spiders (all); Trials and Tribulations (all); Cavern Creatures (all); The Silken Dark (cache:&:SDK-007); The Silken Dark (cache:$:SDK-009); Cocooned (cache:%); The Silken Dark (setaside)",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-sdk.png?v=d7845d49",
+    ["summary"] = "Silken Dark Spiders (all); Trials and Tribulations (all); Cavern Creatures (all); The Silken Dark (cache:&:SDK-007); The Silken Dark (cache:$:SDK-009); Cocooned (cache:%); The Silken Dark (all)",
     ["sets"] = {{
         ["set"] = "SDS",
         ["use"] = "all",
@@ -3382,7 +3382,7 @@ ADVENTURES = {{
         ["set_aside"] = {}
       }, {
         ["set"] = "SDK",
-        ["use"] = "setaside",
+        ["use"] = "all",
         ["set_aside"] = {}
       }}
   }}
@@ -4085,25 +4085,25 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=d949c105"
   }, {
     ["name"] = "MAP_TWG",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=b72024fc"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=76d5e98a"
   }, {
     ["name"] = "MAP_SDK",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-sdk.png?v=ec9cce4a"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-sdk.png?v=769063ca"
   }, {
     ["name"] = "BOSS_WEAVER",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-weaver.png?v=f2aa7253"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-weaver.png?v=3a906591"
   }, {
     ["name"] = "BOSS_GK-CAMP",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=efd5a7e7"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=07f234cf"
   }, {
     ["name"] = "BOSS_GK-TOWER",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f869068d"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f5f8b699"
   }, {
     ["name"] = "ADV_TWG",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-twg.png?v=554e50bf"
   }, {
     ["name"] = "ADV_SDK",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-sdk.png?v=0a7cd59b"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/adventure-sdk.png?v=d7845d49"
   }, {
     ["name"] = "GEM_R1",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/stickers/gem-R1.png?v=1d30c933"
@@ -4287,10 +4287,11 @@ AGGRO_TOKENS = {
 PHASE_IMAGE = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/phase-tracker.png?v=9c0ddf44"
 JOURNEYS = {
   ["TWG"] = {
-    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=b72024fc",
+    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=76d5e98a",
     ["start"] = "A1",
-    ["boss_pos"] = {0.0, 0.504},
-    ["boss_scale"] = 2.197,
+    ["boss_pos"] = {-0.117, 0.474},
+    ["boss_scale"] = 3.809,
+    ["boss_scale_z"] = 2.095,
     ["order"] = {"A1", "B1", "B2", "C1"},
     ["node_w"] = 0.547,
     ["node_h"] = 0.188,
@@ -4326,10 +4327,11 @@ JOURNEYS = {
     }
   },
   ["SDK"] = {
-    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-sdk.png?v=ec9cce4a",
+    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-sdk.png?v=769063ca",
     ["start"] = "A1",
-    ["boss_pos"] = {0.0, 0.504},
-    ["boss_scale"] = 2.197,
+    ["boss_pos"] = {-0.117, 0.474},
+    ["boss_scale"] = 3.809,
+    ["boss_scale_z"] = 2.095,
     ["order"] = {"A1", "B1", "C1", "D1"},
     ["node_w"] = 0.547,
     ["node_h"] = 0.188,
@@ -4368,7 +4370,7 @@ JOURNEYS = {
 BOSSES = {
   ["WEAVER"] = {
     ["name"] = "The Weaver Below",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-weaver.png?v=f2aa7253",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-weaver.png?v=3a906591",
     ["power"] = 0,
     ["health"] = 5,
     ["per_player"] = true,
@@ -4377,7 +4379,7 @@ BOSSES = {
   },
   ["GK-CAMP"] = {
     ["name"] = "The Goblin King",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=efd5a7e7",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=07f234cf",
     ["power"] = 1,
     ["health"] = 4,
     ["per_player"] = true,
@@ -4386,7 +4388,7 @@ BOSSES = {
   },
   ["GK-TOWER"] = {
     ["name"] = "The Goblin King",
-    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f869068d",
+    ["image"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-tower.png?v=f5f8b699",
     ["power"] = 1,
     ["health"] = 4,
     ["per_player"] = true,

@@ -506,7 +506,7 @@ function ACTIONS.boss(args)              -- boss:<id>[:armor=<n>]
   local board = first("J_Board")
   local j = JOURNEYS[STATE.journey.adv]
   local pos = imageToWorld(board, j.boss_pos[1], 0.3, j.boss_pos[2])
-  spawnObjectData({data = tile(b.image, b.name, b.text, args[1], {"J_Setup", "J_Boss"}, pos, 180, j.boss_scale),
+  spawnObjectData({data = tile(b.image, b.name, b.text, args[1], {"J_Setup", "J_Boss"}, pos, 180, j.boss_scale, j.boss_scale_z or j.boss_scale, false),
     callback_function = drawBoss})
   broadcastToAll(b.name .. " has been summoned! (" .. hp .. " health" .. (armor > 0 and (", " .. armor .. " armor") or "") .. ")", {0.9, 0.3, 0.3})
 end
@@ -557,9 +557,13 @@ function drawBoss(obj)
   local b = STATE.journey and STATE.journey.boss
   if not b then return end
   local tip = "Click: +1   |   Right-click: -1"
-  button(obj, "j_bossHP",    "Health " .. b.hp .. " / " .. b.max, 1.75, -0.4, 700, 160, 90, tip, {0.5, 0.12, 0.12, 0.95})
-  button(obj, "j_bossArmor", "Armor " .. b.armor,                  1.75, 0.0, 700, 160, 90, tip)
-  button(obj, "j_bossPower", "Power +" .. b.power,                 1.75, 0.4, 700, 160, 90, tip)
+  -- the tile is landscape (non-uniform scale): keep the buttons a fixed size in the world, just off the tile's right edge
+  local sc = obj.getScale()
+  local K = 2.2                                   -- the scale the button sizes below were made for
+  local sq, x, dz = {K / sc.x, 1, K / sc.z}, -(1 + 1.65 / sc.x), 0.88 / sc.z   -- image right = local -x
+  button(obj, "j_bossHP",    "Health " .. b.hp .. " / " .. b.max, x, -dz, 700, 160, 90, tip, {0.5, 0.12, 0.12, 0.95}, sq)
+  button(obj, "j_bossArmor", "Armor " .. b.armor,                  x, 0.0, 700, 160, 90, tip, nil, sq)
+  button(obj, "j_bossPower", "Power +" .. b.power,                 x, dz,  700, 160, 90, tip, nil, sq)
 end
 local function bump(field, obj, alt, lo, hi)
   local b = STATE.journey.boss
