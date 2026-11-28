@@ -64,6 +64,10 @@ local function cycle(list, cur, dir)
   for k, v in ipairs(list) do if v == cur then i = k end end
   return list[((i - 1 + dir) % #list) + 1]
 end
+-- Plain-text prefix checks. TTS's Lua (MoonSharp) breaks on anchored patterns such as ("all"):match("^cache:[^:]+")
+-- when the string is shorter than the pattern's literal start, so action/use strings are parsed without patterns.
+local function after(s, prefix) if s and s:sub(1, #prefix) == prefix then return s:sub(#prefix + 1) end end
+local function split2(s) local c = s:find(":", 1, true) if c then return s:sub(1, c - 1), s:sub(c + 1) end return s, nil end
 local function keys(t, field) local r = {} for _, v in ipairs(t) do r[#r + 1] = v[field] end return r end
 local function first(tag) return getObjectsWithTag(tag)[1] end
 -- Buttons and our generated images share one x direction; positionToWorld / snap points use the mirrored one.
@@ -257,14 +261,17 @@ function setupAdventure(adv)
   -- rows like "cache:&:SDK-007" claim just those cards; the set's other rows skip them
   local claimed = {}
   for _, e in ipairs(adv.sets) do
-    local only = e.use:match("^cache:[^:]+:(.+)$")
+    local rest = after(e.use, "cache:")
+    local only = rest and select(2, split2(rest))
     if only then for id in only:gmatch("[^,%s]+") do claimed[id] = true end end
   end
   for _, e in ipairs(adv.sets) do
     local set = SETS[e.set]
     local ids, isAside = {}, {}
     for _, id in ipairs(e.set_aside or {}) do isAside[id] = true end
-    local only = e.use:match("^cache:[^:]+:(.+)$")
+    local rest = after(e.use, "cache:")
+    local cacheSig, only
+    if rest then cacheSig, only = split2(rest) end
     local onlySet
     if only then onlySet = {} for id in only:gmatch("[^,%s]+") do onlySet[id] = true end end
     for _, id in ipairs(expand(set.cards)) do
@@ -274,14 +281,13 @@ function setupAdventure(adv)
         if isAside[id] then bagItems[#bagItems + 1] = cardData(id, tags) else ids[#ids + 1] = id end
       end
     end
-    local cacheSig = e.use:match("^cache:([^:]+)")
     if cacheSig then
       local k = cacheKey(cacheSig)
       caches[k] = caches[k] or {}
       for _, id in ipairs(ids) do table.insert(caches[k], id) end
     elseif e.use == "all" then
       for _, id in ipairs(ids) do deck[#deck + 1] = id end
-    elseif e.use:match("^random") then
+    elseif e.use:sub(1, 6) == "random" then
       local n = tonumber(e.use:match("%d+")) or 0
       ids = shuffle(ids)
       for i = 1, math.min(n, #ids) do deck[#deck + 1] = ids[i] end
@@ -298,7 +304,9 @@ function setupAdventure(adv)
   local preDone = {}
   if j then
     for _, a in ipairs(j.nodes[j.start].actions) do
-      local sig, n = a:match("^cachetop:([^:]+):?(.*)$")
+      local rest = after(a, "cachetop:")
+      local sig, n
+      if rest then sig, n = split2(rest) n = n or "" end
       if sig then
         local k = cacheKey(sig)
         n = math.min(starred(n ~= "" and n or "1"), #deck)
@@ -611,7 +619,7 @@ function enterNode(id, skip)
   if board then board.setDescription("Current stage: " .. id .. " " .. node.name .. "\n" .. node.rules) drawBoard(board) end
   broadcastToAll("Journey: " .. id .. " " .. node.name, {0.95, 0.85, 0.55})
   local keepTrack = {}
-  for _, a in ipairs(node.actions) do local t = a:match("^track:(.+)$") if t then keepTrack[t] = true end end
+  for _, a in ipairs(node.actions) do local t = after(a, "track:") if t then keepTrack[t] = true end end
   for _, o in ipairs(getObjectsWithTag("J_Track")) do
     if not keepTrack[o.getGMNotes()] then destroyObject(o) end
   end
@@ -1730,7 +1738,7 @@ local function adventureText(a)
     local seen = {}
     for _, id in ipairs(j.order) do
       for _, act in ipairs(j.nodes[id].actions) do
-        local b = act:match("^boss:([^:]+)")
+        local b = after(act, "boss:") if b then b = split2(b) end
         if b and not seen[b] then
           seen[b] = true
           t[#t + 1] = "BOSS  (" .. id .. ")  " .. BOSSES[b].name .. "\n" .. BOSSES[b].text .. "\n"
