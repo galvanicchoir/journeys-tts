@@ -3619,7 +3619,7 @@ UI_ASSETS = {{
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/cards/LOOT-ROG-OUT-IV-03.png?v=d949c105"
   }, {
     ["name"] = "MAP_TWG",
-    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=7f75cf1f"
+    ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=b72024fc"
   }, {
     ["name"] = "BOSS_GK-CAMP",
     ["url"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/boss-gk-camp.png?v=efd5a7e7"
@@ -3812,7 +3812,7 @@ AGGRO_TOKENS = {
 PHASE_IMAGE = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/phase-tracker.png?v=9c0ddf44"
 JOURNEYS = {
   ["TWG"] = {
-    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=7f75cf1f",
+    ["board"] = "https://raw.githubusercontent.com/galvanicchoir/journeys-tts/main/tts/images/journey-twg.png?v=b72024fc",
     ["start"] = "A1",
     ["boss_pos"] = {0.0, 0.504},
     ["boss_scale"] = 2.197,
