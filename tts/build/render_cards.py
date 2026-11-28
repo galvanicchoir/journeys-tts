@@ -90,7 +90,7 @@ def rules_html(text, keywords, name=""):
     if flavor:
         return f'<p class="flavor">{out}</p>'
     out = re.sub(r"\(([^)]*)\)", r"<i>(\1)</i>", out)                        # reminder text
-    out = re.sub(r"(^|(?<=[.:,)>] ))(" + LEAD + r"(?:, [A-Za-z0-9 ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - "
+    out = re.sub(r"(^|(?<=[.:,)>] )|(?<=\n))(" + LEAD + r"(?:, [A-Za-z0-9 ]{1,30}?)?)(\s-\s)", r"\1<b>\2</b>\4", out)   # "Enter - ", "Action, Recycle a card - ", "A - " (also at the start of a line)
     if nm: out = out.replace(nm, "\x00")                                      # the card's own name never gets keyword-bolded
     for k in kws:                                                             # keywords from the keywords column
         out = re.sub(r"(?<![\w>])(" + re.escape(k) + r")(?![\w<])", r"<b>\1</b>", out, flags=re.I)
@@ -99,13 +99,17 @@ def rules_html(text, keywords, name=""):
     out = re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), out)
     gemify = lambda x: re.sub(r"(\+?\d+)?\{([rgb])\}", lambda m: gem_icons.svg(m.group(2), 28, label=m.group(1) or ""), x)
     body = t.replace(s(name), "") if name else t
-    missing = [gemify(html.escape(k)) for k in kws if k.lower() not in body.lower()]   # e.g. "Lasting 2{g}"
+    missing = [gemify(html.escape(k)) for k in kws if k.lower() not in body.lower()
+               and k.lower() != "horde"]                                      # e.g. "Lasting 2{g}"; "Horde" only marks a horde (blue shield)
     lead = f"<p><b>{' \u00b7 '.join(missing)}</b></p>" if missing else ""            # all keywords on one line: "Focus · Aggro"
     # break before each boss-die result so "A - ... B - ... C - ..." reads as a list
     out = re.sub(r"(?<=\.)\s(?=<b>[ABC]</b> - )", "</p><p>", out)
     out = re.sub(r"<b>([ABC])</b> - ", lambda m: f'<span class="die">{die_icons.icon(DIE_FAMILY, m.group(1), 18)}</span> ', out)
     out = re.sub("[\x01\x02\x03]", lambda m: cache_icons.svg({"\x01": "&", "\x02": "%", "\x03": "$"}[m.group(0)]), out)
-    return lead + (f"<p>{out}</p>" if out else "")
+    out = re.sub(r"\s*\n\s*", "</p><p>", out.strip())                     # a new line in the card text = a new paragraph
+    out = f"<p>{out}</p>" if out else ""
+    out = re.sub(r'<p>("[^<]*")</p>', r'<p class="flavor">\1</p>', out)      # a quoted line on its own = flavor text
+    return lead + out
 
 def is_short(rules):
     """Short text (up to two lines/paragraphs, e.g. a keyword line + one ability): centre it across as well as down."""
@@ -177,7 +181,7 @@ HERO_CLASS = {"CHR-MAG": "mage", "CHR-WAR": "warrior", "CHR-ROG": "rogue", "CHR-
 def card_html(c, set_name):
     kind = s(c["card_type"])
     ti = type_info(s(c["traits"]), kind)
-    horde = kind == "Enemy" and ("Horde" in s(c["name"]) or "reinforce" in s(c["keywords"]).lower())
+    horde = kind == "Enemy" and ("Horde" in s(c["name"]) or re.search(r"(?i)\b(reinforce|horde)\b", s(c["keywords"])))
     cls = {"Enemy": "horde" if horde else "enemy", "Event": "event", "Obstacle": "obstacle",
            "Hero": "hero " + HERO_CLASS.get(s(c["id"]), "")}.get(kind, "event")
     name = html.escape(s(c["name"]))

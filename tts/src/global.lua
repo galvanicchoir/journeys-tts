@@ -28,6 +28,12 @@ STACK_SPAN    = 3.0                -- longest cascade (rear card centre to front
 STACK_ZMIN, STACK_ZMAX = -2.45, 3.95   -- a stack column's extent along z
 STACK_BAR_Z   = -3.05              -- aggro token + Aggro button row
 BAG_POS       = {-19, 1.5, 5.6}    -- just above (north of) the journey board
+-- Caches: face-down piles an adventure routes set-aside cards through. & = Wave, % = Bowl, $ = Fan
+-- (a "#" in adventure text means the % cache). One column west of the set-aside bag.
+CACHE_ORDER = {"&", "%", "$"}
+CACHE_POS   = {["&"] = {-22.6, 1.5, 6.9}, ["%"] = {-22.6, 1.5, 10.4}, ["$"] = {-22.6, 1.5, 13.9}}
+CACHE_NAME  = {["&"] = "Wave", ["%"] = "Bowl", ["$"] = "Fan"}
+local function cacheKey(sig) if sig == "#" then return "%" end return sig end
 ADV_TILE_POS  = {12, 1.2, 1.5}     -- where the chosen adventure tile goes
 SUPPLY_X      = {22.5, 24.7}       -- token bags: two columns along the right edge of the table
 SUPPLY_Z0     = 6.5                -- first bag (north end); the rest step south
@@ -232,15 +238,33 @@ end
 
 function setupAdventure(adv)
   local tags = {"J_Setup"}
-  local deck, bagItems = {}, {}
+  local deck, bagItems, caches = {}, {}, {}
+  -- rows like "cache:&:SDK-007" claim just those cards; the set's other rows skip them
+  local claimed = {}
+  for _, e in ipairs(adv.sets) do
+    local only = e.use:match("^cache:[^:]+:(.+)$")
+    if only then for id in only:gmatch("[^,%s]+") do claimed[id] = true end end
+  end
   for _, e in ipairs(adv.sets) do
     local set = SETS[e.set]
     local ids, isAside = {}, {}
     for _, id in ipairs(e.set_aside or {}) do isAside[id] = true end
+    local only = e.use:match("^cache:[^:]+:(.+)$")
+    local onlySet
+    if only then onlySet = {} for id in only:gmatch("[^,%s]+") do onlySet[id] = true end end
     for _, id in ipairs(expand(set.cards)) do
-      if isAside[id] then bagItems[#bagItems + 1] = cardData(id, tags) else ids[#ids + 1] = id end
+      if onlySet then
+        if onlySet[id] then ids[#ids + 1] = id end
+      elseif not claimed[id] then
+        if isAside[id] then bagItems[#bagItems + 1] = cardData(id, tags) else ids[#ids + 1] = id end
+      end
     end
-    if e.use == "all" then
+    local cacheSig = e.use:match("^cache:([^:]+)")
+    if cacheSig then
+      local k = cacheKey(cacheSig)
+      caches[k] = caches[k] or {}
+      for _, id in ipairs(ids) do table.insert(caches[k], id) end
+    elseif e.use == "all" then
       for _, id in ipairs(ids) do deck[#deck + 1] = id end
     elseif e.use:match("^random") then
       local n = tonumber(e.use:match("%d+")) or 0
@@ -257,6 +281,13 @@ function setupAdventure(adv)
     ColorDiffuse = {r = 0.55, g = 0.4, b = 0.25}}, position = BAG_POS})
   spawnCards(shuffle(deck), ENC_DECK_POS, 180, true, tags)
   spawnZone(ENC_DECK_POS, "J_EncZone"); spawnZone(ENC_DISC_POS, "J_DiscZone")
+  for _, k in ipairs(CACHE_ORDER) do
+    if caches[k] then
+      local p = CACHE_POS[k]
+      if #caches[k] > 0 then spawnCards(shuffle(caches[k]), p, 180, true, tags) end
+      spawnLabel(CACHE_NAME[k] .. " Cache  " .. k, {p[1], 1.05, p[3] - 2.0}, tags)
+    end
+  end
   STATE.turn = {round = 0, phase = 0, die = nil}
   local j = JOURNEYS[adv.id]
   if j then
@@ -396,6 +427,76 @@ function ACTIONS.shuffle(args)
   if sets == 0 then rebuildEncounterDeck(objs) end
   broadcastToAll("The encounter deck and discard pile are shuffled together" .. (sets > 0 and " with the new cards." or "."), {0.9, 0.8, 0.5})
 end
+-- The cache pile for a sigil: the encounter pile sitting on its spot.
+function cachePile(sig) return encPilesAt(CACHE_POS[cacheKey(sig)] or {0, 0, 999})[1] end
+
+-- cachetop:<sigil>:<n> - shuffle the top n cards of the encounter deck into that cache (n may be starred)
+function ACTIONS.cachetop(args)
+  local k, n = cacheKey(args[1]), starred(args[2] or "1")
+  local p = CACHE_POS[k]
+  if not p then return end
+  Wait.frames(function()
+    local deck = encPilesAt(ENC_DECK_POS)[1]
+    if not deck then return end
+    local moved = {}
+    local have = cachePile(k)
+    if have then moved[#moved + 1] = have end
+    for i = 1, n do
+      if deck == nil or deck.isDestroyed() then break end
+      if deck.type == "Deck" then
+        moved[#moved + 1] = deck.takeObject({position = {p[1], p[2] + i * 0.4, p[3]}, rotation = {0, 180, 180}, smooth = false})
+      else
+        deck.setRotation({0, 180, 180}) deck.setPosition({p[1], p[2] + i * 0.4, p[3]}) moved[#moved + 1] = deck break
+      end
+    end
+    Wait.time(function()
+      local pile = encPilesAt(p)
+      if #pile > 1 then pile = group(pile) end
+      Wait.time(function() local c = encPilesAt(p)[1] if c and c.type == "Deck" then c.shuffle() end end, 0.6)
+    end, 0.8)
+    broadcastToAll("The top " .. n .. " encounter cards are shuffled into the " .. CACHE_NAME[k] .. " Cache (" .. k .. ").", {0.9, 0.8, 0.5})
+  end, 10)
+end
+
+-- awaits:<sigil> - discard from the encounter deck until an Elite comes up, spawn it in its own stack, then
+-- attach the card waiting in that cache (What Awaits) behind it in the same stack.
+function ACTIONS.awaits(args)
+  local k = cacheKey(args[1] or "$")
+  local function isElite(o) local c = CARDS[cardIdOf(o) or ""] return c and c.type == "Enemy" and (c.traits or ""):find("Elite") end
+  local function step()
+    local deck = encPilesAt(ENC_DECK_POS)[1]
+    if not deck then broadcastToAll("The encounter deck ran out before an Elite came up.", {1, 0.6, 0.2}) return end
+    local target = emptyStack(0)
+    local card
+    if deck.type == "Deck" then card = deck.takeObject({position = {ENC_DECK_POS[1], 3, ENC_DECK_POS[3]}, rotation = {0, 180, 0}, smooth = false})
+    else card = deck card.setRotation({0, 180, 0}) end
+    Wait.frames(function()
+      if isElite(card) and target then
+        local c = slotCenter(target)
+        card.setPosition({c[1], 1.6, STACK_REAR_Z})
+        addToStack(target, card, nil, nil)
+        broadcastToAll((CARDS[cardIdOf(card)] or {name = "An Elite"}).name .. " awaits! (Stack " .. target:sub(2) .. ")", {0.9, 0.3, 0.3})
+        local aw = cachePile(k)
+        if aw then
+          local w = aw
+          if aw.type == "Deck" then w = aw.takeObject({position = {c[1], 2.2, STACK_REAR_Z + 1}, rotation = {0, 180, 0}, smooth = false})
+          else aw.setRotation({0, 180, 0}) aw.setPosition({c[1], 2.2, STACK_REAR_Z + 1}) end
+          Wait.frames(function()
+            local list = STATE.stacks[target] or {}
+            table.insert(list, 1, w.getGUID())               -- attached: tucked in behind the elite
+            STATE.stacks[target] = list
+            layoutStack(target)
+          end, 5)
+        end
+      else
+        card.setPosition({ENC_DISC_POS[1], 2, ENC_DISC_POS[3]})
+        Wait.frames(step, 3)
+      end
+    end, 3)
+  end
+  step()
+end
+
 function ACTIONS.boss(args)              -- boss:<id>[:armor=<n>]
   local b = BOSSES[args[1]]
   local armor = 0
@@ -820,7 +921,7 @@ function emptyStack(n)
     end
   end
 end
-local function cardIdOf(o) return (o.getGMNotes() or ""):match('"id":%s*"([^"]+)"') end
+function cardIdOf(o) return (o.getGMNotes() or ""):match('"id":%s*"([^"]+)"') end
 local function stackInfo(o)
   local c = CARDS[cardIdOf(o) or ""]
   return c and c.stack or {role = "Generic", rank = 2, with = "Any"}, c
@@ -972,7 +1073,8 @@ local function playerCount()
 end
 local function enemyCard(o) return CARDS[cardIdOf(o) or ""] end
 local function isHorde(c)
-  return c and (c.name:find("Horde", 1, true) or (c.keywords or ""):find("Reinforce", 1, true)) and true or false
+  local kw = c and (c.keywords or "") or ""
+  return c and (c.name:find("Horde", 1, true) or kw:find("Reinforce", 1, true) or kw:find("Horde", 1, true)) and true or false
 end
 local function startingHP(c)
   local base, star = (c and c.health or ""):match("^%s*(%d*)%s*(%*?)%s*$")

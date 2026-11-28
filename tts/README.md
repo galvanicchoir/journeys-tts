@@ -81,3 +81,23 @@ Don't edit `tts/src/data.lua` by hand – it's regenerated.
 - **Draw Encounter** (bottom-right of each playmat, next to Rally): puts the top encounter card face up at the top middle of that playmat. If the deck is empty, the discard is shuffled face down into a new deck first.
 - **Magnets** on the Battlefield hold the Encounter Deck, the Discard and the four Obstacle spaces.
 - **Moving along the journey** to a stage that shuffles in new sets puts the encounter deck, its discard pile and the new cards together into one shuffled deck.
+
+## Caches
+- Some adventures route cards through **caches**: face-down piles to the west of the Set Aside bag, labelled with their sigil.
+  - Wave Cache (&), Bowl Cache (%), Fan Cache ($). A "#" in adventure text means the Bowl cache.
+- In the catalog, an Adventures row with use `cache:<sigil>` puts that set face down in the cache. `cache:<sigil>:<ids>` puts only those cards there; the set's other rows leave them out.
+- Journey actions:
+  - `cachetop:<sigil>:<n>` shuffles the top n encounter cards into a cache.
+  - `awaits:<sigil>` discards from the encounter deck until an Elite comes up, puts it in its own stack, and attaches the card from that cache behind it.
+
+## The Silken Dark
+- **Encounter deck:** Silken Dark Spiders, Trials and Tribulations and Cavern Creatures.
+- **Caches:**
+  - Wave (&): the 4 Webbed.
+  - Bowl (%): the Cocooned cards, plus the top 4 encounter cards at setup.
+  - Fan ($): What Awaits.
+- **Set aside:** the rest of The Silken Dark (Poisons, Hatching Room, Lurking Webs, Pouncing and Webbing Spiders) waits in the Set Aside bag.
+- **Journey:** A1 Descending through Silk -> B1 What Awaits or C1 Rescuing the Captured; C1 -> B1; B1 -> D1 The Weaver Below.
+  - **B1:** an Elite is dug out of the deck and What Awaits is attached to it automatically.
+  - **A1:** the floors are tracked by hand.
+  - **C1:** cocoons are placed by hand.

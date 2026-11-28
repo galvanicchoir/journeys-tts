@@ -84,6 +84,7 @@ for aid in dict.fromkeys(a["adventure_id"] for a in advs):
     y += 130
     for r in rs:
         tag = {"all": "deck", "staged": "set aside", "setaside": "set aside"}.get(r["use"], r["use"])
+        if str(r["use"]).startswith("cache:"): tag = str(r["use"]).split(":")[1] + " cache"
         d.text((512, y), f"{set_by[r['set']]['name']}  ({tag})", fill=(200, 200, 200), font=font(36, False), anchor="mm"); y += 52
     fname = f"adventure-{aid.lower()}.png"; im.save(os.path.join(TTS, "images", fname))
     adv_list.append({"id": aid, "name": a0["name"], "level": int(a0["level"]), "players": str(a0["players"]),
@@ -352,6 +353,7 @@ for c in cards:
         CARDS_L[c["id"]]["power"] = str(c["power"] or "")
         CARDS_L[c["id"]]["health"] = str(c["health"] or "")
         CARDS_L[c["id"]]["keywords"] = c["keywords"] or ""
+        CARDS_L[c["id"]]["traits"] = c["traits"] or ""
 SETS_L = {s["set"]: {"name": s["name"], "kind": s["kind"], "cards": [c["id"] for c in cards if c["set"] == s["set"]]} for s in sets}
 CLASSES_L, order = {}, []
 for r in classes:
