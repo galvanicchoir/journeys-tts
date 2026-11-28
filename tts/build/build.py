@@ -124,6 +124,22 @@ NODE_X = [170, 512, 854]; NODE_Y = [190, 320, 450]; NODE_W, NODE_H = 280, 96
 BOSS_FRAME = (287, 545, 737, 995)      # where the boss tile sits on the board (pixels)
 def px_to_local(x, y): return round((x / BOARD_PX - 0.5) * 2, 3), round((y / BOARD_PX - 0.5) * 2, 3)  # image down = local +z
 
+def box_edge(c, toward, pad=6):
+    """Point where the line from box centre c toward another point leaves the stage box (plus a small gap)."""
+    (x, y), (tx, ty) = c, toward
+    dx, dy = tx - x, ty - y
+    hw, hh = NODE_W / 2 + pad, NODE_H / 2 + pad
+    t = min(hw / abs(dx) if dx else 1e9, hh / abs(dy) if dy else 1e9)
+    return x + dx * t, y + dy * t
+
+def journey_arrow(d, a, b, color=(150, 130, 90)):
+    """Arrow from stage a to stage b, edge to edge, in any direction (sideways, up, down or back)."""
+    x1, y1 = box_edge(a, b); x2, y2 = box_edge(b, a)
+    d.line((x1, y1, x2, y2), fill=color, width=6)
+    ang = math.atan2(y2 - y1, x2 - x1); L, Wd = 24, 13
+    bx, by = x2 - L * math.cos(ang), y2 - L * math.sin(ang)
+    d.polygon([(x2, y2), (bx - Wd * math.sin(ang), by + Wd * math.cos(ang)), (bx + Wd * math.sin(ang), by - Wd * math.cos(ang))], fill=color)
+
 JOURNEYS_L = {}
 for aid in dict.fromkeys(j["adventure_id"] for j in journey):
     nodes = [j for j in journey if j["adventure_id"] == aid]
@@ -134,9 +150,7 @@ for aid in dict.fromkeys(j["adventure_id"] for j in journey):
     pos = {n["node"]: (NODE_X[int(n["col"])], NODE_Y[int(n["row"])]) for n in nodes}
     for n in nodes:                                    # arrows first, boxes on top
         for nx in [x.strip() for x in str(n["next"] or "").split(",") if x.strip()]:
-            (x1, y1), (x2, y2) = pos[n["node"]], pos[nx]
-            d.line((x1 + NODE_W / 2, y1, x2 - NODE_W / 2, y2), fill=(150, 130, 90), width=6)
-            d.polygon([(x2 - NODE_W / 2, y2), (x2 - NODE_W / 2 - 22, y2 - 12), (x2 - NODE_W / 2 - 22, y2 + 12)], fill=(150, 130, 90))
+            journey_arrow(d, pos[n["node"]], pos[nx])
     for n in nodes:
         x, y = pos[n["node"]]
         d.rounded_rectangle((x - NODE_W / 2, y - NODE_H / 2, x + NODE_W / 2, y + NODE_H / 2), radius=14, fill=(48, 42, 62), outline=(120, 110, 140), width=3)
