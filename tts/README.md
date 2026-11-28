@@ -101,3 +101,7 @@ Don't edit `tts/src/data.lua` by hand – it's regenerated.
   - **B1:** an Elite is dug out of the deck and What Awaits is attached to it automatically.
   - **A1:** the floors are tracked by hand.
   - **C1:** cocoons are placed by hand.
+
+## Build notes
+- Build order: `catalog.py`, then `loot.py`, then `render_cards.py`, then `build.py`. catalog.py rewrites the spreadsheet, and loot.py adds the Loot tab back.
+- Never delete old files in `tts/sheets/`: published Workshop versions load their card sheets from this repository by name.
